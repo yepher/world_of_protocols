@@ -123,6 +123,7 @@ nav:
       - NATS: protocols/messaging/nats.md
       - Kafka: protocols/messaging/kafka.md
       - XMPP: protocols/messaging/xmpp.md
+      - ZeroMQ (ZMTP): protocols/messaging/zeromq.md
     - File Sharing:
       - FTP: protocols/file-sharing/ftp.md
       - TFTP: protocols/file-sharing/tftp.md
@@ -188,6 +189,9 @@ nav:
       - Zigbee: protocols/wireless/zigbee.md
       - Z-Wave: protocols/wireless/zwave.md
       - NFC: protocols/wireless/nfc.md
+      - Thread: protocols/wireless/thread.md
+      - LoRaWAN: protocols/wireless/lorawan.md
+      - 6LoWPAN: protocols/wireless/6lowpan.md
     - Robotics:
       - MAVLink: protocols/robotics/mavlink.md
       - EtherCAT: protocols/robotics/ethercat.md
@@ -205,6 +209,7 @@ nav:
       - Safetensors: protocols/data-formats/safetensors.md
       - HDF5: protocols/data-formats/hdf5.md
       - TFRecord: protocols/data-formats/tfrecord.md
+      - MCAP: protocols/data-formats/mcap.md
     - Encoding / Symbology:
       - QR Code: protocols/encoding/qrcode.md
       - UPC / EAN: protocols/encoding/upc.md

@@ -95,6 +95,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [NATS](protocols/messaging/nats.md) | nats.io | Lightweight cloud-native messaging |
 | [Kafka](protocols/messaging/kafka.md) | Apache | Distributed event streaming / partitioned log |
 | [XMPP](protocols/messaging/xmpp.md) | RFC 6120 | Decentralized instant messaging and presence |
+| [ZeroMQ (ZMTP)](protocols/messaging/zeromq.md) | ZMTP 3.1 | Brokerless high-performance messaging library |
 
 ### File Sharing
 
@@ -244,6 +245,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Safetensors](protocols/data-formats/safetensors.md) | Hugging Face | Secure, fast tensor serialization (model weights) |
 | [HDF5](protocols/data-formats/hdf5.md) | HDF Group | Hierarchical scientific / ML data storage |
 | [TFRecord](protocols/data-formats/tfrecord.md) | TensorFlow | Sequential binary training data format |
+| [MCAP](protocols/data-formats/mcap.md) | mcap.dev | Multimodal timestamped log data (robotics, Foxglove) |
 
 ### Encoding / Symbology
 
@@ -267,6 +269,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Zigbee](protocols/wireless/zigbee.md) | IEEE 802.15.4 / CSA | Low-power IoT mesh network (2.4 GHz) |
 | [Z-Wave](protocols/wireless/zwave.md) | ITU-T G.9959 | Home automation mesh (sub-GHz) |
 | [NFC](protocols/wireless/nfc.md) | ISO 18092 | Contactless communication (payments, tags, pairing) |
+| [Thread](protocols/wireless/thread.md) | Thread Group | IPv6 mesh for IoT / Matter smart home |
+| [LoRaWAN](protocols/wireless/lorawan.md) | LoRa Alliance | Long-range low-power WAN (km range, sub-GHz) |
+| [6LoWPAN](protocols/wireless/6lowpan.md) | RFC 4944 / 6282 | IPv6 header compression for constrained wireless |
 
 ## Protocol Map
 
