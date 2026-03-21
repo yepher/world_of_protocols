@@ -102,6 +102,8 @@ nav:
       - HLS / MPEG-DASH: protocols/web/hls.md
       - CoAP: protocols/web/coap.md
       - WebTransport: protocols/web/webtransport.md
+      - GraphQL: protocols/web/graphql.md
+      - SSE: protocols/web/sse.md
     - Email:
       - SMTP: protocols/email/smtp.md
       - IMAP: protocols/email/imap.md
@@ -153,6 +155,8 @@ nav:
       - WPA2 / WPA3: protocols/security/wpa.md
       - 802.1X / EAP: protocols/security/8021x.md
       - NTLM: protocols/security/ntlm.md
+      - X.509: protocols/security/x509.md
+      - ACME: protocols/security/acme.md
     - Naming / Config / Directory:
       - DNS: protocols/naming/dns.md
       - DHCP: protocols/naming/dhcp.md
@@ -162,6 +166,7 @@ nav:
       - NTP: protocols/naming/ntp.md
       - BOOTP / PXE: protocols/naming/bootp_pxe.md
       - Wake-on-LAN: protocols/naming/wol.md
+      - DHCP Options: protocols/naming/dhcp_options.md
     - Monitoring / Observability:
       - SNMP: protocols/monitoring/snmp.md
       - Syslog: protocols/monitoring/syslog.md
@@ -218,6 +223,7 @@ nav:
       - NMEA 0183 / 2000: protocols/industrial/nmea.md
       - IEC 61850: protocols/industrial/iec61850.md
       - IEC 60870-5-104: protocols/industrial/iec104.md
+      - OPC DA / Classic: protocols/industrial/opcda.md
     - Wireless / Mesh:
       - 802.11 (Wi-Fi): protocols/wireless/80211.md
       - 802.11s (Mesh): protocols/wireless/80211s.md
@@ -227,6 +233,7 @@ nav:
       - Z-Wave: protocols/wireless/zwave.md
       - NFC: protocols/wireless/nfc.md
       - Thread: protocols/wireless/thread.md
+      - LoRa PHY: protocols/wireless/lora.md
       - LoRaWAN: protocols/wireless/lorawan.md
       - 6LoWPAN: protocols/wireless/6lowpan.md
       - Matter: protocols/wireless/matter.md
@@ -251,6 +258,7 @@ nav:
       - Redis (RESP): protocols/database/redis.md
       - MongoDB: protocols/database/mongodb.md
       - TDS (SQL Server): protocols/database/tds.md
+      - Memcached: protocols/database/memcached.md
     - Healthcare:
       - DICOM: protocols/healthcare/dicom.md
       - HL7 v2 / FHIR: protocols/healthcare/hl7.md

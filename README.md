@@ -55,6 +55,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [HLS / MPEG-DASH](protocols/web/hls.md) | RFC 8216 / ISO 23009 | Adaptive bitrate video streaming over HTTP |
 | [CoAP](protocols/web/coap.md) | RFC 7252 | Constrained Application Protocol (IoT REST) |
 | [WebTransport](protocols/web/webtransport.md) | RFC 9297 | HTTP/3-based bidirectional transport (WebSocket successor) |
+| [GraphQL](protocols/web/graphql.md) | GraphQL Foundation | Query language for APIs (flexible data fetching) |
+| [SSE](protocols/web/sse.md) | WHATWG | Server-Sent Events (unidirectional server-to-client streaming) |
 
 ### Email
 
@@ -126,6 +128,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [WPA2 / WPA3](protocols/security/wpa.md) | IEEE 802.11i | Wi-Fi encryption and key exchange |
 | [802.1X / EAP](protocols/security/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
 | [NTLM](protocols/security/ntlm.md) | MS-NLMP | Windows challenge-response authentication (legacy) |
+| [X.509](protocols/security/x509.md) | RFC 5280 | Certificate format (TLS, IPsec, code signing) |
+| [ACME](protocols/security/acme.md) | RFC 8555 | Automatic certificate issuance (Let's Encrypt) |
 
 ### Naming / Config / Directory
 
@@ -139,6 +143,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [NTP](protocols/naming/ntp.md) | RFC 5905 | Network clock synchronization |
 | [BOOTP / PXE](protocols/naming/bootp_pxe.md) | RFC 951 / RFC 4578 | Network bootstrap and preboot execution |
 | [Wake-on-LAN](protocols/naming/wol.md) | AMD / IEEE 802.3 | Magic packet remote power-on |
+| [DHCP Options](protocols/naming/dhcp_options.md) | RFC 2132 | DHCP option codes quick reference |
 
 ### Monitoring / Observability
 
@@ -251,6 +256,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [NMEA 0183 / 2000](protocols/industrial/nmea.md) | NMEA | Marine/GPS navigation data |
 | [IEC 61850](protocols/industrial/iec61850.md) | IEC 61850 | Smart grid / power substation automation |
 | [IEC 60870-5-104](protocols/industrial/iec104.md) | IEC 60870-5-104 | SCADA telecontrol (power/water utilities) |
+| [OPC DA / Classic](protocols/industrial/opcda.md) | OPC Foundation | Legacy COM/DCOM industrial data access |
 
 ### Robotics
 
@@ -281,6 +287,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Redis (RESP)](protocols/database/redis.md) | redis.io | Redis serialization protocol (port 6379) |
 | [MongoDB](protocols/database/mongodb.md) | MongoDB Docs | MongoDB binary wire protocol (port 27017) |
 | [TDS](protocols/database/tds.md) | MS-TDS | SQL Server / Sybase tabular data stream (port 1433) |
+| [Memcached](protocols/database/memcached.md) | memcached.org | In-memory key-value cache protocol (port 11211) |
 
 ### Healthcare
 
@@ -340,6 +347,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Z-Wave](protocols/wireless/zwave.md) | ITU-T G.9959 | Home automation mesh (sub-GHz) |
 | [NFC](protocols/wireless/nfc.md) | ISO 18092 | Contactless communication (payments, tags, pairing) |
 | [Thread](protocols/wireless/thread.md) | Thread Group | IPv6 mesh for IoT / Matter smart home |
+| [LoRa PHY](protocols/wireless/lora.md) | Semtech | Chirp spread spectrum radio modulation (sub-GHz) |
 | [LoRaWAN](protocols/wireless/lorawan.md) | LoRa Alliance | Long-range low-power WAN (km range, sub-GHz) |
 | [6LoWPAN](protocols/wireless/6lowpan.md) | RFC 4944 / 6282 | IPv6 header compression for constrained wireless |
 | [Matter](protocols/wireless/matter.md) | CSA | Smart home interoperability (over Thread/Wi-Fi/BLE) |

@@ -4,7 +4,7 @@ This directory contains visual maps showing protocol relationships, encapsulatio
 
 ## Planned
 
-- **protocol-map.excalidraw** — Full interactive protocol relationship chart (zoomable, pannable). Inspired by the Rad Com *World of Protocols* poster.
+- [**protocol-map.excalidraw**](https://app.excalidraw.com/s/8IgSq6ebOhQ/3gaV09MrqIL) — Full interactive protocol relationship chart (zoomable, pannable). Inspired by the Rad Com *World of Protocols* poster.
 - **protocol-map.svg** — Static export for embedding in documentation.
 
 ## Family Maps
