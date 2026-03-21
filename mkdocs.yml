@@ -1,0 +1,57 @@
+site_name: World of Protocols
+site_description: Concise quick-reference for network protocols with packet diagrams and standards links
+repo_url: https://github.com/YOUR_USERNAME/world-of-protocols
+repo_name: world-of-protocols
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - tables
+  - admonitions
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - def_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - Home: README.md
+  - Protocols:
+    - Template: protocols/_template.md
+    - Link Layer:
+      - Ethernet: protocols/link-layer/ethernet.md
+    - Network Layer:
+      - IPv4: protocols/network-layer/ip.md
+      - IPv6: protocols/network-layer/ipv6.md
+    - Transport Layer: []
+    - Application Layer: []
+    - Industrial: []
