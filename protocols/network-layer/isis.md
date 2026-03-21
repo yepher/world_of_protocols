@@ -125,6 +125,6 @@ IS-IS does **not** run over IP. It runs directly over the data link layer using:
 ## See Also
 
 - [OSPF](ospf.md) — alternative link-state IGP
-- [BGP](../application-layer/bgp.md) — used alongside IS-IS for inter-AS routing
+- [BGP](../routing/bgp.md) — used alongside IS-IS for inter-AS routing
 - [MPLS](mpls.md) — IS-IS commonly drives MPLS label distribution
 - [Ethernet](../link-layer/ethernet.md) — IS-IS runs directly on Ethernet

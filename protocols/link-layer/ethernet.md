@@ -72,7 +72,7 @@ Common EtherType values:
 | EtherType | Protocol |
 |-----------|----------|
 | `0x0800` | [IPv4](../network-layer/ip.md) |
-| `0x0806` | [ARP](../network-layer/arp.md) |
+| `0x0806` | [ARP](arp.md) |
 | `0x8100` | IEEE 802.1Q (VLAN tag) |
 | `0x86DD` | [IPv6](../network-layer/ipv6.md) |
 | `0x8847` | MPLS (unicast) |
@@ -133,4 +133,4 @@ graph LR
 
 - [IPv4](../network-layer/ip.md)
 - [IPv6](../network-layer/ipv6.md)
-- [ARP](../network-layer/arp.md)
+- [ARP](arp.md)

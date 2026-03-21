@@ -176,5 +176,5 @@ graph LR
 
 - [UDP](udp.md) — QUIC runs over UDP
 - [TCP](tcp.md) — the transport protocol QUIC aims to replace
-- [TLS](../application-layer/tls.md) — QUIC integrates TLS 1.3
-- [HTTP](../application-layer/http.md) — HTTP/3 runs over QUIC
+- [TLS](../security/tls.md) — QUIC integrates TLS 1.3
+- [HTTP](../web/http.md) — HTTP/3 runs over QUIC

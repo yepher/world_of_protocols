@@ -173,4 +173,4 @@ graph LR
 
 - [Ethernet](ethernet.md) — PPPoE carrier
 - [IPv4](../network-layer/ip.md) — configured via IPCP
-- [RADIUS](../application-layer/radius.md) — authenticates PPP/PPPoE sessions
+- [RADIUS](../security/radius.md) — authenticates PPP/PPPoE sessions

@@ -194,5 +194,5 @@ graph LR
 
 - [IPv4](ip.md) — IPsec protects IP traffic (protocol 50/51)
 - [GRE](gre.md) — commonly paired with IPsec for multiprotocol VPN
-- [TLS](../application-layer/tls.md) — application-layer alternative to IPsec
+- [TLS](../security/tls.md) — application-layer alternative to IPsec
 - [UDP](../transport-layer/udp.md) — IKE and NAT-T use UDP

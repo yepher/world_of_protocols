@@ -171,5 +171,5 @@ graph LR
 
 - [Ethernet](../link-layer/ethernet.md) — carries MPLS frames
 - [IPv4](ip.md) — the network layer MPLS often encapsulates
-- [BGP](../application-layer/bgp.md) — distributes VPN labels in L3VPN
+- [BGP](../routing/bgp.md) — distributes VPN labels in L3VPN
 - [OSPF](ospf.md) — IGP that drives LDP label assignment

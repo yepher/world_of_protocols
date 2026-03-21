@@ -164,4 +164,4 @@ graph LR
 - [GRE](../network-layer/gre.md) — alternative tunneling protocol
 - [L2TP](l2tp.md) — another L2 tunneling protocol
 - [MPLS](../network-layer/mpls.md) — carrier-grade L2/L3 VPN alternative
-- [BGP](../application-layer/bgp.md) — EVPN control plane for VXLAN
+- [BGP](../routing/bgp.md) — EVPN control plane for VXLAN

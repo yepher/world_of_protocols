@@ -86,71 +86,81 @@ nav:
       - UDP: protocols/transport-layer/udp.md
       - QUIC: protocols/transport-layer/quic.md
       - SCTP: protocols/transport-layer/sctp.md
-    - Application Layer:
-      - DNS: protocols/application-layer/dns.md
-      - DHCP: protocols/application-layer/dhcp.md
-      - HTTP: protocols/application-layer/http.md
-      - TLS: protocols/application-layer/tls.md
-      - SSH: protocols/application-layer/ssh.md
-      - NTP: protocols/application-layer/ntp.md
-      - BGP: protocols/application-layer/bgp.md
-      - SIP: protocols/application-layer/sip.md
-      - SIMPLE: protocols/application-layer/simple.md
-      - RTP: protocols/application-layer/rtp.md
-      - RTCP: protocols/application-layer/rtcp.md
-      - WebRTC: protocols/application-layer/webrtc.md
-      - SMTP: protocols/application-layer/smtp.md
-      - SMPP: protocols/application-layer/smpp.md
-      - WBXML: protocols/application-layer/wbxml.md
-      - MM5: protocols/application-layer/mm5.md
-      - LDAP: protocols/application-layer/ldap.md
-      - ICE: protocols/application-layer/ice.md
-      - STUN: protocols/application-layer/stun.md
-      - TURN: protocols/application-layer/turn.md
-      - SNMP: protocols/application-layer/snmp.md
-      - RADIUS: protocols/application-layer/radius.md
-      - FTP: protocols/application-layer/ftp.md
-      - IMAP: protocols/application-layer/imap.md
-      - MQTT: protocols/application-layer/mqtt.md
-      - WebSocket: protocols/application-layer/websocket.md
-      - Telnet: protocols/application-layer/telnet.md
-      - XMPP: protocols/application-layer/xmpp.md
-      - SCP: protocols/application-layer/scp.md
-      - NetBIOS: protocols/application-layer/netbios.md
-      - SMB / CIFS: protocols/application-layer/smb.md
-      - DDS / ROS 2: protocols/application-layer/dds.md
-      - gRPC: protocols/application-layer/grpc.md
-      - AMQP: protocols/application-layer/amqp.md
-      - NATS: protocols/application-layer/nats.md
-      - Kafka: protocols/application-layer/kafka.md
-      - POP3: protocols/application-layer/pop3.md
-      - RTSP: protocols/application-layer/rtsp.md
-      - SDP: protocols/application-layer/sdp.md
-      - DTLS: protocols/application-layer/dtls.md
-      - SRTP: protocols/application-layer/srtp.md
-      - HLS / MPEG-DASH: protocols/application-layer/hls.md
-      - WireGuard: protocols/application-layer/wireguard.md
-      - OTLP: protocols/application-layer/otlp.md
-      - SyncML / OMA DS: protocols/application-layer/syncml.md
-      - Exchange ActiveSync: protocols/application-layer/eas.md
-      - DeltaSync: protocols/application-layer/deltasync.md
-      - SPF: protocols/application-layer/spf.md
-      - DKIM: protocols/application-layer/dkim.md
-      - DMARC: protocols/application-layer/dmarc.md
-      - DANE: protocols/application-layer/dane.md
-      - Syslog: protocols/application-layer/syslog.md
-      - Kerberos: protocols/application-layer/kerberos.md
-      - DHCPv6: protocols/application-layer/dhcpv6.md
-      - NFS: protocols/application-layer/nfs.md
-      - CoAP: protocols/application-layer/coap.md
-      - mDNS / DNS-SD: protocols/application-layer/mdns.md
-      - TFTP: protocols/application-layer/tftp.md
-      - NetFlow / IPFIX: protocols/application-layer/netflow.md
-      - H.323: protocols/application-layer/h323.md
-      - MGCP / H.248: protocols/application-layer/mgcp.md
-      - Skinny (SCCP): protocols/application-layer/skinny.md
-      - IAX: protocols/application-layer/iax.md
-      - Diameter: protocols/application-layer/diameter.md
+    - Web / API:
+      - HTTP: protocols/web/http.md
+      - gRPC: protocols/web/grpc.md
+      - WebSocket: protocols/web/websocket.md
+      - HLS / MPEG-DASH: protocols/web/hls.md
+      - CoAP: protocols/web/coap.md
+    - Email:
+      - SMTP: protocols/email/smtp.md
+      - IMAP: protocols/email/imap.md
+      - POP3: protocols/email/pop3.md
+      - SPF: protocols/email/spf.md
+      - DKIM: protocols/email/dkim.md
+      - DMARC: protocols/email/dmarc.md
+      - DANE: protocols/email/dane.md
+    - VoIP / Real-Time Media:
+      - SIP: protocols/voip/sip.md
+      - SIMPLE: protocols/voip/simple.md
+      - RTP: protocols/voip/rtp.md
+      - RTCP: protocols/voip/rtcp.md
+      - SRTP: protocols/voip/srtp.md
+      - SDP: protocols/voip/sdp.md
+      - WebRTC: protocols/voip/webrtc.md
+      - ICE: protocols/voip/ice.md
+      - STUN: protocols/voip/stun.md
+      - TURN: protocols/voip/turn.md
+      - DTLS: protocols/voip/dtls.md
+      - RTSP: protocols/voip/rtsp.md
+      - H.323: protocols/voip/h323.md
+      - MGCP / H.248: protocols/voip/mgcp.md
+      - Skinny (SCCP): protocols/voip/skinny.md
+      - IAX: protocols/voip/iax.md
+    - Messaging:
+      - MQTT: protocols/messaging/mqtt.md
+      - AMQP: protocols/messaging/amqp.md
+      - NATS: protocols/messaging/nats.md
+      - Kafka: protocols/messaging/kafka.md
+      - XMPP: protocols/messaging/xmpp.md
+    - File Sharing:
+      - FTP: protocols/file-sharing/ftp.md
+      - TFTP: protocols/file-sharing/tftp.md
+      - SCP: protocols/file-sharing/scp.md
+      - NFS: protocols/file-sharing/nfs.md
+      - SMB / CIFS: protocols/file-sharing/smb.md
+      - NetBIOS: protocols/file-sharing/netbios.md
+    - Security / Authentication:
+      - TLS: protocols/security/tls.md
+      - Kerberos: protocols/security/kerberos.md
+      - RADIUS: protocols/security/radius.md
+      - WireGuard: protocols/security/wireguard.md
+      - WPA2 / WPA3: protocols/security/wpa.md
+      - 802.1X / EAP: protocols/security/8021x.md
+    - Naming / Config / Directory:
+      - DNS: protocols/naming/dns.md
+      - DHCP: protocols/naming/dhcp.md
+      - DHCPv6: protocols/naming/dhcpv6.md
+      - mDNS / DNS-SD: protocols/naming/mdns.md
+      - LDAP: protocols/naming/ldap.md
+      - NTP: protocols/naming/ntp.md
+    - Monitoring / Observability:
+      - SNMP: protocols/monitoring/snmp.md
+      - Syslog: protocols/monitoring/syslog.md
+      - NetFlow / IPFIX: protocols/monitoring/netflow.md
+      - OTLP: protocols/monitoring/otlp.md
+    - Remote Access:
+      - SSH: protocols/remote-access/ssh.md
+      - Telnet: protocols/remote-access/telnet.md
+    - Mobile / Sync:
+      - SyncML / OMA DS: protocols/mobile-sync/syncml.md
+      - Exchange ActiveSync: protocols/mobile-sync/eas.md
+      - DeltaSync: protocols/mobile-sync/deltasync.md
+      - WBXML: protocols/mobile-sync/wbxml.md
+      - SMPP: protocols/mobile-sync/smpp.md
+      - MM5: protocols/mobile-sync/mm5.md
+    - Routing:
+      - BGP: protocols/routing/bgp.md
     - Tunneling:
       - L2TP: protocols/tunneling/l2tp.md
       - VXLAN: protocols/tunneling/vxlan.md
@@ -166,6 +176,7 @@ nav:
       - GSM: protocols/telecom/gsm.md
       - LTE: protocols/telecom/lte.md
       - 5G NR: protocols/telecom/5gnr.md
+      - Diameter: protocols/telecom/diameter.md
     - Industrial:
       - PROFIBUS: protocols/industrial/profibus.md
       - Modbus: protocols/industrial/modbus.md
@@ -174,11 +185,26 @@ nav:
       - 802.11s (Mesh): protocols/wireless/80211s.md
       - Bluetooth / BLE: protocols/wireless/bluetooth.md
       - BLE Deep Dive: protocols/wireless/ble.md
-      - WPA2 / WPA3: protocols/wireless/wpa.md
-      - 802.1X / EAP: protocols/wireless/8021x.md
       - Zigbee: protocols/wireless/zigbee.md
       - Z-Wave: protocols/wireless/zwave.md
       - NFC: protocols/wireless/nfc.md
+    - Robotics:
+      - MAVLink: protocols/robotics/mavlink.md
+      - EtherCAT: protocols/robotics/ethercat.md
+      - CANopen: protocols/robotics/canopen.md
+      - ROS 1 (TCPROS): protocols/robotics/ros1.md
+      - DDS / ROS 2: protocols/robotics/dds.md
+    - HPC / AI Networking:
+      - RDMA / RoCE / InfiniBand: protocols/hpc/rdma.md
+      - NCCL: protocols/hpc/nccl.md
+      - MPI: protocols/hpc/mpi.md
+    - Data & Model Formats:
+      - Parquet: protocols/data-formats/parquet.md
+      - ONNX: protocols/data-formats/onnx.md
+      - GGUF: protocols/data-formats/gguf.md
+      - Safetensors: protocols/data-formats/safetensors.md
+      - HDF5: protocols/data-formats/hdf5.md
+      - TFRecord: protocols/data-formats/tfrecord.md
     - Encoding / Symbology:
       - QR Code: protocols/encoding/qrcode.md
       - UPC / EAN: protocols/encoding/upc.md

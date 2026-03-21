@@ -205,6 +205,6 @@ graph TD
 - [GSM](gsm.md) — 2G predecessor
 - [5G NR](5gnr.md) — 5G successor
 - [GTP](../tunneling/gtp.md) — user plane tunneling
-- [Diameter](../application-layer/diameter.md) — authentication and policy signaling
-- [SIP](../application-layer/sip.md) — VoLTE voice calls
+- [Diameter](diameter.md) — authentication and policy signaling
+- [SIP](../voip/sip.md) — VoLTE voice calls
 - [SS7](ss7.md) — legacy signaling (interworking via SGs)

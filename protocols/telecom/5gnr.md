@@ -162,5 +162,5 @@ The IMSI is never sent in cleartext over the air — a major improvement over GS
 - [LTE](lte.md) — 4G predecessor
 - [GSM](gsm.md) — 2G predecessor
 - [GTP](../tunneling/gtp.md) — user plane tunneling (GTP-U on N3)
-- [Diameter](../application-layer/diameter.md) — replaced by HTTP/2-based SBI in 5GC
-- [SIP](../application-layer/sip.md) — VoNR voice calls via IMS
+- [Diameter](diameter.md) — replaced by HTTP/2-based SBI in 5GC
+- [SIP](../voip/sip.md) — VoNR voice calls via IMS

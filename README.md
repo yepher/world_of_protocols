@@ -43,74 +43,124 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [QUIC](protocols/transport-layer/quic.md) | RFC 9000 | Encrypted multiplexed transport over UDP (HTTP/3) |
 | [SCTP](protocols/transport-layer/sctp.md) | RFC 9260 | Multi-stream, multi-homed reliable transport (SIGTRAN, WebRTC) |
 
-### Application Layer
+### Web / API
 
 | Protocol | Standard | Description |
 |----------|----------|-------------|
-| [DNS](protocols/application-layer/dns.md) | RFC 1035 | Domain name resolution |
-| [DHCP](protocols/application-layer/dhcp.md) | RFC 2131 | Automatic IP address and network configuration |
-| [HTTP](protocols/application-layer/http.md) | RFC 9110 | Hypertext transfer — the protocol of the Web |
-| [TLS](protocols/application-layer/tls.md) | RFC 8446 | Encryption, authentication, and integrity |
-| [SSH](protocols/application-layer/ssh.md) | RFC 4253 | Encrypted remote login and tunneling |
-| [NTP](protocols/application-layer/ntp.md) | RFC 5905 | Network clock synchronization |
-| [BGP](protocols/application-layer/bgp.md) | RFC 4271 | Inter-AS path-vector routing (the Internet's backbone) |
-| [SIP](protocols/application-layer/sip.md) | RFC 3261 | VoIP signaling — session setup and teardown |
-| [SIMPLE](protocols/application-layer/simple.md) | RFC 3428 / 3856 / 4975 | SIP-based instant messaging, presence, and MSRP |
-| [RTP](protocols/application-layer/rtp.md) | RFC 3550 | Real-time audio and video media transport |
-| [RTCP](protocols/application-layer/rtcp.md) | RFC 3550 | Quality feedback and statistics for RTP |
-| [WebRTC](protocols/application-layer/webrtc.md) | RFC 8825 | Peer-to-peer real-time communication in browsers |
-| [SMTP](protocols/application-layer/smtp.md) | RFC 5321 | Email transfer between mail servers |
-| [SMPP](protocols/application-layer/smpp.md) | SMPP v3.4 | SMS exchange between SMSCs and applications |
-| [WBXML](protocols/application-layer/wbxml.md) | WAP-192 | Compact binary encoding of XML for mobile |
-| [MM5](protocols/application-layer/mm5.md) | 3GPP TS 23.140 | MMS MMSC-to-HLR interface (MAP-based) |
-| [LDAP](protocols/application-layer/ldap.md) | RFC 4511 | Directory access — authentication and identity lookup |
-| [ICE](protocols/application-layer/ice.md) | RFC 8445 | NAT traversal framework for peer-to-peer connectivity |
-| [STUN](protocols/application-layer/stun.md) | RFC 8489 | NAT type discovery and reflexive address mapping |
-| [TURN](protocols/application-layer/turn.md) | RFC 8656 | Media relay for when direct connectivity fails |
-| [SNMP](protocols/application-layer/snmp.md) | RFC 3416 | Network device monitoring and management |
-| [RADIUS](protocols/application-layer/radius.md) | RFC 2865 | Authentication, authorization, and accounting (AAA) |
-| [FTP](protocols/application-layer/ftp.md) | RFC 959 | File transfer (two-connection model) |
-| [IMAP](protocols/application-layer/imap.md) | RFC 9051 | Email retrieval with server-side sync |
-| [MQTT](protocols/application-layer/mqtt.md) | OASIS MQTT v5.0 | Lightweight IoT publish-subscribe messaging |
-| [WebSocket](protocols/application-layer/websocket.md) | RFC 6455 | Full-duplex bidirectional communication over TCP |
-| [gRPC](protocols/application-layer/grpc.md) | grpc.io | High-performance RPC over HTTP/2 + Protocol Buffers |
-| [AMQP](protocols/application-layer/amqp.md) | OASIS AMQP 1.0 | Enterprise message queuing with rich routing |
-| [NATS](protocols/application-layer/nats.md) | nats.io | Lightweight cloud-native messaging |
-| [Kafka](protocols/application-layer/kafka.md) | Apache | Distributed event streaming / partitioned log |
-| [POP3](protocols/application-layer/pop3.md) | RFC 1939 | Email retrieval (download and delete) |
-| [RTSP](protocols/application-layer/rtsp.md) | RFC 7826 | Streaming media control (play, pause, seek) |
-| [SDP](protocols/application-layer/sdp.md) | RFC 8866 | Session description for media negotiation |
-| [DTLS](protocols/application-layer/dtls.md) | RFC 9147 | TLS for datagrams (UDP encryption) |
-| [SRTP](protocols/application-layer/srtp.md) | RFC 3711 | Encrypted real-time media transport |
-| [HLS / MPEG-DASH](protocols/application-layer/hls.md) | RFC 8216 / ISO 23009 | Adaptive bitrate video streaming over HTTP |
-| [WireGuard](protocols/application-layer/wireguard.md) | wireguard.com | Modern VPN (simple, fast, Noise protocol) |
-| [OTLP](protocols/application-layer/otlp.md) | OpenTelemetry | Observability telemetry (traces, metrics, logs) |
-| [SyncML / OMA DS](protocols/application-layer/syncml.md) | OMA DS/DM | Mobile data sync and device management |
-| [Exchange ActiveSync](protocols/application-layer/eas.md) | MS-ASCMD | Microsoft mobile email/calendar/contacts sync |
-| [DeltaSync](protocols/application-layer/deltasync.md) | Microsoft (proprietary) | Hotmail delta-based email sync (deprecated 2016) |
-| [SPF](protocols/application-layer/spf.md) | RFC 7208 | Email sender IP authorization via DNS |
-| [DKIM](protocols/application-layer/dkim.md) | RFC 6376 | Cryptographic email message signing |
-| [DMARC](protocols/application-layer/dmarc.md) | RFC 7489 | Email authentication policy (ties SPF + DKIM) |
-| [DANE](protocols/application-layer/dane.md) | RFC 6698 | TLS certificate pinning via DNSSEC |
-| [Syslog](protocols/application-layer/syslog.md) | RFC 5424 | Universal network logging |
-| [Kerberos](protocols/application-layer/kerberos.md) | RFC 4120 | Ticket-based network authentication (Active Directory) |
-| [DHCPv6](protocols/application-layer/dhcpv6.md) | RFC 8415 | IPv6 address and configuration assignment |
-| [NFS](protocols/application-layer/nfs.md) | RFC 7530 | Network file system (Unix/Linux file sharing) |
-| [CoAP](protocols/application-layer/coap.md) | RFC 7252 | Constrained Application Protocol (IoT REST) |
-| [mDNS / DNS-SD](protocols/application-layer/mdns.md) | RFC 6762 / 6763 | Local service discovery (Bonjour/Avahi) |
-| [TFTP](protocols/application-layer/tftp.md) | RFC 1350 | Trivial file transfer (PXE boot, firmware) |
-| [NetFlow / IPFIX](protocols/application-layer/netflow.md) | RFC 7011 | IP traffic flow export and analysis |
-| [H.323](protocols/application-layer/h323.md) | ITU-T H.323 | Legacy VoIP / video conferencing suite |
-| [MGCP / H.248](protocols/application-layer/mgcp.md) | RFC 3435 | Media gateway control (carrier VoIP) |
-| [Skinny (SCCP)](protocols/application-layer/skinny.md) | Cisco | Cisco IP phone control protocol |
-| [IAX](protocols/application-layer/iax.md) | RFC 5456 | Inter-Asterisk eXchange (single-port VoIP) |
-| [Diameter](protocols/application-layer/diameter.md) | RFC 6733 | AAA for mobile networks (LTE/5G successor to RADIUS) |
-| [Telnet](protocols/application-layer/telnet.md) | RFC 854 | Interactive remote terminal (plaintext, legacy) |
-| [XMPP](protocols/application-layer/xmpp.md) | RFC 6120 | Decentralized instant messaging and presence |
-| [SCP](protocols/application-layer/scp.md) | — (BSD/SSH) | Secure file copy over SSH |
-| [NetBIOS](protocols/application-layer/netbios.md) | RFC 1001/1002 | LAN name service, sessions, and datagrams |
-| [SMB / CIFS](protocols/application-layer/smb.md) | MS-SMB2 | Windows network file and printer sharing |
-| [DDS / ROS 2](protocols/application-layer/dds.md) | OMG DDS / RTPS | Real-time pub-sub middleware for robotics |
+| [HTTP](protocols/web/http.md) | RFC 9110 | Hypertext transfer — the protocol of the Web |
+| [gRPC](protocols/web/grpc.md) | grpc.io | High-performance RPC over HTTP/2 + Protocol Buffers |
+| [WebSocket](protocols/web/websocket.md) | RFC 6455 | Full-duplex bidirectional communication over TCP |
+| [HLS / MPEG-DASH](protocols/web/hls.md) | RFC 8216 / ISO 23009 | Adaptive bitrate video streaming over HTTP |
+| [CoAP](protocols/web/coap.md) | RFC 7252 | Constrained Application Protocol (IoT REST) |
+
+### Email
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [SMTP](protocols/email/smtp.md) | RFC 5321 | Email transfer between mail servers |
+| [IMAP](protocols/email/imap.md) | RFC 9051 | Email retrieval with server-side sync |
+| [POP3](protocols/email/pop3.md) | RFC 1939 | Email retrieval (download and delete) |
+| [SPF](protocols/email/spf.md) | RFC 7208 | Email sender IP authorization via DNS |
+| [DKIM](protocols/email/dkim.md) | RFC 6376 | Cryptographic email message signing |
+| [DMARC](protocols/email/dmarc.md) | RFC 7489 | Email authentication policy (ties SPF + DKIM) |
+| [DANE](protocols/email/dane.md) | RFC 6698 | TLS certificate pinning via DNSSEC |
+
+### VoIP / Real-Time Media
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [SIP](protocols/voip/sip.md) | RFC 3261 | VoIP signaling — session setup and teardown |
+| [SIMPLE](protocols/voip/simple.md) | RFC 3428 / 3856 / 4975 | SIP-based instant messaging, presence, and MSRP |
+| [RTP](protocols/voip/rtp.md) | RFC 3550 | Real-time audio and video media transport |
+| [RTCP](protocols/voip/rtcp.md) | RFC 3550 | Quality feedback and statistics for RTP |
+| [SRTP](protocols/voip/srtp.md) | RFC 3711 | Encrypted real-time media transport |
+| [SDP](protocols/voip/sdp.md) | RFC 8866 | Session description for media negotiation |
+| [WebRTC](protocols/voip/webrtc.md) | RFC 8825 | Peer-to-peer real-time communication in browsers |
+| [ICE](protocols/voip/ice.md) | RFC 8445 | NAT traversal framework for peer-to-peer connectivity |
+| [STUN](protocols/voip/stun.md) | RFC 8489 | NAT type discovery and reflexive address mapping |
+| [TURN](protocols/voip/turn.md) | RFC 8656 | Media relay for when direct connectivity fails |
+| [DTLS](protocols/voip/dtls.md) | RFC 9147 | TLS for datagrams (UDP encryption) |
+| [RTSP](protocols/voip/rtsp.md) | RFC 7826 | Streaming media control (play, pause, seek) |
+| [H.323](protocols/voip/h323.md) | ITU-T H.323 | Legacy VoIP / video conferencing suite |
+| [MGCP / H.248](protocols/voip/mgcp.md) | RFC 3435 | Media gateway control (carrier VoIP) |
+| [Skinny (SCCP)](protocols/voip/skinny.md) | Cisco | Cisco IP phone control protocol |
+| [IAX](protocols/voip/iax.md) | RFC 5456 | Inter-Asterisk eXchange (single-port VoIP) |
+
+### Messaging
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [MQTT](protocols/messaging/mqtt.md) | OASIS MQTT v5.0 | Lightweight IoT publish-subscribe messaging |
+| [AMQP](protocols/messaging/amqp.md) | OASIS AMQP 1.0 | Enterprise message queuing with rich routing |
+| [NATS](protocols/messaging/nats.md) | nats.io | Lightweight cloud-native messaging |
+| [Kafka](protocols/messaging/kafka.md) | Apache | Distributed event streaming / partitioned log |
+| [XMPP](protocols/messaging/xmpp.md) | RFC 6120 | Decentralized instant messaging and presence |
+
+### File Sharing
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [FTP](protocols/file-sharing/ftp.md) | RFC 959 | File transfer (two-connection model) |
+| [TFTP](protocols/file-sharing/tftp.md) | RFC 1350 | Trivial file transfer (PXE boot, firmware) |
+| [SCP](protocols/file-sharing/scp.md) | — (BSD/SSH) | Secure file copy over SSH |
+| [NFS](protocols/file-sharing/nfs.md) | RFC 7530 | Network file system (Unix/Linux file sharing) |
+| [SMB / CIFS](protocols/file-sharing/smb.md) | MS-SMB2 | Windows network file and printer sharing |
+| [NetBIOS](protocols/file-sharing/netbios.md) | RFC 1001/1002 | LAN name service, sessions, and datagrams |
+
+### Security / Authentication
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [TLS](protocols/security/tls.md) | RFC 8446 | Encryption, authentication, and integrity |
+| [Kerberos](protocols/security/kerberos.md) | RFC 4120 | Ticket-based network authentication (Active Directory) |
+| [RADIUS](protocols/security/radius.md) | RFC 2865 | Authentication, authorization, and accounting (AAA) |
+| [WireGuard](protocols/security/wireguard.md) | wireguard.com | Modern VPN (simple, fast, Noise protocol) |
+| [WPA2 / WPA3](protocols/security/wpa.md) | IEEE 802.11i | Wi-Fi encryption and key exchange |
+| [802.1X / EAP](protocols/security/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
+
+### Naming / Config / Directory
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [DNS](protocols/naming/dns.md) | RFC 1035 | Domain name resolution |
+| [DHCP](protocols/naming/dhcp.md) | RFC 2131 | Automatic IP address and network configuration |
+| [DHCPv6](protocols/naming/dhcpv6.md) | RFC 8415 | IPv6 address and configuration assignment |
+| [mDNS / DNS-SD](protocols/naming/mdns.md) | RFC 6762 / 6763 | Local service discovery (Bonjour/Avahi) |
+| [LDAP](protocols/naming/ldap.md) | RFC 4511 | Directory access — authentication and identity lookup |
+| [NTP](protocols/naming/ntp.md) | RFC 5905 | Network clock synchronization |
+
+### Monitoring / Observability
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [SNMP](protocols/monitoring/snmp.md) | RFC 3416 | Network device monitoring and management |
+| [Syslog](protocols/monitoring/syslog.md) | RFC 5424 | Universal network logging |
+| [NetFlow / IPFIX](protocols/monitoring/netflow.md) | RFC 7011 | IP traffic flow export and analysis |
+| [OTLP](protocols/monitoring/otlp.md) | OpenTelemetry | Observability telemetry (traces, metrics, logs) |
+
+### Remote Access
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [SSH](protocols/remote-access/ssh.md) | RFC 4253 | Encrypted remote login and tunneling |
+| [Telnet](protocols/remote-access/telnet.md) | RFC 854 | Interactive remote terminal (plaintext, legacy) |
+
+### Mobile / Sync
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [SyncML / OMA DS](protocols/mobile-sync/syncml.md) | OMA DS/DM | Mobile data sync and device management |
+| [Exchange ActiveSync](protocols/mobile-sync/eas.md) | MS-ASCMD | Microsoft mobile email/calendar/contacts sync |
+| [DeltaSync](protocols/mobile-sync/deltasync.md) | Microsoft (proprietary) | Hotmail delta-based email sync (deprecated 2016) |
+| [WBXML](protocols/mobile-sync/wbxml.md) | WAP-192 | Compact binary encoding of XML for mobile |
+| [SMPP](protocols/mobile-sync/smpp.md) | SMPP v3.4 | SMS exchange between SMSCs and applications |
+| [MM5](protocols/mobile-sync/mm5.md) | 3GPP TS 23.140 | MMS MMSC-to-HLR interface (MAP-based) |
+
+### Routing
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [BGP](protocols/routing/bgp.md) | RFC 4271 | Inter-AS path-vector routing (the Internet's backbone) |
 
 ### Tunneling
 
@@ -166,6 +216,35 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 
 *Coming soon: PROFINET, EtherNet/IP, OPC UA*
 
+### Robotics
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [MAVLink](protocols/robotics/mavlink.md) | mavlink.io | Drone/UAV command and telemetry protocol |
+| [EtherCAT](protocols/robotics/ethercat.md) | IEC 61158 | Real-time industrial Ethernet for motion control |
+| [CANopen](protocols/robotics/canopen.md) | CiA 301 | Application layer on CAN for drives and I/O |
+| [ROS 1 (TCPROS)](protocols/robotics/ros1.md) | ROS Wiki | Original Robot Operating System transport |
+| [DDS / ROS 2](protocols/robotics/dds.md) | OMG DDS / RTPS | Real-time pub-sub middleware for robotics |
+
+### HPC / AI Networking
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [RDMA / RoCE / InfiniBand](protocols/hpc/rdma.md) | InfiniBand Arch | Remote Direct Memory Access for GPU clusters |
+| [NCCL](protocols/hpc/nccl.md) | NVIDIA | GPU collective communication for distributed training |
+| [MPI](protocols/hpc/mpi.md) | MPI Forum | Message Passing Interface for parallel computing |
+
+### Data & Model Formats
+
+| Format | Standard | Description |
+|--------|----------|-------------|
+| [Parquet](protocols/data-formats/parquet.md) | Apache | Columnar storage for analytics and ML training data |
+| [ONNX](protocols/data-formats/onnx.md) | onnx.ai | Cross-framework ML model interchange |
+| [GGUF](protocols/data-formats/gguf.md) | llama.cpp | Quantized LLM model format for local inference |
+| [Safetensors](protocols/data-formats/safetensors.md) | Hugging Face | Secure, fast tensor serialization (model weights) |
+| [HDF5](protocols/data-formats/hdf5.md) | HDF Group | Hierarchical scientific / ML data storage |
+| [TFRecord](protocols/data-formats/tfrecord.md) | TensorFlow | Sequential binary training data format |
+
 ### Encoding / Symbology
 
 | Symbol | Standard | Description |
@@ -183,8 +262,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [802.11s](protocols/wireless/80211s.md) | IEEE 802.11-2020 | Wi-Fi mesh networking at Layer 2 |
 | [Bluetooth / BLE](protocols/wireless/bluetooth.md) | Bluetooth SIG | Short-range wireless (audio, IoT, peripherals) |
 | [BLE Deep Dive](protocols/wireless/ble.md) | Bluetooth SIG | GATT, advertising, connection params, security |
-| [WPA2 / WPA3](protocols/wireless/wpa.md) | IEEE 802.11i / Wi-Fi Alliance | Wi-Fi encryption and key exchange |
-| [802.1X / EAP](protocols/wireless/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
+| [WPA2 / WPA3](protocols/security/wpa.md) | IEEE 802.11i / Wi-Fi Alliance | Wi-Fi encryption and key exchange |
+| [802.1X / EAP](protocols/security/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
 | [Zigbee](protocols/wireless/zigbee.md) | IEEE 802.15.4 / CSA | Low-power IoT mesh network (2.4 GHz) |
 | [Z-Wave](protocols/wireless/zwave.md) | ITU-T G.9959 | Home automation mesh (sub-GHz) |
 | [NFC](protocols/wireless/nfc.md) | ISO 18092 | Contactless communication (payments, tags, pairing) |
@@ -251,15 +330,29 @@ graph TD
 protocols/
   _template.md              # Template for new protocol pages
   serial/                   # UART, RS-232, RS-485, RS-422
-  bus/                      # I2C, SPI, I2S, CAN, 1-Wire, DMX512, MIDI
-  telecom/                  # SS7, ISDN, T1, E1
-  link-layer/               # Ethernet, ARP
-  network-layer/            # IP, IPv6, ICMP, OSPF
-  transport-layer/          # TCP, UDP
-  tunneling/                # L2TP, VXLAN, GTP
-  application-layer/        # HTTP, DNS, TLS, SSH, BGP, SIP, RTP, SMTP, SNMP, RADIUS, MQTT, SMB, DDS, and more
-  industrial/               # PROFIBUS, Modbus
-  wireless/                 # 802.11, Bluetooth, Zigbee, Z-Wave, NFC
+  bus/                      # I2C, SPI, I2S, CAN, 1-Wire, USB, DMX512, MIDI
+  link-layer/               # Ethernet, ARP, PPP, 802.1Q, STP, LLDP, LACP
+  network-layer/            # IP, IPv6, ICMP, ICMPv6, OSPF, IS-IS, MPLS, GRE, IPsec, IGMP, VRRP
+  transport-layer/          # TCP, UDP, QUIC, SCTP
+  web/                      # HTTP, gRPC, WebSocket, HLS/DASH, CoAP
+  email/                    # SMTP, IMAP, POP3, SPF, DKIM, DMARC, DANE
+  voip/                     # SIP, RTP, RTCP, SRTP, SDP, WebRTC, ICE, STUN, TURN, DTLS, H.323, MGCP, Skinny, IAX
+  messaging/                # MQTT, AMQP, NATS, Kafka, XMPP
+  file-sharing/             # FTP, TFTP, SCP, NFS, SMB, NetBIOS
+  security/                 # TLS, Kerberos, RADIUS, WireGuard, WPA, 802.1X
+  naming/                   # DNS, DHCP, DHCPv6, mDNS, LDAP, NTP
+  monitoring/               # SNMP, Syslog, NetFlow, OTLP
+  remote-access/            # SSH, Telnet
+  mobile-sync/              # SyncML, EAS, DeltaSync, WBXML, SMPP, MM5
+  routing/                  # BGP
+  tunneling/                # L2TP, VXLAN, GTP, Geneve
+  telecom/                  # SS7, ISDN, T1, E1, xDSL, DOCSIS, GSM, LTE, 5G NR, Diameter
+  industrial/               # Modbus, PROFIBUS
+  robotics/                 # MAVLink, EtherCAT, CANopen, ROS 1, DDS/ROS 2
+  wireless/                 # 802.11, 802.11s, Bluetooth, BLE, Zigbee, Z-Wave, NFC
+  hpc/                      # RDMA/RoCE, NCCL, MPI
+  data-formats/             # Parquet, ONNX, GGUF, Safetensors, HDF5, TFRecord
+  encoding/                 # QR Code, UPC/EAN, Code 128, Data Matrix
 maps/                       # Protocol relationship visualizations
 scripts/                    # Tools for extracting data from Wireshark dissectors
 ```

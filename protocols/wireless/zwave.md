@@ -128,4 +128,4 @@ Maximum 4 hops per route. Explorer frames can discover new routes when existing 
 ## See Also
 
 - [Zigbee](zigbee.md) — alternative home automation mesh protocol (2.4 GHz)
-- [802.11s](../wireless/80211s.md) — Wi-Fi mesh networking
+- [802.11s](80211s.md) — Wi-Fi mesh networking

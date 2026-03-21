@@ -159,5 +159,5 @@ DSL line training (sync) takes 10-60 seconds:
 - [PPP / PPPoE](../link-layer/ppp.md) — data link protocol used over most DSL connections
 - [Ethernet](../link-layer/ethernet.md) — delivered over VDSL2 PTM
 - [DOCSIS](docsis.md) — cable modem alternative to DSL
-- [RADIUS](../application-layer/radius.md) — authenticates PPPoE sessions
+- [RADIUS](../security/radius.md) — authenticates PPPoE sessions
 - [T1](t1.md) / [E1](e1.md) — legacy digital access (DSL replaced leased lines for many uses)

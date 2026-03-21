@@ -110,14 +110,14 @@ sequenceDiagram
 | Port | Service |
 |------|---------|
 | 20, 21 | FTP |
-| 22 | [SSH](../application-layer/ssh.md) |
+| 22 | [SSH](../remote-access/ssh.md) |
 | 23 | Telnet |
 | 25 | SMTP |
-| 53 | [DNS](../application-layer/dns.md) |
-| 80 | [HTTP](../application-layer/http.md) |
+| 53 | [DNS](../naming/dns.md) |
+| 80 | [HTTP](../web/http.md) |
 | 110 | POP3 |
 | 143 | IMAP |
-| 443 | HTTPS ([TLS](../application-layer/tls.md)) |
+| 443 | HTTPS ([TLS](../security/tls.md)) |
 | 993 | IMAPS |
 | 3389 | RDP |
 
@@ -152,5 +152,5 @@ graph LR
 - [UDP](udp.md)
 - [IPv4](../network-layer/ip.md)
 - [IPv6](../network-layer/ipv6.md)
-- [TLS](../application-layer/tls.md)
-- [HTTP](../application-layer/http.md)
+- [TLS](../security/tls.md)
+- [HTTP](../web/http.md)

@@ -203,5 +203,5 @@ graph TD
 - [ISDN](isdn.md) — uses SS7 (ISUP) for call signaling
 - [T1](t1.md) — physical bearer for SS7 links in North America
 - [E1](e1.md) — physical bearer for SS7 links internationally
-- [MM5](../application-layer/mm5.md) — MMS interface using MAP over SS7
-- [SMPP](../application-layer/smpp.md) — SMS protocol that interfaces with SS7/MAP
+- [MM5](../mobile-sync/mm5.md) — MMS interface using MAP over SS7
+- [SMPP](../mobile-sync/smpp.md) — SMS protocol that interfaces with SS7/MAP

@@ -148,4 +148,4 @@ graph LR
 - [TCP](tcp.md) — reliable byte-stream transport
 - [UDP](udp.md) — unreliable datagram transport
 - [SS7](../telecom/ss7.md) — SIGTRAN carries SS7 over SCTP
-- [WebRTC](../application-layer/webrtc.md) — data channels use SCTP over DTLS
+- [WebRTC](../voip/webrtc.md) — data channels use SCTP over DTLS

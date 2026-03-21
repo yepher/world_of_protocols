@@ -180,4 +180,4 @@ graph LR
 - [SS7](ss7.md) — carrier signaling network (ISUP handles ISDN calls between switches)
 - [T1](t1.md) — physical carrier for PRI in North America
 - [E1](e1.md) — physical carrier for PRI internationally
-- [SIP](../application-layer/sip.md) — VoIP successor to ISDN signaling
+- [SIP](../voip/sip.md) — VoIP successor to ISDN signaling

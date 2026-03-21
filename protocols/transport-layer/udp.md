@@ -35,10 +35,10 @@ The checksum is computed over a pseudo-header (source IP, destination IP, protoc
 
 | Port | Service |
 |------|---------|
-| 53 | [DNS](../application-layer/dns.md) |
-| 67, 68 | [DHCP](../application-layer/dhcp.md) |
+| 53 | [DNS](../naming/dns.md) |
+| 67, 68 | [DHCP](../naming/dhcp.md) |
 | 69 | TFTP |
-| 123 | [NTP](../application-layer/ntp.md) |
+| 123 | [NTP](../naming/ntp.md) |
 | 161, 162 | SNMP |
 | 443 | QUIC / HTTP/3 |
 | 500 | IKE (IPsec) |
@@ -84,7 +84,7 @@ graph LR
 ## See Also
 
 - [TCP](tcp.md)
-- [DNS](../application-layer/dns.md)
-- [DHCP](../application-layer/dhcp.md)
-- [NTP](../application-layer/ntp.md)
+- [DNS](../naming/dns.md)
+- [DHCP](../naming/dhcp.md)
+- [NTP](../naming/ntp.md)
 - [IPv4](../network-layer/ip.md)

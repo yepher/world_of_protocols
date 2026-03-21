@@ -113,4 +113,4 @@ OSPF uses multicast addresses `224.0.0.5` (AllSPFRouters) and `224.0.0.6` (AllDR
 ## See Also
 
 - [IPv4](ip.md)
-- [BGP](../application-layer/bgp.md) — exterior gateway protocol (between autonomous systems)
+- [BGP](../routing/bgp.md) — exterior gateway protocol (between autonomous systems)

@@ -194,5 +194,5 @@ Unlike DSL (which typically uses PPPoE), DOCSIS presents a standard Ethernet int
 
 - [xDSL](xdsl.md) — telephone-line alternative to cable broadband
 - [Ethernet](../link-layer/ethernet.md) — interface presented to customer
-- [DHCP](../application-layer/dhcp.md) — IP address assignment for cable modems
+- [DHCP](../naming/dhcp.md) — IP address assignment for cable modems
 - [IPv4](../network-layer/ip.md)
