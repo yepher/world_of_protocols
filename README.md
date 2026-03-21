@@ -57,6 +57,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [WebTransport](protocols/web/webtransport.md) | RFC 9297 | HTTP/3-based bidirectional transport (WebSocket successor) |
 | [GraphQL](protocols/web/graphql.md) | GraphQL Foundation | Query language for APIs (flexible data fetching) |
 | [SSE](protocols/web/sse.md) | WHATWG | Server-Sent Events (unidirectional server-to-client streaming) |
+| [LwM2M](protocols/web/lwm2m.md) | OMA SpecWorks | Lightweight M2M IoT device management (over CoAP) |
+| [IPP](protocols/web/ipp.md) | RFC 8011 | Internet Printing Protocol (printing over HTTP) |
+| [PROXY Protocol](protocols/web/proxy_protocol.md) | HAProxy | Preserve client info through load balancers/proxies |
 
 ### Email
 
@@ -130,6 +133,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [NTLM](protocols/security/ntlm.md) | MS-NLMP | Windows challenge-response authentication (legacy) |
 | [X.509](protocols/security/x509.md) | RFC 5280 | Certificate format (TLS, IPsec, code signing) |
 | [ACME](protocols/security/acme.md) | RFC 8555 | Automatic certificate issuance (Let's Encrypt) |
+| [FIDO2 / WebAuthn](protocols/security/fido2.md) | W3C / FIDO Alliance | Passwordless authentication (passkeys, security keys) |
 
 ### Naming / Config / Directory
 
@@ -156,6 +160,10 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [PTP (IEEE 1588)](protocols/monitoring/ptp.md) | IEEE 1588-2019 | Precision time synchronization (sub-microsecond) |
 | [sFlow](protocols/monitoring/sflow.md) | RFC 3176 | Sampling-based traffic monitoring |
 | [SMPTE Timecode](protocols/monitoring/smpte_timecode.md) | SMPTE ST 12 | LTC/VITC timecode for media synchronization |
+| [NETCONF / YANG](protocols/monitoring/netconf.md) | RFC 6241 / 7950 | XML-based network configuration management |
+| [gNMI](protocols/monitoring/gnmi.md) | OpenConfig | gRPC-based streaming telemetry and config |
+| [RESTCONF](protocols/monitoring/restconf.md) | RFC 8040 | RESTful interface to YANG datastores |
+| [OpenFlow](protocols/monitoring/openflow.md) | ONF | SDN switch control protocol |
 
 ### Remote Access
 
@@ -241,6 +249,15 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [ARINC 429](protocols/bus/arinc429.md) | ARINC | Avionics digital data bus |
 | [MIL-STD-1553](protocols/bus/milstd1553.md) | DoD | Military/aerospace serial data bus |
 
+### Automotive
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [OBD-II](protocols/automotive/obdii.md) | ISO 15031 / SAE J1979 | On-board diagnostics (every car since 1996) |
+| [SAE J1939](protocols/automotive/j1939.md) | SAE J1939 | Heavy-duty vehicle CAN protocol (trucks, buses, ag) |
+| [SOME/IP](protocols/automotive/someip.md) | AUTOSAR | Service-oriented middleware over automotive Ethernet |
+| [DoIP / UDS](protocols/automotive/doip.md) | ISO 13400 / 14229 | Diagnostics over IP + unified diagnostic services |
+
 ### Industrial / Fieldbus
 
 | Protocol | Standard | Description |
@@ -257,6 +274,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [IEC 61850](protocols/industrial/iec61850.md) | IEC 61850 | Smart grid / power substation automation |
 | [IEC 60870-5-104](protocols/industrial/iec104.md) | IEC 60870-5-104 | SCADA telecontrol (power/water utilities) |
 | [OPC DA / Classic](protocols/industrial/opcda.md) | OPC Foundation | Legacy COM/DCOM industrial data access |
+| [OCPP](protocols/industrial/ocpp.md) | Open Charge Alliance | EV charging station communication |
 
 ### Robotics
 
@@ -277,6 +295,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [NDI](protocols/media/ndi.md) | Vizrt | Low-latency video over IP (broadcast/production) |
 | [SMPTE ST 2110](protocols/media/smpte2110.md) | SMPTE | Professional uncompressed media over IP (replacing SDI) |
 | [SMPTE ST 2022](protocols/media/smpte2022.md) | SMPTE | Professional video over IP with FEC and redundancy |
+| [AES67](protocols/media/aes67.md) | AES | Professional audio over IP (interop standard) |
+| [Dante](protocols/media/dante.md) | Audinate | Dominant pro audio networking (proprietary) |
+| [AVB / TSN](protocols/media/avb.md) | IEEE 802.1 | Audio Video Bridging / Time-Sensitive Networking (Layer 2) |
 
 ### Database
 
@@ -434,7 +455,8 @@ protocols/
   routing/                  # BGP, PIM, RSVP, LDP, SRv6, EIGRP, RIP, HSRP
   tunneling/                # L2TP, VXLAN, GTP, Geneve
   telecom/                  # SS7, ISDN, T1, E1, xDSL, DOCSIS, GSM, LTE, 5G NR, Diameter
-  industrial/               # Modbus, PROFIBUS, OPC UA, EtherNet/IP, PROFINET, BACnet, KNX, DNP3, NMEA
+  automotive/               # OBD-II, J1939, SOME/IP, DoIP/UDS
+  industrial/               # Modbus, PROFIBUS, OPC UA, EtherNet/IP, PROFINET, BACnet, KNX, DNP3, NMEA, OPC DA, OCPP
   robotics/                 # MAVLink, EtherCAT, CANopen, ROS 1, DDS/ROS 2
   database/                 # MySQL, PostgreSQL, Redis, MongoDB, TDS
   healthcare/               # DICOM, HL7/FHIR
