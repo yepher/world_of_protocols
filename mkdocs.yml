@@ -59,6 +59,7 @@ nav:
       - CAN: protocols/bus/can.md
       - 1-Wire: protocols/bus/onewire.md
       - DMX512: protocols/bus/dmx512.md
+      - DALI: protocols/bus/dali.md
       - Art-Net: protocols/bus/artnet.md
       - sACN (E1.31): protocols/bus/sacn.md
       - MIDI: protocols/bus/midi.md
@@ -70,6 +71,7 @@ nav:
     - Link Layer:
       - Ethernet: protocols/link-layer/ethernet.md
       - ARP: protocols/link-layer/arp.md
+      - CDP: protocols/link-layer/cdp.md
       - PPP / PPPoE: protocols/link-layer/ppp.md
       - 802.1Q (VLAN): protocols/link-layer/vlan8021q.md
       - STP / RSTP / MSTP: protocols/link-layer/stp.md
@@ -92,6 +94,7 @@ nav:
       - UDP: protocols/transport-layer/udp.md
       - QUIC: protocols/transport-layer/quic.md
       - SCTP: protocols/transport-layer/sctp.md
+      - DCCP: protocols/transport-layer/dccp.md
     - Web / API:
       - HTTP: protocols/web/http.md
       - gRPC: protocols/web/grpc.md
@@ -133,6 +136,7 @@ nav:
       - ZeroMQ (ZMTP): protocols/messaging/zeromq.md
     - File Sharing:
       - FTP: protocols/file-sharing/ftp.md
+      - SFTP: protocols/file-sharing/sftp.md
       - TFTP: protocols/file-sharing/tftp.md
       - SCP: protocols/file-sharing/scp.md
       - NFS: protocols/file-sharing/nfs.md
@@ -148,6 +152,7 @@ nav:
       - WireGuard: protocols/security/wireguard.md
       - WPA2 / WPA3: protocols/security/wpa.md
       - 802.1X / EAP: protocols/security/8021x.md
+      - NTLM: protocols/security/ntlm.md
     - Naming / Config / Directory:
       - DNS: protocols/naming/dns.md
       - DHCP: protocols/naming/dhcp.md
@@ -160,6 +165,8 @@ nav:
       - Syslog: protocols/monitoring/syslog.md
       - NetFlow / IPFIX: protocols/monitoring/netflow.md
       - OTLP: protocols/monitoring/otlp.md
+      - PTP (IEEE 1588): protocols/monitoring/ptp.md
+      - sFlow: protocols/monitoring/sflow.md
     - Remote Access:
       - SSH: protocols/remote-access/ssh.md
       - Telnet: protocols/remote-access/telnet.md
@@ -176,11 +183,15 @@ nav:
       - RSVP / RSVP-TE: protocols/routing/rsvp.md
       - LDP: protocols/routing/ldp.md
       - Segment Routing v6: protocols/routing/srv6.md
+      - EIGRP: protocols/routing/eigrp.md
+      - RIP: protocols/routing/rip.md
+      - HSRP: protocols/routing/hsrp.md
     - Tunneling:
       - L2TP: protocols/tunneling/l2tp.md
       - VXLAN: protocols/tunneling/vxlan.md
       - GTP: protocols/tunneling/gtp.md
       - Geneve: protocols/tunneling/geneve.md
+      - EVPN: protocols/tunneling/evpn.md
     - Telecom:
       - SS7: protocols/telecom/ss7.md
       - ISDN: protocols/telecom/isdn.md
@@ -202,6 +213,8 @@ nav:
       - KNX: protocols/industrial/knx.md
       - DNP3: protocols/industrial/dnp3.md
       - NMEA 0183 / 2000: protocols/industrial/nmea.md
+      - IEC 61850: protocols/industrial/iec61850.md
+      - IEC 60870-5-104: protocols/industrial/iec104.md
     - Wireless / Mesh:
       - 802.11 (Wi-Fi): protocols/wireless/80211.md
       - 802.11s (Mesh): protocols/wireless/80211s.md
@@ -215,12 +228,23 @@ nav:
       - 6LoWPAN: protocols/wireless/6lowpan.md
       - Matter: protocols/wireless/matter.md
       - UWB: protocols/wireless/uwb.md
+      - ANT / ANT+: protocols/wireless/antplus.md
+      - EnOcean: protocols/wireless/enocean.md
     - Robotics:
       - MAVLink: protocols/robotics/mavlink.md
       - EtherCAT: protocols/robotics/ethercat.md
       - CANopen: protocols/robotics/canopen.md
       - ROS 1 (TCPROS): protocols/robotics/ros1.md
       - DDS / ROS 2: protocols/robotics/dds.md
+    - Database:
+      - MySQL: protocols/database/mysql.md
+      - PostgreSQL: protocols/database/postgresql.md
+      - Redis (RESP): protocols/database/redis.md
+      - MongoDB: protocols/database/mongodb.md
+      - TDS (SQL Server): protocols/database/tds.md
+    - Healthcare:
+      - DICOM: protocols/healthcare/dicom.md
+      - HL7 v2 / FHIR: protocols/healthcare/hl7.md
     - Storage:
       - iSCSI: protocols/storage/iscsi.md
       - Fibre Channel: protocols/storage/fibrechannel.md

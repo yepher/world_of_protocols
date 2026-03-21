@@ -12,6 +12,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 |----------|----------|-------------|
 | [Ethernet](protocols/link-layer/ethernet.md) | IEEE 802.3 | Dominant wired LAN framing |
 | [ARP](protocols/link-layer/arp.md) | RFC 826 | Maps IPv4 addresses to MAC addresses |
+| [CDP](protocols/link-layer/cdp.md) | Cisco | Cisco Discovery Protocol (Layer 2 neighbor discovery) |
 | [PPP / PPPoE](protocols/link-layer/ppp.md) | RFC 1661 / 2516 | Point-to-point framing (dial-up, DSL, fiber broadband) |
 | [802.1Q (VLAN)](protocols/link-layer/vlan8021q.md) | IEEE 802.1Q | VLAN tagging and QoS priority |
 | [STP / RSTP / MSTP](protocols/link-layer/stp.md) | IEEE 802.1D | Spanning tree loop prevention |
@@ -42,6 +43,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [UDP](protocols/transport-layer/udp.md) | RFC 768 | Minimal, connectionless datagram transport |
 | [QUIC](protocols/transport-layer/quic.md) | RFC 9000 | Encrypted multiplexed transport over UDP (HTTP/3) |
 | [SCTP](protocols/transport-layer/sctp.md) | RFC 9260 | Multi-stream, multi-homed reliable transport (SIGTRAN, WebRTC) |
+| [DCCP](protocols/transport-layer/dccp.md) | RFC 4340 | Congestion-controlled unreliable transport |
 
 ### Web / API
 
@@ -103,6 +105,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | Protocol | Standard | Description |
 |----------|----------|-------------|
 | [FTP](protocols/file-sharing/ftp.md) | RFC 959 | File transfer (two-connection model) |
+| [SFTP](protocols/file-sharing/sftp.md) | draft-ietf-secsh-filexfer | SSH File Transfer Protocol (secure file operations) |
 | [TFTP](protocols/file-sharing/tftp.md) | RFC 1350 | Trivial file transfer (PXE boot, firmware) |
 | [SCP](protocols/file-sharing/scp.md) | — (BSD/SSH) | Secure file copy over SSH |
 | [NFS](protocols/file-sharing/nfs.md) | RFC 7530 | Network file system (Unix/Linux file sharing) |
@@ -122,6 +125,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [WireGuard](protocols/security/wireguard.md) | wireguard.com | Modern VPN (simple, fast, Noise protocol) |
 | [WPA2 / WPA3](protocols/security/wpa.md) | IEEE 802.11i | Wi-Fi encryption and key exchange |
 | [802.1X / EAP](protocols/security/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
+| [NTLM](protocols/security/ntlm.md) | MS-NLMP | Windows challenge-response authentication (legacy) |
 
 ### Naming / Config / Directory
 
@@ -142,6 +146,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Syslog](protocols/monitoring/syslog.md) | RFC 5424 | Universal network logging |
 | [NetFlow / IPFIX](protocols/monitoring/netflow.md) | RFC 7011 | IP traffic flow export and analysis |
 | [OTLP](protocols/monitoring/otlp.md) | OpenTelemetry | Observability telemetry (traces, metrics, logs) |
+| [PTP (IEEE 1588)](protocols/monitoring/ptp.md) | IEEE 1588-2019 | Precision time synchronization (sub-microsecond) |
+| [sFlow](protocols/monitoring/sflow.md) | RFC 3176 | Sampling-based traffic monitoring |
 
 ### Remote Access
 
@@ -170,6 +176,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [RSVP / RSVP-TE](protocols/routing/rsvp.md) | RFC 2205 / 3209 | Resource reservation and MPLS LSP signaling |
 | [LDP](protocols/routing/ldp.md) | RFC 5036 | MPLS label distribution protocol |
 | [Segment Routing v6](protocols/routing/srv6.md) | RFC 8986 | Source-routed IPv6 network programming |
+| [EIGRP](protocols/routing/eigrp.md) | RFC 7868 | Cisco enhanced distance-vector routing (DUAL algorithm) |
+| [RIP](protocols/routing/rip.md) | RFC 2453 | Distance-vector routing (hop count, max 15) |
+| [HSRP](protocols/routing/hsrp.md) | RFC 2281 | Cisco hot standby router redundancy |
 
 ### Tunneling
 
@@ -179,6 +188,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [VXLAN](protocols/tunneling/vxlan.md) | RFC 7348 | Data center L2 overlay (24-bit segment ID) |
 | [GTP](protocols/tunneling/gtp.md) | 3GPP TS 29.281 | Mobile network user/control plane tunneling (3G/4G/5G) |
 | [Geneve](protocols/tunneling/geneve.md) | RFC 8926 | Extensible network virtualization overlay (VXLAN successor) |
+| [EVPN](protocols/tunneling/evpn.md) | RFC 7432 | BGP-based Ethernet VPN control plane (data center fabrics) |
 
 ### Telecom
 
@@ -215,6 +225,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [DMX512](protocols/bus/dmx512.md) | ANSI E1.11 | Stage lighting control over RS-485 (512 channels) |
 | [Art-Net](protocols/bus/artnet.md) | Artistic Licence | DMX over Ethernet/IP (UDP port 6454) |
 | [sACN (E1.31)](protocols/bus/sacn.md) | ANSI E1.31 | Streaming ACN — DMX over Ethernet/IP (multicast UDP) |
+| [DALI](protocols/bus/dali.md) | IEC 62386 | Digital addressable lighting interface |
 | [MIDI](protocols/bus/midi.md) | MMA/AMEI | Musical instrument digital interface |
 | [USB](protocols/bus/usb.md) | USB-IF | Universal wired peripheral interconnect |
 | [PCIe](protocols/bus/pcie.md) | PCI-SIG | High-speed serial computer expansion bus |
@@ -235,6 +246,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [KNX](protocols/industrial/knx.md) | ISO/IEC 14543-3 | European building/home automation |
 | [DNP3](protocols/industrial/dnp3.md) | IEEE 1815 | SCADA / power grid / water utility protocol |
 | [NMEA 0183 / 2000](protocols/industrial/nmea.md) | NMEA | Marine/GPS navigation data |
+| [IEC 61850](protocols/industrial/iec61850.md) | IEC 61850 | Smart grid / power substation automation |
+| [IEC 60870-5-104](protocols/industrial/iec104.md) | IEC 60870-5-104 | SCADA telecontrol (power/water utilities) |
 
 ### Robotics
 
@@ -245,6 +258,23 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [CANopen](protocols/robotics/canopen.md) | CiA 301 | Application layer on CAN for drives and I/O |
 | [ROS 1 (TCPROS)](protocols/robotics/ros1.md) | ROS Wiki | Original Robot Operating System transport |
 | [DDS / ROS 2](protocols/robotics/dds.md) | OMG DDS / RTPS | Real-time pub-sub middleware for robotics |
+
+### Database
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [MySQL](protocols/database/mysql.md) | MySQL Internals | MySQL client/server wire protocol (port 3306) |
+| [PostgreSQL](protocols/database/postgresql.md) | PG Documentation | PostgreSQL frontend/backend wire protocol (port 5432) |
+| [Redis (RESP)](protocols/database/redis.md) | redis.io | Redis serialization protocol (port 6379) |
+| [MongoDB](protocols/database/mongodb.md) | MongoDB Docs | MongoDB binary wire protocol (port 27017) |
+| [TDS](protocols/database/tds.md) | MS-TDS | SQL Server / Sybase tabular data stream (port 1433) |
+
+### Healthcare
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [DICOM](protocols/healthcare/dicom.md) | NEMA PS3 | Medical imaging communication (CT, MRI, X-ray) |
+| [HL7 v2 / FHIR](protocols/healthcare/hl7.md) | HL7.org | Healthcare messaging (v2 MLLP + FHIR REST API) |
 
 ### Storage
 
@@ -301,6 +331,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [6LoWPAN](protocols/wireless/6lowpan.md) | RFC 4944 / 6282 | IPv6 header compression for constrained wireless |
 | [Matter](protocols/wireless/matter.md) | CSA | Smart home interoperability (over Thread/Wi-Fi/BLE) |
 | [UWB](protocols/wireless/uwb.md) | IEEE 802.15.4z | Ultra-wideband secure ranging and positioning |
+| [ANT / ANT+](protocols/wireless/antplus.md) | thisisant.com | Wireless fitness/sports sensors (heart rate, power, cadence) |
+| [EnOcean](protocols/wireless/enocean.md) | ISO/IEC 14543-3-10 | Energy-harvesting batteryless wireless (switches, sensors) |
 
 ## Protocol Map
 
@@ -378,13 +410,15 @@ protocols/
   monitoring/               # SNMP, Syslog, NetFlow, OTLP
   remote-access/            # SSH, Telnet
   mobile-sync/              # SyncML, EAS, DeltaSync, WBXML, SMPP, MM5
-  routing/                  # BGP, PIM, RSVP, LDP, SRv6
+  routing/                  # BGP, PIM, RSVP, LDP, SRv6, EIGRP, RIP, HSRP
   tunneling/                # L2TP, VXLAN, GTP, Geneve
   telecom/                  # SS7, ISDN, T1, E1, xDSL, DOCSIS, GSM, LTE, 5G NR, Diameter
   industrial/               # Modbus, PROFIBUS, OPC UA, EtherNet/IP, PROFINET, BACnet, KNX, DNP3, NMEA
   robotics/                 # MAVLink, EtherCAT, CANopen, ROS 1, DDS/ROS 2
+  database/                 # MySQL, PostgreSQL, Redis, MongoDB, TDS
+  healthcare/               # DICOM, HL7/FHIR
   storage/                  # iSCSI, Fibre Channel, NVMe-oF
-  wireless/                 # 802.11, 802.11s, Bluetooth, BLE, Zigbee, Z-Wave, NFC, Matter, UWB
+  wireless/                 # 802.11, 802.11s, Bluetooth, BLE, Zigbee, Z-Wave, NFC, Matter, UWB, ANT+, EnOcean
   hpc/                      # RDMA/RoCE, NCCL, MPI
   data-formats/             # Parquet, ONNX, GGUF, Safetensors, HDF5, TFRecord
   encoding/                 # QR Code, UPC/EAN, Code 128, Data Matrix
