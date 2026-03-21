@@ -47,11 +47,86 @@ nav:
   - Home: README.md
   - Protocols:
     - Template: protocols/_template.md
+    - Serial:
+      - UART: protocols/serial/uart.md
+      - RS-232: protocols/serial/rs232.md
+      - RS-485: protocols/serial/rs485.md
+      - RS-422: protocols/serial/rs422.md
+    - Bus:
+      - I2C: protocols/bus/i2c.md
+      - SPI: protocols/bus/spi.md
+      - I2S: protocols/bus/i2s.md
+      - CAN: protocols/bus/can.md
+      - 1-Wire: protocols/bus/onewire.md
+      - DMX512: protocols/bus/dmx512.md
+      - MIDI: protocols/bus/midi.md
+      - USB: protocols/bus/usb.md
     - Link Layer:
       - Ethernet: protocols/link-layer/ethernet.md
+      - ARP: protocols/link-layer/arp.md
+      - PPP / PPPoE: protocols/link-layer/ppp.md
     - Network Layer:
       - IPv4: protocols/network-layer/ip.md
       - IPv6: protocols/network-layer/ipv6.md
-    - Transport Layer: []
-    - Application Layer: []
-    - Industrial: []
+      - ICMP: protocols/network-layer/icmp.md
+      - OSPF: protocols/network-layer/ospf.md
+      - MPLS: protocols/network-layer/mpls.md
+      - GRE: protocols/network-layer/gre.md
+      - IPsec: protocols/network-layer/ipsec.md
+    - Transport Layer:
+      - TCP: protocols/transport-layer/tcp.md
+      - UDP: protocols/transport-layer/udp.md
+      - QUIC: protocols/transport-layer/quic.md
+    - Application Layer:
+      - DNS: protocols/application-layer/dns.md
+      - DHCP: protocols/application-layer/dhcp.md
+      - HTTP: protocols/application-layer/http.md
+      - TLS: protocols/application-layer/tls.md
+      - SSH: protocols/application-layer/ssh.md
+      - NTP: protocols/application-layer/ntp.md
+      - BGP: protocols/application-layer/bgp.md
+      - SIP: protocols/application-layer/sip.md
+      - RTP: protocols/application-layer/rtp.md
+      - RTCP: protocols/application-layer/rtcp.md
+      - WebRTC: protocols/application-layer/webrtc.md
+      - SMTP: protocols/application-layer/smtp.md
+      - SMPP: protocols/application-layer/smpp.md
+      - WBXML: protocols/application-layer/wbxml.md
+      - MM5: protocols/application-layer/mm5.md
+      - LDAP: protocols/application-layer/ldap.md
+      - ICE: protocols/application-layer/ice.md
+      - STUN: protocols/application-layer/stun.md
+      - TURN: protocols/application-layer/turn.md
+      - SNMP: protocols/application-layer/snmp.md
+      - RADIUS: protocols/application-layer/radius.md
+      - FTP: protocols/application-layer/ftp.md
+      - IMAP: protocols/application-layer/imap.md
+      - MQTT: protocols/application-layer/mqtt.md
+      - WebSocket: protocols/application-layer/websocket.md
+      - Telnet: protocols/application-layer/telnet.md
+      - XMPP: protocols/application-layer/xmpp.md
+      - SCP: protocols/application-layer/scp.md
+      - NetBIOS: protocols/application-layer/netbios.md
+      - SMB / CIFS: protocols/application-layer/smb.md
+      - DDS / ROS 2: protocols/application-layer/dds.md
+    - Tunneling:
+      - L2TP: protocols/tunneling/l2tp.md
+      - VXLAN: protocols/tunneling/vxlan.md
+      - GTP: protocols/tunneling/gtp.md
+    - Telecom:
+      - SS7: protocols/telecom/ss7.md
+      - ISDN: protocols/telecom/isdn.md
+      - T1: protocols/telecom/t1.md
+      - E1: protocols/telecom/e1.md
+      - xDSL: protocols/telecom/xdsl.md
+      - DOCSIS: protocols/telecom/docsis.md
+    - Industrial:
+      - PROFIBUS: protocols/industrial/profibus.md
+      - Modbus: protocols/industrial/modbus.md
+    - Wireless / Mesh:
+      - 802.11 (Wi-Fi): protocols/wireless/80211.md
+      - 802.11s (Mesh): protocols/wireless/80211s.md
+      - Bluetooth / BLE: protocols/wireless/bluetooth.md
+      - Zigbee: protocols/wireless/zigbee.md
+      - Z-Wave: protocols/wireless/zwave.md
+      - NFC: protocols/wireless/nfc.md
