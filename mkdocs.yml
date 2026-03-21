@@ -63,6 +63,10 @@ nav:
       - sACN (E1.31): protocols/bus/sacn.md
       - MIDI: protocols/bus/midi.md
       - USB: protocols/bus/usb.md
+      - PCIe: protocols/bus/pcie.md
+      - HDMI CEC: protocols/bus/hdmi_cec.md
+      - ARINC 429: protocols/bus/arinc429.md
+      - MIL-STD-1553: protocols/bus/milstd1553.md
     - Link Layer:
       - Ethernet: protocols/link-layer/ethernet.md
       - ARP: protocols/link-layer/arp.md
@@ -94,6 +98,7 @@ nav:
       - WebSocket: protocols/web/websocket.md
       - HLS / MPEG-DASH: protocols/web/hls.md
       - CoAP: protocols/web/coap.md
+      - WebTransport: protocols/web/webtransport.md
     - Email:
       - SMTP: protocols/email/smtp.md
       - IMAP: protocols/email/imap.md
@@ -137,6 +142,9 @@ nav:
       - TLS: protocols/security/tls.md
       - Kerberos: protocols/security/kerberos.md
       - RADIUS: protocols/security/radius.md
+      - TACACS+: protocols/security/tacacs.md
+      - OAuth 2.0 / OIDC: protocols/security/oauth2.md
+      - SAML 2.0: protocols/security/saml.md
       - WireGuard: protocols/security/wireguard.md
       - WPA2 / WPA3: protocols/security/wpa.md
       - 802.1X / EAP: protocols/security/8021x.md
@@ -164,6 +172,10 @@ nav:
       - MM5: protocols/mobile-sync/mm5.md
     - Routing:
       - BGP: protocols/routing/bgp.md
+      - PIM: protocols/routing/pim.md
+      - RSVP / RSVP-TE: protocols/routing/rsvp.md
+      - LDP: protocols/routing/ldp.md
+      - Segment Routing v6: protocols/routing/srv6.md
     - Tunneling:
       - L2TP: protocols/tunneling/l2tp.md
       - VXLAN: protocols/tunneling/vxlan.md
@@ -183,6 +195,13 @@ nav:
     - Industrial:
       - PROFIBUS: protocols/industrial/profibus.md
       - Modbus: protocols/industrial/modbus.md
+      - OPC UA: protocols/industrial/opcua.md
+      - EtherNet/IP: protocols/industrial/ethernetip.md
+      - PROFINET: protocols/industrial/profinet.md
+      - BACnet: protocols/industrial/bacnet.md
+      - KNX: protocols/industrial/knx.md
+      - DNP3: protocols/industrial/dnp3.md
+      - NMEA 0183 / 2000: protocols/industrial/nmea.md
     - Wireless / Mesh:
       - 802.11 (Wi-Fi): protocols/wireless/80211.md
       - 802.11s (Mesh): protocols/wireless/80211s.md
@@ -194,12 +213,18 @@ nav:
       - Thread: protocols/wireless/thread.md
       - LoRaWAN: protocols/wireless/lorawan.md
       - 6LoWPAN: protocols/wireless/6lowpan.md
+      - Matter: protocols/wireless/matter.md
+      - UWB: protocols/wireless/uwb.md
     - Robotics:
       - MAVLink: protocols/robotics/mavlink.md
       - EtherCAT: protocols/robotics/ethercat.md
       - CANopen: protocols/robotics/canopen.md
       - ROS 1 (TCPROS): protocols/robotics/ros1.md
       - DDS / ROS 2: protocols/robotics/dds.md
+    - Storage:
+      - iSCSI: protocols/storage/iscsi.md
+      - Fibre Channel: protocols/storage/fibrechannel.md
+      - NVMe-oF: protocols/storage/nvmeof.md
     - HPC / AI Networking:
       - RDMA / RoCE / InfiniBand: protocols/hpc/rdma.md
       - NCCL: protocols/hpc/nccl.md

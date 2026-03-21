@@ -52,6 +52,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [WebSocket](protocols/web/websocket.md) | RFC 6455 | Full-duplex bidirectional communication over TCP |
 | [HLS / MPEG-DASH](protocols/web/hls.md) | RFC 8216 / ISO 23009 | Adaptive bitrate video streaming over HTTP |
 | [CoAP](protocols/web/coap.md) | RFC 7252 | Constrained Application Protocol (IoT REST) |
+| [WebTransport](protocols/web/webtransport.md) | RFC 9297 | HTTP/3-based bidirectional transport (WebSocket successor) |
 
 ### Email
 
@@ -115,6 +116,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [TLS](protocols/security/tls.md) | RFC 8446 | Encryption, authentication, and integrity |
 | [Kerberos](protocols/security/kerberos.md) | RFC 4120 | Ticket-based network authentication (Active Directory) |
 | [RADIUS](protocols/security/radius.md) | RFC 2865 | Authentication, authorization, and accounting (AAA) |
+| [TACACS+](protocols/security/tacacs.md) | RFC 8907 | Terminal access control (Cisco AAA, full encryption) |
+| [OAuth 2.0 / OIDC](protocols/security/oauth2.md) | RFC 6749 | Token-based authorization and identity (web/API) |
+| [SAML 2.0](protocols/security/saml.md) | OASIS | XML-based SSO and identity federation (enterprise) |
 | [WireGuard](protocols/security/wireguard.md) | wireguard.com | Modern VPN (simple, fast, Noise protocol) |
 | [WPA2 / WPA3](protocols/security/wpa.md) | IEEE 802.11i | Wi-Fi encryption and key exchange |
 | [802.1X / EAP](protocols/security/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
@@ -162,6 +166,10 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | Protocol | Standard | Description |
 |----------|----------|-------------|
 | [BGP](protocols/routing/bgp.md) | RFC 4271 | Inter-AS path-vector routing (the Internet's backbone) |
+| [PIM](protocols/routing/pim.md) | RFC 7761 | Protocol Independent Multicast (multicast tree building) |
+| [RSVP / RSVP-TE](protocols/routing/rsvp.md) | RFC 2205 / 3209 | Resource reservation and MPLS LSP signaling |
+| [LDP](protocols/routing/ldp.md) | RFC 5036 | MPLS label distribution protocol |
+| [Segment Routing v6](protocols/routing/srv6.md) | RFC 8986 | Source-routed IPv6 network programming |
 
 ### Tunneling
 
@@ -209,6 +217,10 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [sACN (E1.31)](protocols/bus/sacn.md) | ANSI E1.31 | Streaming ACN — DMX over Ethernet/IP (multicast UDP) |
 | [MIDI](protocols/bus/midi.md) | MMA/AMEI | Musical instrument digital interface |
 | [USB](protocols/bus/usb.md) | USB-IF | Universal wired peripheral interconnect |
+| [PCIe](protocols/bus/pcie.md) | PCI-SIG | High-speed serial computer expansion bus |
+| [HDMI CEC](protocols/bus/hdmi_cec.md) | HDMI Forum | Consumer electronics control over HDMI |
+| [ARINC 429](protocols/bus/arinc429.md) | ARINC | Avionics digital data bus |
+| [MIL-STD-1553](protocols/bus/milstd1553.md) | DoD | Military/aerospace serial data bus |
 
 ### Industrial / Fieldbus
 
@@ -216,8 +228,13 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 |----------|----------|-------------|
 | [PROFIBUS](protocols/industrial/profibus.md) | IEC 61158 | Token-passing fieldbus for factory/process automation |
 | [Modbus](protocols/industrial/modbus.md) | Modbus.org | Register-based industrial communication (RTU/TCP) |
-
-*Coming soon: PROFINET, EtherNet/IP, OPC UA*
+| [OPC UA](protocols/industrial/opcua.md) | IEC 62541 | Unified industrial automation architecture |
+| [EtherNet/IP](protocols/industrial/ethernetip.md) | IEC 61158 / ODVA | CIP over Ethernet (Rockwell/Allen-Bradley) |
+| [PROFINET](protocols/industrial/profinet.md) | IEC 61158 | Siemens industrial real-time Ethernet |
+| [BACnet](protocols/industrial/bacnet.md) | ASHRAE 135 | Building automation (HVAC, lighting, fire alarm) |
+| [KNX](protocols/industrial/knx.md) | ISO/IEC 14543-3 | European building/home automation |
+| [DNP3](protocols/industrial/dnp3.md) | IEEE 1815 | SCADA / power grid / water utility protocol |
+| [NMEA 0183 / 2000](protocols/industrial/nmea.md) | NMEA | Marine/GPS navigation data |
 
 ### Robotics
 
@@ -228,6 +245,14 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [CANopen](protocols/robotics/canopen.md) | CiA 301 | Application layer on CAN for drives and I/O |
 | [ROS 1 (TCPROS)](protocols/robotics/ros1.md) | ROS Wiki | Original Robot Operating System transport |
 | [DDS / ROS 2](protocols/robotics/dds.md) | OMG DDS / RTPS | Real-time pub-sub middleware for robotics |
+
+### Storage
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [iSCSI](protocols/storage/iscsi.md) | RFC 7143 | SCSI block storage over TCP/IP |
+| [Fibre Channel](protocols/storage/fibrechannel.md) | INCITS FC-FS | High-speed data center storage fabric |
+| [NVMe-oF](protocols/storage/nvmeof.md) | NVMe 2.0 | NVMe over Fabrics (RDMA, TCP, FC) |
 
 ### HPC / AI Networking
 
@@ -274,6 +299,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Thread](protocols/wireless/thread.md) | Thread Group | IPv6 mesh for IoT / Matter smart home |
 | [LoRaWAN](protocols/wireless/lorawan.md) | LoRa Alliance | Long-range low-power WAN (km range, sub-GHz) |
 | [6LoWPAN](protocols/wireless/6lowpan.md) | RFC 4944 / 6282 | IPv6 header compression for constrained wireless |
+| [Matter](protocols/wireless/matter.md) | CSA | Smart home interoperability (over Thread/Wi-Fi/BLE) |
+| [UWB](protocols/wireless/uwb.md) | IEEE 802.15.4z | Ultra-wideband secure ranging and positioning |
 
 ## Protocol Map
 
@@ -337,26 +364,27 @@ graph TD
 protocols/
   _template.md              # Template for new protocol pages
   serial/                   # UART, RS-232, RS-485, RS-422
-  bus/                      # I2C, SPI, I2S, CAN, 1-Wire, USB, DMX512, MIDI
+  bus/                      # I2C, SPI, I2S, CAN, 1-Wire, USB, DMX512, MIDI, PCIe, HDMI CEC, ARINC 429, MIL-STD-1553
   link-layer/               # Ethernet, ARP, PPP, 802.1Q, STP, LLDP, LACP
   network-layer/            # IP, IPv6, ICMP, ICMPv6, OSPF, IS-IS, MPLS, GRE, IPsec, IGMP, VRRP
   transport-layer/          # TCP, UDP, QUIC, SCTP
-  web/                      # HTTP, gRPC, WebSocket, HLS/DASH, CoAP
+  web/                      # HTTP, gRPC, WebSocket, WebTransport, HLS/DASH, CoAP
   email/                    # SMTP, IMAP, POP3, SPF, DKIM, DMARC, DANE
   voip/                     # SIP, RTP, RTCP, SRTP, SDP, WebRTC, ICE, STUN, TURN, DTLS, H.323, MGCP, Skinny, IAX
   messaging/                # MQTT, AMQP, NATS, Kafka, XMPP
   file-sharing/             # FTP, TFTP, SCP, NFS, SMB, NetBIOS
-  security/                 # TLS, Kerberos, RADIUS, WireGuard, WPA, 802.1X
+  security/                 # TLS, Kerberos, RADIUS, TACACS+, OAuth 2.0, SAML, WireGuard, WPA, 802.1X
   naming/                   # DNS, DHCP, DHCPv6, mDNS, LDAP, NTP
   monitoring/               # SNMP, Syslog, NetFlow, OTLP
   remote-access/            # SSH, Telnet
   mobile-sync/              # SyncML, EAS, DeltaSync, WBXML, SMPP, MM5
-  routing/                  # BGP
+  routing/                  # BGP, PIM, RSVP, LDP, SRv6
   tunneling/                # L2TP, VXLAN, GTP, Geneve
   telecom/                  # SS7, ISDN, T1, E1, xDSL, DOCSIS, GSM, LTE, 5G NR, Diameter
-  industrial/               # Modbus, PROFIBUS
+  industrial/               # Modbus, PROFIBUS, OPC UA, EtherNet/IP, PROFINET, BACnet, KNX, DNP3, NMEA
   robotics/                 # MAVLink, EtherCAT, CANopen, ROS 1, DDS/ROS 2
-  wireless/                 # 802.11, 802.11s, Bluetooth, BLE, Zigbee, Z-Wave, NFC
+  storage/                  # iSCSI, Fibre Channel, NVMe-oF
+  wireless/                 # 802.11, 802.11s, Bluetooth, BLE, Zigbee, Z-Wave, NFC, Matter, UWB
   hpc/                      # RDMA/RoCE, NCCL, MPI
   data-formats/             # Parquet, ONNX, GGUF, Safetensors, HDF5, TFRecord
   encoding/                 # QR Code, UPC/EAN, Code 128, Data Matrix
