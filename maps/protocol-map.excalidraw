@@ -1,0 +1,34 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "world-of-protocols",
+  "elements": [
+    {"type":"rectangle","id":"bg7","x":0,"y":50,"width":2200,"height":150,"backgroundColor":"#dbe4ff","fillStyle":"solid","strokeColor":"#4a9eed","strokeWidth":1,"opacity":40,"angle":0,"roughness":1,"seed":1},
+    {"type":"rectangle","id":"bg6","x":0,"y":210,"width":2200,"height":100,"backgroundColor":"#e5dbff","fillStyle":"solid","strokeColor":"#8b5cf6","strokeWidth":1,"opacity":35,"angle":0,"roughness":1,"seed":2},
+    {"type":"rectangle","id":"bg4","x":0,"y":320,"width":2200,"height":110,"backgroundColor":"#d3f9d8","fillStyle":"solid","strokeColor":"#22c55e","strokeWidth":1,"opacity":35,"angle":0,"roughness":1,"seed":3},
+    {"type":"rectangle","id":"bg3","x":0,"y":440,"width":2200,"height":130,"backgroundColor":"#fff3bf","fillStyle":"solid","strokeColor":"#f59e0b","strokeWidth":1,"opacity":35,"angle":0,"roughness":1,"seed":4},
+    {"type":"rectangle","id":"bg2","x":0,"y":580,"width":2200,"height":130,"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#f59e0b","strokeWidth":1,"opacity":35,"angle":0,"roughness":1,"seed":5},
+    {"type":"rectangle","id":"bg1","x":0,"y":720,"width":2200,"height":130,"backgroundColor":"#ffc9c9","fillStyle":"solid","strokeColor":"#ef4444","strokeWidth":1,"opacity":30,"angle":0,"roughness":1,"seed":6},
+    {"type":"text","id":"title","x":550,"y":-40,"width":500,"height":40,"text":"The World of Protocols","fontSize":32,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#1e1e1e","angle":0,"roughness":1,"seed":7},
+    {"type":"text","id":"l7","x":10,"y":55,"width":200,"height":25,"text":"7 APPLICATION","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#2563eb","angle":0,"roughness":1,"seed":8},
+    {"type":"text","id":"l6","x":10,"y":215,"width":200,"height":25,"text":"6 SECURITY","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#7c3aed","angle":0,"roughness":1,"seed":9},
+    {"type":"text","id":"l4","x":10,"y":325,"width":200,"height":25,"text":"4 TRANSPORT","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#15803d","angle":0,"roughness":1,"seed":10},
+    {"type":"text","id":"l3","x":10,"y":445,"width":200,"height":25,"text":"3 NETWORK","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#b45309","angle":0,"roughness":1,"seed":11},
+    {"type":"text","id":"l2","x":10,"y":585,"width":200,"height":25,"text":"2 DATA LINK","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#c2410c","angle":0,"roughness":1,"seed":12},
+    {"type":"text","id":"l1","x":10,"y":725,"width":200,"height":25,"text":"1 PHYSICAL","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#dc2626","angle":0,"roughness":1,"seed":13},
+    {"type":"text","id":"h_web","x":200,"y":20,"width":100,"height":20,"text":"Web / API","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":14},
+    {"type":"text","id":"h_email","x":450,"y":20,"width":120,"height":20,"text":"Email / Auth","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":15},
+    {"type":"text","id":"h_msg","x":700,"y":20,"width":100,"height":20,"text":"Messaging","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":16},
+    {"type":"text","id":"h_voip","x":920,"y":20,"width":120,"height":20,"text":"VoIP / Media","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":17},
+    {"type":"text","id":"h_vpn","x":1180,"y":20,"width":120,"height":20,"text":"VPN / Tunnel","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":18},
+    {"type":"text","id":"h_tele","x":1420,"y":20,"width":100,"height":20,"text":"Telecom","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":19},
+    {"type":"text","id":"h_iot","x":1650,"y":20,"width":130,"height":20,"text":"IoT / Industrial","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":20},
+    {"type":"text","id":"h_wire","x":1900,"y":20,"width":100,"height":20,"text":"Wireless","fontSize":16,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#555555","angle":0,"roughness":1,"seed":21},
+    {"type":"text","id":"footer","x":650,"y":840,"width":400,"height":25,"text":"worldofprotocols.org  |  105 protocols documented","fontSize":18,"fontFamily":1,"textAlign":"left","verticalAlign":"top","strokeColor":"#757575","angle":0,"roughness":1,"seed":100}
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}
