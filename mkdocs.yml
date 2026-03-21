@@ -138,6 +138,19 @@ nav:
       - DKIM: protocols/application-layer/dkim.md
       - DMARC: protocols/application-layer/dmarc.md
       - DANE: protocols/application-layer/dane.md
+      - Syslog: protocols/application-layer/syslog.md
+      - Kerberos: protocols/application-layer/kerberos.md
+      - DHCPv6: protocols/application-layer/dhcpv6.md
+      - NFS: protocols/application-layer/nfs.md
+      - CoAP: protocols/application-layer/coap.md
+      - mDNS / DNS-SD: protocols/application-layer/mdns.md
+      - TFTP: protocols/application-layer/tftp.md
+      - NetFlow / IPFIX: protocols/application-layer/netflow.md
+      - H.323: protocols/application-layer/h323.md
+      - MGCP / H.248: protocols/application-layer/mgcp.md
+      - Skinny (SCCP): protocols/application-layer/skinny.md
+      - IAX: protocols/application-layer/iax.md
+      - Diameter: protocols/application-layer/diameter.md
     - Tunneling:
       - L2TP: protocols/tunneling/l2tp.md
       - VXLAN: protocols/tunneling/vxlan.md
@@ -150,6 +163,9 @@ nav:
       - E1: protocols/telecom/e1.md
       - xDSL: protocols/telecom/xdsl.md
       - DOCSIS: protocols/telecom/docsis.md
+      - GSM: protocols/telecom/gsm.md
+      - LTE: protocols/telecom/lte.md
+      - 5G NR: protocols/telecom/5gnr.md
     - Industrial:
       - PROFIBUS: protocols/industrial/profibus.md
       - Modbus: protocols/industrial/modbus.md
@@ -157,6 +173,9 @@ nav:
       - 802.11 (Wi-Fi): protocols/wireless/80211.md
       - 802.11s (Mesh): protocols/wireless/80211s.md
       - Bluetooth / BLE: protocols/wireless/bluetooth.md
+      - BLE Deep Dive: protocols/wireless/ble.md
+      - WPA2 / WPA3: protocols/wireless/wpa.md
+      - 802.1X / EAP: protocols/wireless/8021x.md
       - Zigbee: protocols/wireless/zigbee.md
       - Z-Wave: protocols/wireless/zwave.md
       - NFC: protocols/wireless/nfc.md

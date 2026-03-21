@@ -92,6 +92,19 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [DKIM](protocols/application-layer/dkim.md) | RFC 6376 | Cryptographic email message signing |
 | [DMARC](protocols/application-layer/dmarc.md) | RFC 7489 | Email authentication policy (ties SPF + DKIM) |
 | [DANE](protocols/application-layer/dane.md) | RFC 6698 | TLS certificate pinning via DNSSEC |
+| [Syslog](protocols/application-layer/syslog.md) | RFC 5424 | Universal network logging |
+| [Kerberos](protocols/application-layer/kerberos.md) | RFC 4120 | Ticket-based network authentication (Active Directory) |
+| [DHCPv6](protocols/application-layer/dhcpv6.md) | RFC 8415 | IPv6 address and configuration assignment |
+| [NFS](protocols/application-layer/nfs.md) | RFC 7530 | Network file system (Unix/Linux file sharing) |
+| [CoAP](protocols/application-layer/coap.md) | RFC 7252 | Constrained Application Protocol (IoT REST) |
+| [mDNS / DNS-SD](protocols/application-layer/mdns.md) | RFC 6762 / 6763 | Local service discovery (Bonjour/Avahi) |
+| [TFTP](protocols/application-layer/tftp.md) | RFC 1350 | Trivial file transfer (PXE boot, firmware) |
+| [NetFlow / IPFIX](protocols/application-layer/netflow.md) | RFC 7011 | IP traffic flow export and analysis |
+| [H.323](protocols/application-layer/h323.md) | ITU-T H.323 | Legacy VoIP / video conferencing suite |
+| [MGCP / H.248](protocols/application-layer/mgcp.md) | RFC 3435 | Media gateway control (carrier VoIP) |
+| [Skinny (SCCP)](protocols/application-layer/skinny.md) | Cisco | Cisco IP phone control protocol |
+| [IAX](protocols/application-layer/iax.md) | RFC 5456 | Inter-Asterisk eXchange (single-port VoIP) |
+| [Diameter](protocols/application-layer/diameter.md) | RFC 6733 | AAA for mobile networks (LTE/5G successor to RADIUS) |
 | [Telnet](protocols/application-layer/telnet.md) | RFC 854 | Interactive remote terminal (plaintext, legacy) |
 | [XMPP](protocols/application-layer/xmpp.md) | RFC 6120 | Decentralized instant messaging and presence |
 | [SCP](protocols/application-layer/scp.md) | — (BSD/SSH) | Secure file copy over SSH |
@@ -118,6 +131,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [E1](protocols/telecom/e1.md) | ITU-T G.704 | 2.048 Mbps TDM carrier — 32 channels (international) |
 | [xDSL](protocols/telecom/xdsl.md) | ITU-T G.992/G.993 | Broadband over copper telephone lines |
 | [DOCSIS](protocols/telecom/docsis.md) | CableLabs | Cable modem broadband over HFC networks |
+| [GSM](protocols/telecom/gsm.md) | 3GPP | 2G digital cellular (TDMA, MAP/SS7) |
+| [LTE](protocols/telecom/lte.md) | 3GPP | 4G mobile broadband (OFDMA, all-IP EPC) |
+| [5G NR](protocols/telecom/5gnr.md) | 3GPP | 5G New Radio (eMBB, URLLC, mMTC, network slicing) |
 
 ### Serial
 
@@ -166,6 +182,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [802.11 (Wi-Fi)](protocols/wireless/80211.md) | IEEE 802.11-2020 | Wireless LAN (Wi-Fi 4/5/6/6E/7) |
 | [802.11s](protocols/wireless/80211s.md) | IEEE 802.11-2020 | Wi-Fi mesh networking at Layer 2 |
 | [Bluetooth / BLE](protocols/wireless/bluetooth.md) | Bluetooth SIG | Short-range wireless (audio, IoT, peripherals) |
+| [BLE Deep Dive](protocols/wireless/ble.md) | Bluetooth SIG | GATT, advertising, connection params, security |
+| [WPA2 / WPA3](protocols/wireless/wpa.md) | IEEE 802.11i / Wi-Fi Alliance | Wi-Fi encryption and key exchange |
+| [802.1X / EAP](protocols/wireless/8021x.md) | IEEE 802.1X | Port-based access control (Wi-Fi Enterprise, wired NAC) |
 | [Zigbee](protocols/wireless/zigbee.md) | IEEE 802.15.4 / CSA | Low-power IoT mesh network (2.4 GHz) |
 | [Z-Wave](protocols/wireless/zwave.md) | ITU-T G.9959 | Home automation mesh (sub-GHz) |
 | [NFC](protocols/wireless/nfc.md) | ISO 18092 | Contactless communication (payments, tags, pairing) |
