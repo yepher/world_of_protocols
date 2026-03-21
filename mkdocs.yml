@@ -107,6 +107,9 @@ nav:
       - LwM2M: protocols/web/lwm2m.md
       - IPP: protocols/web/ipp.md
       - PROXY Protocol: protocols/web/proxy_protocol.md
+      - BitTorrent: protocols/web/bittorrent.md
+      - Raft: protocols/web/raft.md
+      - S3 API: protocols/web/s3.md
     - Email:
       - SMTP: protocols/email/smtp.md
       - IMAP: protocols/email/imap.md
@@ -115,6 +118,7 @@ nav:
       - DKIM: protocols/email/dkim.md
       - DMARC: protocols/email/dmarc.md
       - DANE: protocols/email/dane.md
+      - JMAP: protocols/email/jmap.md
     - VoIP / Real-Time Media:
       - SIP: protocols/voip/sip.md
       - SIMPLE: protocols/voip/simple.md
@@ -161,6 +165,7 @@ nav:
       - X.509: protocols/security/x509.md
       - ACME: protocols/security/acme.md
       - FIDO2 / WebAuthn: protocols/security/fido2.md
+      - SCIM: protocols/security/scim.md
     - Naming / Config / Directory:
       - DNS: protocols/naming/dns.md
       - DHCP: protocols/naming/dhcp.md
@@ -171,6 +176,9 @@ nav:
       - BOOTP / PXE: protocols/naming/bootp_pxe.md
       - Wake-on-LAN: protocols/naming/wol.md
       - DHCP Options: protocols/naming/dhcp_options.md
+      - DoH: protocols/naming/doh.md
+      - DoT: protocols/naming/dot.md
+      - DNSSEC: protocols/naming/dnssec.md
     - Monitoring / Observability:
       - SNMP: protocols/monitoring/snmp.md
       - Syslog: protocols/monitoring/syslog.md
@@ -208,6 +216,8 @@ nav:
       - GTP: protocols/tunneling/gtp.md
       - Geneve: protocols/tunneling/geneve.md
       - EVPN: protocols/tunneling/evpn.md
+      - SOCKS5: protocols/tunneling/socks.md
+      - OpenVPN: protocols/tunneling/openvpn.md
     - Telecom:
       - SS7: protocols/telecom/ss7.md
       - ISDN: protocols/telecom/isdn.md
@@ -219,6 +229,12 @@ nav:
       - LTE: protocols/telecom/lte.md
       - 5G NR: protocols/telecom/5gnr.md
       - Diameter: protocols/telecom/diameter.md
+    - Aviation:
+      - ACARS: protocols/aviation/acars.md
+      - Mode S / TCAS: protocols/aviation/modes.md
+      - ASTERIX: protocols/aviation/asterix.md
+      - METAR / TAF: protocols/aviation/metar.md
+      - CPDLC: protocols/aviation/cpdlc.md
     - Automotive:
       - OBD-II: protocols/automotive/obdii.md
       - SAE J1939: protocols/automotive/j1939.md
@@ -238,6 +254,7 @@ nav:
       - IEC 60870-5-104: protocols/industrial/iec104.md
       - OPC DA / Classic: protocols/industrial/opcda.md
       - OCPP: protocols/industrial/ocpp.md
+      - ISO 8583: protocols/industrial/iso8583.md
     - Wireless / Mesh:
       - 802.11 (Wi-Fi): protocols/wireless/80211.md
       - 802.11s (Mesh): protocols/wireless/80211s.md
@@ -254,6 +271,10 @@ nav:
       - UWB: protocols/wireless/uwb.md
       - ANT / ANT+: protocols/wireless/antplus.md
       - EnOcean: protocols/wireless/enocean.md
+      - ADS-B: protocols/wireless/adsb.md
+      - DMR: protocols/wireless/dmr.md
+      - TETRA: protocols/wireless/tetra.md
+      - DVB-S / S2: protocols/wireless/dvbs2.md
     - Robotics:
       - MAVLink: protocols/robotics/mavlink.md
       - EtherCAT: protocols/robotics/ethercat.md

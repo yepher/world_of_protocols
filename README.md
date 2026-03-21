@@ -60,6 +60,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [LwM2M](protocols/web/lwm2m.md) | OMA SpecWorks | Lightweight M2M IoT device management (over CoAP) |
 | [IPP](protocols/web/ipp.md) | RFC 8011 | Internet Printing Protocol (printing over HTTP) |
 | [PROXY Protocol](protocols/web/proxy_protocol.md) | HAProxy | Preserve client info through load balancers/proxies |
+| [BitTorrent](protocols/web/bittorrent.md) | BEP 3 | Peer-to-peer file sharing (tracker, DHT, peer wire) |
+| [Raft](protocols/web/raft.md) | Ongaro 2014 | Distributed consensus (etcd, Consul, CockroachDB) |
+| [S3 API](protocols/web/s3.md) | Amazon | Object storage REST API (de facto standard) |
 
 ### Email
 
@@ -72,6 +75,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [DKIM](protocols/email/dkim.md) | RFC 6376 | Cryptographic email message signing |
 | [DMARC](protocols/email/dmarc.md) | RFC 7489 | Email authentication policy (ties SPF + DKIM) |
 | [DANE](protocols/email/dane.md) | RFC 6698 | TLS certificate pinning via DNSSEC |
+| [JMAP](protocols/email/jmap.md) | RFC 8620 | JSON-based modern IMAP replacement |
 
 ### VoIP / Real-Time Media
 
@@ -134,6 +138,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [X.509](protocols/security/x509.md) | RFC 5280 | Certificate format (TLS, IPsec, code signing) |
 | [ACME](protocols/security/acme.md) | RFC 8555 | Automatic certificate issuance (Let's Encrypt) |
 | [FIDO2 / WebAuthn](protocols/security/fido2.md) | W3C / FIDO Alliance | Passwordless authentication (passkeys, security keys) |
+| [SCIM](protocols/security/scim.md) | RFC 7644 | Cross-domain identity provisioning (user/group sync) |
 
 ### Naming / Config / Directory
 
@@ -148,6 +153,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [BOOTP / PXE](protocols/naming/bootp_pxe.md) | RFC 951 / RFC 4578 | Network bootstrap and preboot execution |
 | [Wake-on-LAN](protocols/naming/wol.md) | AMD / IEEE 802.3 | Magic packet remote power-on |
 | [DHCP Options](protocols/naming/dhcp_options.md) | RFC 2132 | DHCP option codes quick reference |
+| [DoH](protocols/naming/doh.md) | RFC 8484 | DNS over HTTPS (encrypted DNS queries) |
+| [DoT](protocols/naming/dot.md) | RFC 7858 | DNS over TLS (port 853) |
+| [DNSSEC](protocols/naming/dnssec.md) | RFC 4033 | DNS cryptographic authentication |
 
 ### Monitoring / Observability
 
@@ -205,6 +213,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [GTP](protocols/tunneling/gtp.md) | 3GPP TS 29.281 | Mobile network user/control plane tunneling (3G/4G/5G) |
 | [Geneve](protocols/tunneling/geneve.md) | RFC 8926 | Extensible network virtualization overlay (VXLAN successor) |
 | [EVPN](protocols/tunneling/evpn.md) | RFC 7432 | BGP-based Ethernet VPN control plane (data center fabrics) |
+| [SOCKS5](protocols/tunneling/socks.md) | RFC 1928 | Proxy protocol (SSH tunnels, Tor, corporate proxies) |
+| [OpenVPN](protocols/tunneling/openvpn.md) | OpenVPN | TLS-based VPN (TUN/TAP modes) |
 
 ### Telecom
 
@@ -249,6 +259,16 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [ARINC 429](protocols/bus/arinc429.md) | ARINC | Avionics digital data bus |
 | [MIL-STD-1553](protocols/bus/milstd1553.md) | DoD | Military/aerospace serial data bus |
 
+### Aviation
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [ACARS](protocols/aviation/acars.md) | ARINC 618 | Aircraft data link messaging (air↔ground) |
+| [Mode S / TCAS](protocols/aviation/modes.md) | ICAO Annex 10 | Secondary surveillance radar + collision avoidance |
+| [ASTERIX](protocols/aviation/asterix.md) | Eurocontrol | ATC surveillance data exchange (binary) |
+| [METAR / TAF](protocols/aviation/metar.md) | ICAO Annex 3 | Aviation weather reports and forecasts |
+| [CPDLC](protocols/aviation/cpdlc.md) | ICAO Doc 4444 | Digital controller-pilot data link communications |
+
 ### Automotive
 
 | Protocol | Standard | Description |
@@ -275,6 +295,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [IEC 60870-5-104](protocols/industrial/iec104.md) | IEC 60870-5-104 | SCADA telecontrol (power/water utilities) |
 | [OPC DA / Classic](protocols/industrial/opcda.md) | OPC Foundation | Legacy COM/DCOM industrial data access |
 | [OCPP](protocols/industrial/ocpp.md) | Open Charge Alliance | EV charging station communication |
+| [ISO 8583](protocols/industrial/iso8583.md) | ISO 8583:2003 | Financial transaction card messaging (ATM, POS) |
 
 ### Robotics
 
@@ -375,6 +396,10 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [UWB](protocols/wireless/uwb.md) | IEEE 802.15.4z | Ultra-wideband secure ranging and positioning |
 | [ANT / ANT+](protocols/wireless/antplus.md) | thisisant.com | Wireless fitness/sports sensors (heart rate, power, cadence) |
 | [EnOcean](protocols/wireless/enocean.md) | ISO/IEC 14543-3-10 | Energy-harvesting batteryless wireless (switches, sensors) |
+| [ADS-B](protocols/wireless/adsb.md) | ICAO Annex 10 | Aircraft automatic dependent surveillance (1090 MHz) |
+| [DMR](protocols/wireless/dmr.md) | ETSI TS 102 361 | Digital mobile radio (TDMA two-way radio) |
+| [TETRA](protocols/wireless/tetra.md) | ETSI EN 300 392 | Emergency services trunked radio |
+| [DVB-S / S2 / S2X](protocols/wireless/dvbs2.md) | ETSI EN 302 307 | Digital satellite TV broadcasting |
 
 ## Protocol Map
 
@@ -455,6 +480,7 @@ protocols/
   routing/                  # BGP, PIM, RSVP, LDP, SRv6, EIGRP, RIP, HSRP
   tunneling/                # L2TP, VXLAN, GTP, Geneve
   telecom/                  # SS7, ISDN, T1, E1, xDSL, DOCSIS, GSM, LTE, 5G NR, Diameter
+  aviation/                 # ACARS, Mode S/TCAS, ASTERIX, METAR/TAF, CPDLC
   automotive/               # OBD-II, J1939, SOME/IP, DoIP/UDS
   industrial/               # Modbus, PROFIBUS, OPC UA, EtherNet/IP, PROFINET, BACnet, KNX, DNP3, NMEA, OPC DA, OCPP
   robotics/                 # MAVLink, EtherCAT, CANopen, ROS 1, DDS/ROS 2
