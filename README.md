@@ -205,6 +205,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [CAN](protocols/bus/can.md) | ISO 11898 | Automotive/industrial multi-master differential bus |
 | [1-Wire](protocols/bus/onewire.md) | Maxim (proprietary) | Single-wire bus with parasitic power (sensors, iButtons) |
 | [DMX512](protocols/bus/dmx512.md) | ANSI E1.11 | Stage lighting control over RS-485 (512 channels) |
+| [Art-Net](protocols/bus/artnet.md) | Artistic Licence | DMX over Ethernet/IP (UDP port 6454) |
+| [sACN (E1.31)](protocols/bus/sacn.md) | ANSI E1.31 | Streaming ACN — DMX over Ethernet/IP (multicast UDP) |
 | [MIDI](protocols/bus/midi.md) | MMA/AMEI | Musical instrument digital interface |
 | [USB](protocols/bus/usb.md) | USB-IF | Universal wired peripheral interconnect |
 

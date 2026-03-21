@@ -59,6 +59,8 @@ nav:
       - CAN: protocols/bus/can.md
       - 1-Wire: protocols/bus/onewire.md
       - DMX512: protocols/bus/dmx512.md
+      - Art-Net: protocols/bus/artnet.md
+      - sACN (E1.31): protocols/bus/sacn.md
       - MIDI: protocols/bus/midi.md
       - USB: protocols/bus/usb.md
     - Link Layer:
