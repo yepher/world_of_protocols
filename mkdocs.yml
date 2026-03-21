@@ -73,6 +73,7 @@ nav:
       - IPv4: protocols/network-layer/ip.md
       - IPv6: protocols/network-layer/ipv6.md
       - ICMP: protocols/network-layer/icmp.md
+      - ICMPv6 / NDP / MLD: protocols/network-layer/icmpv6.md
       - OSPF: protocols/network-layer/ospf.md
       - MPLS: protocols/network-layer/mpls.md
       - GRE: protocols/network-layer/gre.md
@@ -94,6 +95,7 @@ nav:
       - NTP: protocols/application-layer/ntp.md
       - BGP: protocols/application-layer/bgp.md
       - SIP: protocols/application-layer/sip.md
+      - SIMPLE: protocols/application-layer/simple.md
       - RTP: protocols/application-layer/rtp.md
       - RTCP: protocols/application-layer/rtcp.md
       - WebRTC: protocols/application-layer/webrtc.md

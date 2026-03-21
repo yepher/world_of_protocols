@@ -25,6 +25,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [IPv4](protocols/network-layer/ip.md) | RFC 791 | Internet Protocol — addressing and routing |
 | [IPv6](protocols/network-layer/ipv6.md) | RFC 8200 | Next-generation IP with 128-bit addresses |
 | [ICMP](protocols/network-layer/icmp.md) | RFC 792 | Diagnostic and error messages for IPv4 |
+| [ICMPv6 / NDP / MLD](protocols/network-layer/icmpv6.md) | RFC 4443 | IPv6 diagnostics + neighbor discovery + multicast (replaces ARP, IGMP) |
 | [OSPF](protocols/network-layer/ospf.md) | RFC 2328 | Link-state interior gateway routing protocol |
 | [MPLS](protocols/network-layer/mpls.md) | RFC 3031 | Label switching for carrier backbone networks |
 | [GRE](protocols/network-layer/gre.md) | RFC 2784 | Generic tunneling protocol |
@@ -54,6 +55,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [NTP](protocols/application-layer/ntp.md) | RFC 5905 | Network clock synchronization |
 | [BGP](protocols/application-layer/bgp.md) | RFC 4271 | Inter-AS path-vector routing (the Internet's backbone) |
 | [SIP](protocols/application-layer/sip.md) | RFC 3261 | VoIP signaling — session setup and teardown |
+| [SIMPLE](protocols/application-layer/simple.md) | RFC 3428 / 3856 / 4975 | SIP-based instant messaging, presence, and MSRP |
 | [RTP](protocols/application-layer/rtp.md) | RFC 3550 | Real-time audio and video media transport |
 | [RTCP](protocols/application-layer/rtcp.md) | RFC 3550 | Quality feedback and statistics for RTP |
 | [WebRTC](protocols/application-layer/webrtc.md) | RFC 8825 | Peer-to-peer real-time communication in browsers |

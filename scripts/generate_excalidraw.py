@@ -23,7 +23,7 @@ def make_rect(id, x, y, w, h, bg, stroke, label, font=16, link=None, opacity=100
         "seed": random.randint(1, 999999),
     }
     if link:
-        el["link"] = {"type": "url", "url": link}
+        el["link"] = link
     # Label as bound text
     return el, {
         "type": "text",
