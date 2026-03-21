@@ -13,6 +13,10 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Ethernet](protocols/link-layer/ethernet.md) | IEEE 802.3 | Dominant wired LAN framing |
 | [ARP](protocols/link-layer/arp.md) | RFC 826 | Maps IPv4 addresses to MAC addresses |
 | [PPP / PPPoE](protocols/link-layer/ppp.md) | RFC 1661 / 2516 | Point-to-point framing (dial-up, DSL, fiber broadband) |
+| [802.1Q (VLAN)](protocols/link-layer/vlan8021q.md) | IEEE 802.1Q | VLAN tagging and QoS priority |
+| [STP / RSTP / MSTP](protocols/link-layer/stp.md) | IEEE 802.1D | Spanning tree loop prevention |
+| [LLDP](protocols/link-layer/lldp.md) | IEEE 802.1AB | Link layer discovery and topology mapping |
+| [LACP](protocols/link-layer/lacp.md) | IEEE 802.1AX | Link aggregation (bonding) negotiation |
 
 ### Network Layer
 
@@ -25,6 +29,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [MPLS](protocols/network-layer/mpls.md) | RFC 3031 | Label switching for carrier backbone networks |
 | [GRE](protocols/network-layer/gre.md) | RFC 2784 | Generic tunneling protocol |
 | [IPsec](protocols/network-layer/ipsec.md) | RFC 4301 | VPN encryption, authentication, and integrity |
+| [IGMP](protocols/network-layer/igmp.md) | RFC 3376 | Multicast group membership management |
+| [IS-IS](protocols/network-layer/isis.md) | ISO 10589 | Link-state IGP for service provider / data center networks |
+| [VRRP](protocols/network-layer/vrrp.md) | RFC 5798 | Virtual router redundancy (gateway failover) |
 
 ### Transport Layer
 
@@ -33,6 +40,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [TCP](protocols/transport-layer/tcp.md) | RFC 9293 | Reliable, connection-oriented byte-stream transport |
 | [UDP](protocols/transport-layer/udp.md) | RFC 768 | Minimal, connectionless datagram transport |
 | [QUIC](protocols/transport-layer/quic.md) | RFC 9000 | Encrypted multiplexed transport over UDP (HTTP/3) |
+| [SCTP](protocols/transport-layer/sctp.md) | RFC 9260 | Multi-stream, multi-homed reliable transport (SIGTRAN, WebRTC) |
 
 ### Application Layer
 
@@ -63,6 +71,25 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [IMAP](protocols/application-layer/imap.md) | RFC 9051 | Email retrieval with server-side sync |
 | [MQTT](protocols/application-layer/mqtt.md) | OASIS MQTT v5.0 | Lightweight IoT publish-subscribe messaging |
 | [WebSocket](protocols/application-layer/websocket.md) | RFC 6455 | Full-duplex bidirectional communication over TCP |
+| [gRPC](protocols/application-layer/grpc.md) | grpc.io | High-performance RPC over HTTP/2 + Protocol Buffers |
+| [AMQP](protocols/application-layer/amqp.md) | OASIS AMQP 1.0 | Enterprise message queuing with rich routing |
+| [NATS](protocols/application-layer/nats.md) | nats.io | Lightweight cloud-native messaging |
+| [Kafka](protocols/application-layer/kafka.md) | Apache | Distributed event streaming / partitioned log |
+| [POP3](protocols/application-layer/pop3.md) | RFC 1939 | Email retrieval (download and delete) |
+| [RTSP](protocols/application-layer/rtsp.md) | RFC 7826 | Streaming media control (play, pause, seek) |
+| [SDP](protocols/application-layer/sdp.md) | RFC 8866 | Session description for media negotiation |
+| [DTLS](protocols/application-layer/dtls.md) | RFC 9147 | TLS for datagrams (UDP encryption) |
+| [SRTP](protocols/application-layer/srtp.md) | RFC 3711 | Encrypted real-time media transport |
+| [HLS / MPEG-DASH](protocols/application-layer/hls.md) | RFC 8216 / ISO 23009 | Adaptive bitrate video streaming over HTTP |
+| [WireGuard](protocols/application-layer/wireguard.md) | wireguard.com | Modern VPN (simple, fast, Noise protocol) |
+| [OTLP](protocols/application-layer/otlp.md) | OpenTelemetry | Observability telemetry (traces, metrics, logs) |
+| [SyncML / OMA DS](protocols/application-layer/syncml.md) | OMA DS/DM | Mobile data sync and device management |
+| [Exchange ActiveSync](protocols/application-layer/eas.md) | MS-ASCMD | Microsoft mobile email/calendar/contacts sync |
+| [DeltaSync](protocols/application-layer/deltasync.md) | Microsoft (proprietary) | Hotmail delta-based email sync (deprecated 2016) |
+| [SPF](protocols/application-layer/spf.md) | RFC 7208 | Email sender IP authorization via DNS |
+| [DKIM](protocols/application-layer/dkim.md) | RFC 6376 | Cryptographic email message signing |
+| [DMARC](protocols/application-layer/dmarc.md) | RFC 7489 | Email authentication policy (ties SPF + DKIM) |
+| [DANE](protocols/application-layer/dane.md) | RFC 6698 | TLS certificate pinning via DNSSEC |
 | [Telnet](protocols/application-layer/telnet.md) | RFC 854 | Interactive remote terminal (plaintext, legacy) |
 | [XMPP](protocols/application-layer/xmpp.md) | RFC 6120 | Decentralized instant messaging and presence |
 | [SCP](protocols/application-layer/scp.md) | — (BSD/SSH) | Secure file copy over SSH |
@@ -77,6 +104,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [L2TP](protocols/tunneling/l2tp.md) | RFC 2661 / 3931 | Layer 2 tunneling (PPP over IP, L2TP/IPsec VPN) |
 | [VXLAN](protocols/tunneling/vxlan.md) | RFC 7348 | Data center L2 overlay (24-bit segment ID) |
 | [GTP](protocols/tunneling/gtp.md) | 3GPP TS 29.281 | Mobile network user/control plane tunneling (3G/4G/5G) |
+| [Geneve](protocols/tunneling/geneve.md) | RFC 8926 | Extensible network virtualization overlay (VXLAN successor) |
 
 ### Telecom
 
@@ -119,6 +147,15 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Modbus](protocols/industrial/modbus.md) | Modbus.org | Register-based industrial communication (RTU/TCP) |
 
 *Coming soon: PROFINET, EtherNet/IP, OPC UA*
+
+### Encoding / Symbology
+
+| Symbol | Standard | Description |
+|--------|----------|-------------|
+| [QR Code](protocols/encoding/qrcode.md) | ISO 18004 | 2D matrix barcode (URLs, payments, auth, Wi-Fi) |
+| [UPC / EAN](protocols/encoding/upc.md) | ISO 15420 | Retail product barcodes (GTIN) |
+| [Code 128](protocols/encoding/code128.md) | ISO 15417 | High-density alphanumeric 1D barcode (GS1-128 shipping) |
+| [Data Matrix](protocols/encoding/datamatrix.md) | ISO 16022 | 2D barcode for industrial DPM and small parts |
 
 ### Wireless / Mesh
 

@@ -65,6 +65,10 @@ nav:
       - Ethernet: protocols/link-layer/ethernet.md
       - ARP: protocols/link-layer/arp.md
       - PPP / PPPoE: protocols/link-layer/ppp.md
+      - 802.1Q (VLAN): protocols/link-layer/vlan8021q.md
+      - STP / RSTP / MSTP: protocols/link-layer/stp.md
+      - LLDP: protocols/link-layer/lldp.md
+      - LACP: protocols/link-layer/lacp.md
     - Network Layer:
       - IPv4: protocols/network-layer/ip.md
       - IPv6: protocols/network-layer/ipv6.md
@@ -73,10 +77,14 @@ nav:
       - MPLS: protocols/network-layer/mpls.md
       - GRE: protocols/network-layer/gre.md
       - IPsec: protocols/network-layer/ipsec.md
+      - IGMP: protocols/network-layer/igmp.md
+      - IS-IS: protocols/network-layer/isis.md
+      - VRRP: protocols/network-layer/vrrp.md
     - Transport Layer:
       - TCP: protocols/transport-layer/tcp.md
       - UDP: protocols/transport-layer/udp.md
       - QUIC: protocols/transport-layer/quic.md
+      - SCTP: protocols/transport-layer/sctp.md
     - Application Layer:
       - DNS: protocols/application-layer/dns.md
       - DHCP: protocols/application-layer/dhcp.md
@@ -109,10 +117,30 @@ nav:
       - NetBIOS: protocols/application-layer/netbios.md
       - SMB / CIFS: protocols/application-layer/smb.md
       - DDS / ROS 2: protocols/application-layer/dds.md
+      - gRPC: protocols/application-layer/grpc.md
+      - AMQP: protocols/application-layer/amqp.md
+      - NATS: protocols/application-layer/nats.md
+      - Kafka: protocols/application-layer/kafka.md
+      - POP3: protocols/application-layer/pop3.md
+      - RTSP: protocols/application-layer/rtsp.md
+      - SDP: protocols/application-layer/sdp.md
+      - DTLS: protocols/application-layer/dtls.md
+      - SRTP: protocols/application-layer/srtp.md
+      - HLS / MPEG-DASH: protocols/application-layer/hls.md
+      - WireGuard: protocols/application-layer/wireguard.md
+      - OTLP: protocols/application-layer/otlp.md
+      - SyncML / OMA DS: protocols/application-layer/syncml.md
+      - Exchange ActiveSync: protocols/application-layer/eas.md
+      - DeltaSync: protocols/application-layer/deltasync.md
+      - SPF: protocols/application-layer/spf.md
+      - DKIM: protocols/application-layer/dkim.md
+      - DMARC: protocols/application-layer/dmarc.md
+      - DANE: protocols/application-layer/dane.md
     - Tunneling:
       - L2TP: protocols/tunneling/l2tp.md
       - VXLAN: protocols/tunneling/vxlan.md
       - GTP: protocols/tunneling/gtp.md
+      - Geneve: protocols/tunneling/geneve.md
     - Telecom:
       - SS7: protocols/telecom/ss7.md
       - ISDN: protocols/telecom/isdn.md
@@ -130,3 +158,8 @@ nav:
       - Zigbee: protocols/wireless/zigbee.md
       - Z-Wave: protocols/wireless/zwave.md
       - NFC: protocols/wireless/nfc.md
+    - Encoding / Symbology:
+      - QR Code: protocols/encoding/qrcode.md
+      - UPC / EAN: protocols/encoding/upc.md
+      - Code 128: protocols/encoding/code128.md
+      - Data Matrix: protocols/encoding/datamatrix.md
