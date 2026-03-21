@@ -160,6 +160,8 @@ nav:
       - mDNS / DNS-SD: protocols/naming/mdns.md
       - LDAP: protocols/naming/ldap.md
       - NTP: protocols/naming/ntp.md
+      - BOOTP / PXE: protocols/naming/bootp_pxe.md
+      - Wake-on-LAN: protocols/naming/wol.md
     - Monitoring / Observability:
       - SNMP: protocols/monitoring/snmp.md
       - Syslog: protocols/monitoring/syslog.md
@@ -167,6 +169,7 @@ nav:
       - OTLP: protocols/monitoring/otlp.md
       - PTP (IEEE 1588): protocols/monitoring/ptp.md
       - sFlow: protocols/monitoring/sflow.md
+      - SMPTE Timecode: protocols/monitoring/smpte_timecode.md
     - Remote Access:
       - SSH: protocols/remote-access/ssh.md
       - Telnet: protocols/remote-access/telnet.md
@@ -236,6 +239,12 @@ nav:
       - CANopen: protocols/robotics/canopen.md
       - ROS 1 (TCPROS): protocols/robotics/ros1.md
       - DDS / ROS 2: protocols/robotics/dds.md
+    - Media / Broadcast:
+      - UPnP / DLNA: protocols/media/upnp.md
+      - ONVIF: protocols/media/onvif.md
+      - NDI: protocols/media/ndi.md
+      - SMPTE ST 2110: protocols/media/smpte2110.md
+      - SMPTE ST 2022: protocols/media/smpte2022.md
     - Database:
       - MySQL: protocols/database/mysql.md
       - PostgreSQL: protocols/database/postgresql.md

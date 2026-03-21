@@ -137,6 +137,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [mDNS / DNS-SD](protocols/naming/mdns.md) | RFC 6762 / 6763 | Local service discovery (Bonjour/Avahi) |
 | [LDAP](protocols/naming/ldap.md) | RFC 4511 | Directory access — authentication and identity lookup |
 | [NTP](protocols/naming/ntp.md) | RFC 5905 | Network clock synchronization |
+| [BOOTP / PXE](protocols/naming/bootp_pxe.md) | RFC 951 / RFC 4578 | Network bootstrap and preboot execution |
+| [Wake-on-LAN](protocols/naming/wol.md) | AMD / IEEE 802.3 | Magic packet remote power-on |
 
 ### Monitoring / Observability
 
@@ -148,6 +150,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [OTLP](protocols/monitoring/otlp.md) | OpenTelemetry | Observability telemetry (traces, metrics, logs) |
 | [PTP (IEEE 1588)](protocols/monitoring/ptp.md) | IEEE 1588-2019 | Precision time synchronization (sub-microsecond) |
 | [sFlow](protocols/monitoring/sflow.md) | RFC 3176 | Sampling-based traffic monitoring |
+| [SMPTE Timecode](protocols/monitoring/smpte_timecode.md) | SMPTE ST 12 | LTC/VITC timecode for media synchronization |
 
 ### Remote Access
 
@@ -258,6 +261,16 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [CANopen](protocols/robotics/canopen.md) | CiA 301 | Application layer on CAN for drives and I/O |
 | [ROS 1 (TCPROS)](protocols/robotics/ros1.md) | ROS Wiki | Original Robot Operating System transport |
 | [DDS / ROS 2](protocols/robotics/dds.md) | OMG DDS / RTPS | Real-time pub-sub middleware for robotics |
+
+### Media / Broadcast
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [UPnP / DLNA](protocols/media/upnp.md) | OCF / DLNA | Universal Plug and Play with media sharing |
+| [ONVIF](protocols/media/onvif.md) | ONVIF | IP camera discovery, control, and streaming |
+| [NDI](protocols/media/ndi.md) | Vizrt | Low-latency video over IP (broadcast/production) |
+| [SMPTE ST 2110](protocols/media/smpte2110.md) | SMPTE | Professional uncompressed media over IP (replacing SDI) |
+| [SMPTE ST 2022](protocols/media/smpte2022.md) | SMPTE | Professional video over IP with FEC and redundancy |
 
 ### Database
 
