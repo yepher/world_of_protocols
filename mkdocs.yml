@@ -52,6 +52,8 @@ nav:
       - RS-232: protocols/serial/rs232.md
       - RS-485: protocols/serial/rs485.md
       - RS-422: protocols/serial/rs422.md
+      - XMODEM / YMODEM: protocols/serial/xmodem.md
+      - ZMODEM: protocols/serial/zmodem.md
     - Bus:
       - I2C: protocols/bus/i2c.md
       - SPI: protocols/bus/spi.md
@@ -68,6 +70,7 @@ nav:
       - HDMI CEC: protocols/bus/hdmi_cec.md
       - ARINC 429: protocols/bus/arinc429.md
       - MIL-STD-1553: protocols/bus/milstd1553.md
+      - JTAG / SWD: protocols/bus/jtag_swd.md
     - Link Layer:
       - Ethernet: protocols/link-layer/ethernet.md
       - ARP: protocols/link-layer/arp.md
@@ -77,6 +80,9 @@ nav:
       - STP / RSTP / MSTP: protocols/link-layer/stp.md
       - LLDP: protocols/link-layer/lldp.md
       - LACP: protocols/link-layer/lacp.md
+      - HDLC: protocols/link-layer/hdlc.md
+      - ATM: protocols/link-layer/atm.md
+      - Frame Relay: protocols/link-layer/framerelay.md
     - Network Layer:
       - IPv4: protocols/network-layer/ip.md
       - IPv6: protocols/network-layer/ipv6.md
@@ -143,6 +149,8 @@ nav:
       - Kafka: protocols/messaging/kafka.md
       - XMPP: protocols/messaging/xmpp.md
       - ZeroMQ (ZMTP): protocols/messaging/zeromq.md
+      - IRC: protocols/messaging/irc.md
+      - Matrix: protocols/messaging/matrix.md
     - File Sharing:
       - FTP: protocols/file-sharing/ftp.md
       - SFTP: protocols/file-sharing/sftp.md
@@ -166,6 +174,7 @@ nav:
       - ACME: protocols/security/acme.md
       - FIDO2 / WebAuthn: protocols/security/fido2.md
       - SCIM: protocols/security/scim.md
+      - Signal Protocol: protocols/security/signal_protocol.md
     - Naming / Config / Directory:
       - DNS: protocols/naming/dns.md
       - DHCP: protocols/naming/dhcp.md
@@ -191,6 +200,7 @@ nav:
       - gNMI: protocols/monitoring/gnmi.md
       - RESTCONF: protocols/monitoring/restconf.md
       - OpenFlow: protocols/monitoring/openflow.md
+      - TR-069 / TR-369: protocols/monitoring/tr069.md
     - Remote Access:
       - SSH: protocols/remote-access/ssh.md
       - Telnet: protocols/remote-access/telnet.md
@@ -218,6 +228,7 @@ nav:
       - EVPN: protocols/tunneling/evpn.md
       - SOCKS5: protocols/tunneling/socks.md
       - OpenVPN: protocols/tunneling/openvpn.md
+      - Tor: protocols/tunneling/tor.md
     - Telecom:
       - SS7: protocols/telecom/ss7.md
       - ISDN: protocols/telecom/isdn.md
@@ -229,6 +240,16 @@ nav:
       - LTE: protocols/telecom/lte.md
       - 5G NR: protocols/telecom/5gnr.md
       - Diameter: protocols/telecom/diameter.md
+      - SMS / MMS: protocols/telecom/sms.md
+      - USSD: protocols/telecom/ussd.md
+      - WAP: protocols/telecom/wap.md
+      - GPON / XGS-PON: protocols/telecom/gpon.md
+      - EPON / 10G-EPON: protocols/telecom/epon.md
+      - 50G-PON / NG-PON2: protocols/telecom/pon_50g.md
+      - 5G NAS: protocols/telecom/nas5g.md
+      - NGAP: protocols/telecom/ngap.md
+      - PFCP: protocols/telecom/pfcp.md
+      - 5G SBI: protocols/telecom/sbi.md
     - Aviation:
       - ACARS: protocols/aviation/acars.md
       - Mode S / TCAS: protocols/aviation/modes.md
@@ -240,6 +261,11 @@ nav:
       - SAE J1939: protocols/automotive/j1939.md
       - SOME/IP: protocols/automotive/someip.md
       - DoIP / UDS: protocols/automotive/doip.md
+    - Space / Satellite:
+      - GPS Navigation Message: protocols/space/gps.md
+      - RTCM 3.x: protocols/space/rtcm.md
+      - CCSDS: protocols/space/ccsds.md
+      - LRIT / HRIT: protocols/space/lrit.md
     - Industrial:
       - PROFIBUS: protocols/industrial/profibus.md
       - Modbus: protocols/industrial/modbus.md
@@ -316,6 +342,7 @@ nav:
       - HDF5: protocols/data-formats/hdf5.md
       - TFRecord: protocols/data-formats/tfrecord.md
       - MCAP: protocols/data-formats/mcap.md
+      - Protocol Buffers: protocols/data-formats/protobuf.md
     - Encoding / Symbology:
       - QR Code: protocols/encoding/qrcode.md
       - UPC / EAN: protocols/encoding/upc.md

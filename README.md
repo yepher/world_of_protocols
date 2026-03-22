@@ -21,6 +21,9 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [STP / RSTP / MSTP](protocols/link-layer/stp.md) | IEEE 802.1D | Spanning tree loop prevention |
 | [LLDP](protocols/link-layer/lldp.md) | IEEE 802.1AB | Link layer discovery and topology mapping |
 | [LACP](protocols/link-layer/lacp.md) | IEEE 802.1AX | Link aggregation (bonding) negotiation |
+| [HDLC](protocols/link-layer/hdlc.md) | ISO 13239 | Bit-oriented synchronous data link (foundation of PPP, Frame Relay) |
+| [ATM](protocols/link-layer/atm.md) | ITU-T I.361 | Cell-based switching (53-byte cells, telco/DSL backbone) |
+| [Frame Relay](protocols/link-layer/framerelay.md) | ITU-T Q.922 | Packet-switched WAN via virtual circuits (legacy enterprise) |
 
 ### Network Layer
 
@@ -111,6 +114,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [Kafka](protocols/messaging/kafka.md) | Apache | Distributed event streaming / partitioned log |
 | [XMPP](protocols/messaging/xmpp.md) | RFC 6120 | Decentralized instant messaging and presence |
 | [ZeroMQ (ZMTP)](protocols/messaging/zeromq.md) | ZMTP 3.1 | Brokerless high-performance messaging library |
+| [IRC](protocols/messaging/irc.md) | RFC 1459 / 2812 | Internet Relay Chat (text-based real-time messaging) |
+| [Matrix](protocols/messaging/matrix.md) | matrix.org | Open federated protocol for decentralized real-time communication |
 
 ### File Sharing
 
@@ -142,6 +147,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [ACME](protocols/security/acme.md) | RFC 8555 | Automatic certificate issuance (Let's Encrypt) |
 | [FIDO2 / WebAuthn](protocols/security/fido2.md) | W3C / FIDO Alliance | Passwordless authentication (passkeys, security keys) |
 | [SCIM](protocols/security/scim.md) | RFC 7644 | Cross-domain identity provisioning (user/group sync) |
+| [Signal Protocol](protocols/security/signal_protocol.md) | signal.org | Double Ratchet E2E encryption (WhatsApp, Signal, Google Messages) |
 
 ### Naming / Config / Directory
 
@@ -175,6 +181,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [gNMI](protocols/monitoring/gnmi.md) | OpenConfig | gRPC-based streaming telemetry and config |
 | [RESTCONF](protocols/monitoring/restconf.md) | RFC 8040 | RESTful interface to YANG datastores |
 | [OpenFlow](protocols/monitoring/openflow.md) | ONF | SDN switch control protocol |
+| [TR-069 / TR-369](protocols/monitoring/tr069.md) | Broadband Forum | CPE remote management (ISP router/ONT provisioning) |
 
 ### Remote Access
 
@@ -218,6 +225,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [EVPN](protocols/tunneling/evpn.md) | RFC 7432 | BGP-based Ethernet VPN control plane (data center fabrics) |
 | [SOCKS5](protocols/tunneling/socks.md) | RFC 1928 | Proxy protocol (SSH tunnels, Tor, corporate proxies) |
 | [OpenVPN](protocols/tunneling/openvpn.md) | OpenVPN | TLS-based VPN (TUN/TAP modes) |
+| [Tor](protocols/tunneling/tor.md) | torproject.org | Onion-routed anonymous overlay network (3-hop circuits) |
 
 ### Telecom
 
@@ -232,6 +240,17 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [GSM](protocols/telecom/gsm.md) | 3GPP | 2G digital cellular (TDMA, MAP/SS7) |
 | [LTE](protocols/telecom/lte.md) | 3GPP | 4G mobile broadband (OFDMA, all-IP EPC) |
 | [5G NR](protocols/telecom/5gnr.md) | 3GPP | 5G New Radio (eMBB, URLLC, mMTC, network slicing) |
+| [Diameter](protocols/telecom/diameter.md) | RFC 6733 | AAA protocol for LTE/5G (successor to RADIUS in mobile) |
+| [SMS / MMS](protocols/telecom/sms.md) | 3GPP TS 23.040 / 23.140 | Short message and multimedia messaging service |
+| [USSD](protocols/telecom/ussd.md) | 3GPP TS 22.090 | Real-time session-based GSM signaling (balance, top-up, M-Pesa) |
+| [WAP](protocols/telecom/wap.md) | OMA | Wireless Application Protocol suite (early mobile web) |
+| [GPON / XGS-PON](protocols/telecom/gpon.md) | ITU-T G.984 | Gigabit passive optical network (FTTP broadband) |
+| [EPON / 10G-EPON](protocols/telecom/epon.md) | IEEE 802.3ah | Ethernet passive optical network (FTTP, dominant in Asia) |
+| [50G-PON / NG-PON2](protocols/telecom/pon_50g.md) | ITU-T G.9804 | Next-generation 50 Gbps passive optical network |
+| [5G NAS](protocols/telecom/nas5g.md) | 3GPP TS 24.501 | 5G Non-Access Stratum (UE-AMF signaling) |
+| [NGAP](protocols/telecom/ngap.md) | 3GPP TS 38.413 | Next Generation Application Protocol (gNB-AMF N2 interface) |
+| [PFCP](protocols/telecom/pfcp.md) | 3GPP TS 29.244 | Packet Forwarding Control Protocol (SMF-UPF N4 interface) |
+| [5G SBI](protocols/telecom/sbi.md) | 3GPP TS 29.500 | 5G Service-Based Interface (HTTP/2 REST between NFs) |
 
 ### Serial
 
@@ -241,6 +260,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [RS-232](protocols/serial/rs232.md) | EIA/TIA-232 | Single-ended point-to-point serial (classic COM port) |
 | [RS-485](protocols/serial/rs485.md) | EIA/TIA-485 | Differential multi-drop serial (industrial backbone) |
 | [RS-422](protocols/serial/rs422.md) | EIA/TIA-422 | Differential point-to-point serial |
+| [XMODEM / YMODEM](protocols/serial/xmodem.md) | Ward Christensen / Chuck Forsberg | Serial file transfer protocols (BBS era) |
+| [ZMODEM](protocols/serial/zmodem.md) | Chuck Forsberg | Advanced serial file transfer with streaming and crash recovery |
 
 ### Bus
 
@@ -261,6 +282,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [HDMI CEC](protocols/bus/hdmi_cec.md) | HDMI Forum | Consumer electronics control over HDMI |
 | [ARINC 429](protocols/bus/arinc429.md) | ARINC | Avionics digital data bus |
 | [MIL-STD-1553](protocols/bus/milstd1553.md) | DoD | Military/aerospace serial data bus |
+| [JTAG / SWD](protocols/bus/jtag_swd.md) | IEEE 1149.1 / ARM ADIv5 | Debug, programming, and boundary scan interfaces |
 
 ### Aviation
 
@@ -280,6 +302,15 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [SAE J1939](protocols/automotive/j1939.md) | SAE J1939 | Heavy-duty vehicle CAN protocol (trucks, buses, ag) |
 | [SOME/IP](protocols/automotive/someip.md) | AUTOSAR | Service-oriented middleware over automotive Ethernet |
 | [DoIP / UDS](protocols/automotive/doip.md) | ISO 13400 / 14229 | Diagnostics over IP + unified diagnostic services |
+
+### Space / Satellite
+
+| Protocol | Standard | Description |
+|----------|----------|-------------|
+| [GPS Navigation Message](protocols/space/gps.md) | IS-GPS-200 | L1 C/A nav message (ephemeris, almanac, clock corrections) |
+| [RTCM 3.x](protocols/space/rtcm.md) | RTCM 10403.3 | Differential GNSS corrections for RTK (centimeter accuracy) |
+| [CCSDS](protocols/space/ccsds.md) | CCSDS 133.0-B | Space data link — used by NASA, ESA, JAXA for all spacecraft |
+| [LRIT / HRIT](protocols/space/lrit.md) | CGMS Global Spec | Weather satellite image downlink (GOES, Meteosat, Himawari) |
 
 ### Industrial / Fieldbus
 
@@ -368,6 +399,7 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [HDF5](protocols/data-formats/hdf5.md) | HDF Group | Hierarchical scientific / ML data storage |
 | [TFRecord](protocols/data-formats/tfrecord.md) | TensorFlow | Sequential binary training data format |
 | [MCAP](protocols/data-formats/mcap.md) | mcap.dev | Multimodal timestamped log data (robotics, Foxglove) |
+| [Protocol Buffers](protocols/data-formats/protobuf.md) | Google | Binary serialization wire format (gRPC, compact encoding) |
 
 ### Encoding / Symbology
 
