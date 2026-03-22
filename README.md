@@ -4,9 +4,8 @@ A concise, structured quick-reference for network protocols. Each protocol gets 
 
 Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol the same treatment: a brief description, a frame diagram, and a table of fields. This project aims to do the same for the full breadth of protocols found in modern networks.
 
-see [diagram](https://link.excalidraw.com/l/8IgSq6ebOhQ/3gaV09MrqIL)
+![protocol diagram](https://raw.githubusercontent.com/yepher/world_of_protocols/refs/heads/main/maps/protocol-map.svg)
 
-![diagram](maps/protocol-map.svg)
 
 ## Protocol Index
 
