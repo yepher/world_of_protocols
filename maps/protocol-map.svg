@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      viewBox="0 0 3200 2800" width="3200" height="2800">
 <title>World of Protocols</title>
-<desc>A comprehensive protocol relationship diagram showing 270+ protocols organized by OSI layer and domain.</desc>
+<desc>A comprehensive protocol relationship diagram showing 274 protocols organized by OSI layer and domain.</desc>
 
 <defs>
   <style type="text/css">
@@ -125,7 +125,7 @@
 
 <!-- ===================== TITLE ===================== -->
 <text x="1600" y="40" text-anchor="middle" class="title">World of Protocols</text>
-<text x="1600" y="62" text-anchor="middle" class="subtitle">270+ protocols organized by layer and domain  --  from physical bus to application layer</text>
+<text x="1600" y="62" text-anchor="middle" class="subtitle">274 protocols organized by layer and domain  --  from physical bus to application layer</text>
 <text x="1600" y="80" text-anchor="middle" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #888;">Click any protocol to view its documentation on GitHub</text>
 
 <!-- ===================== LAYER BANDS ===================== -->
@@ -249,6 +249,14 @@
   <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/raft.md">
     <rect x="464" y="161" width="44" height="28" class="proto-box"/>
     <text x="486" y="175" class="proto-name">Raft</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/caldav.md">
+    <rect x="80" y="197" width="66" height="28" class="proto-box"/>
+    <text x="113" y="211" class="proto-name">CalDAV</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/carddav.md">
+    <rect x="154" y="197" width="72" height="28" class="proto-box"/>
+    <text x="190" y="211" class="proto-name">CardDAV</text>
   </a>
 </g>
 
@@ -1522,6 +1530,14 @@
   <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/mcap.md">
     <rect x="166" y="2571" width="52" height="28" class="proto-box"/>
     <text x="192" y="2585" class="proto-name">MCAP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/vcard.md">
+    <rect x="226" y="2571" width="56" height="28" class="proto-box"/>
+    <text x="254" y="2585" class="proto-name">vCard</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/icalendar.md">
+    <rect x="290" y="2571" width="82" height="28" class="proto-box"/>
+    <text x="331" y="2585" class="proto-name">iCalendar</text>
   </a>
 </g>
 

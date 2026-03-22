@@ -1,6 +1,6 @@
 # World of Protocols
 
-A concise, structured quick-reference for network protocols. Each protocol gets a one-to-two-page summary with Mermaid packet diagrams, field breakdowns, and links to the official standards.
+A concise, structured quick-reference covering **274 protocols**. Each protocol gets a one-to-two-page summary with Mermaid packet diagrams, field breakdowns, and links to the official standards.
 
 Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol the same treatment: a brief description, a frame diagram, and a table of fields. This project aims to do the same for the full breadth of protocols found in modern networks.
 
@@ -69,6 +69,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [BitTorrent](protocols/web/bittorrent.md) | BEP 3 | Peer-to-peer file sharing (tracker, DHT, peer wire) |
 | [Raft](protocols/web/raft.md) | Ongaro 2014 | Distributed consensus (etcd, Consul, CockroachDB) |
 | [S3 API](protocols/web/s3.md) | Amazon | Object storage REST API (de facto standard) |
+| [CalDAV](protocols/web/caldav.md) | RFC 4791 | Calendar synchronization over WebDAV (HTTPS) |
+| [CardDAV](protocols/web/carddav.md) | RFC 6352 | Contact synchronization over WebDAV (HTTPS) |
 
 ### Email
 
@@ -400,6 +402,8 @@ Inspired by Rad Com's *A World of Protocols* — a book that gave every protocol
 | [TFRecord](protocols/data-formats/tfrecord.md) | TensorFlow | Sequential binary training data format |
 | [MCAP](protocols/data-formats/mcap.md) | mcap.dev | Multimodal timestamped log data (robotics, Foxglove) |
 | [Protocol Buffers](protocols/data-formats/protobuf.md) | Google | Binary serialization wire format (gRPC, compact encoding) |
+| [vCard](protocols/data-formats/vcard.md) | RFC 6350 | Electronic business card / contact interchange format |
+| [iCalendar](protocols/data-formats/icalendar.md) | RFC 5545 | Calendar event and scheduling interchange format |
 
 ### Encoding / Symbology
 
@@ -502,7 +506,7 @@ protocols/
   link-layer/               # Ethernet, ARP, PPP, 802.1Q, STP, LLDP, LACP
   network-layer/            # IP, IPv6, ICMP, ICMPv6, OSPF, IS-IS, MPLS, GRE, IPsec, IGMP, VRRP
   transport-layer/          # TCP, UDP, QUIC, SCTP
-  web/                      # HTTP, gRPC, WebSocket, WebTransport, HLS/DASH, CoAP
+  web/                      # HTTP, gRPC, WebSocket, WebTransport, HLS/DASH, CoAP, CalDAV, CardDAV
   email/                    # SMTP, IMAP, POP3, SPF, DKIM, DMARC, DANE
   voip/                     # SIP, RTP, RTCP, SRTP, SDP, WebRTC, ICE, STUN, TURN, DTLS, H.323, MGCP, Skinny, IAX
   messaging/                # MQTT, AMQP, NATS, Kafka, XMPP
@@ -524,7 +528,7 @@ protocols/
   storage/                  # iSCSI, Fibre Channel, NVMe-oF
   wireless/                 # 802.11, 802.11s, Bluetooth, BLE, Zigbee, Z-Wave, NFC, Matter, UWB, ANT+, EnOcean
   hpc/                      # RDMA/RoCE, NCCL, MPI
-  data-formats/             # Parquet, ONNX, GGUF, Safetensors, HDF5, TFRecord
+  data-formats/             # Parquet, ONNX, GGUF, Safetensors, HDF5, TFRecord, vCard, iCalendar
   encoding/                 # QR Code, UPC/EAN, Code 128, Data Matrix
 maps/                       # Protocol relationship visualizations
 scripts/                    # Tools for extracting data from Wireshark dissectors

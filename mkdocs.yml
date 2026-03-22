@@ -116,6 +116,8 @@ nav:
       - BitTorrent: protocols/web/bittorrent.md
       - Raft: protocols/web/raft.md
       - S3 API: protocols/web/s3.md
+      - CalDAV: protocols/web/caldav.md
+      - CardDAV: protocols/web/carddav.md
     - Email:
       - SMTP: protocols/email/smtp.md
       - IMAP: protocols/email/imap.md
@@ -343,6 +345,8 @@ nav:
       - TFRecord: protocols/data-formats/tfrecord.md
       - MCAP: protocols/data-formats/mcap.md
       - Protocol Buffers: protocols/data-formats/protobuf.md
+      - vCard: protocols/data-formats/vcard.md
+      - iCalendar: protocols/data-formats/icalendar.md
     - Encoding / Symbology:
       - QR Code: protocols/encoding/qrcode.md
       - UPC / EAN: protocols/encoding/upc.md
