@@ -1,0 +1,1639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 3200 2800" width="3200" height="2800">
+<title>World of Protocols</title>
+<desc>A comprehensive protocol relationship diagram showing 270+ protocols organized by OSI layer and domain.</desc>
+
+<defs>
+  <style type="text/css">
+    /* Base styles */
+    .title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 36px; font-weight: bold; fill: #1a1a2e; }
+    .subtitle { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; fill: #555; }
+    .layer-label { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+    .group-label { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; }
+    .proto-name { font-family: 'Consolas', 'Monaco', 'Courier New', monospace; font-size: 10px; fill: #fff; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+    .proto-box { rx: 4; ry: 4; stroke-width: 1; cursor: pointer; }
+    .proto-box:hover { stroke-width: 2; filter: brightness(1.15); }
+    .group-bg { rx: 8; ry: 8; stroke-width: 1.5; fill-opacity: 0.08; }
+    .layer-band { fill-opacity: 0.03; }
+    a { text-decoration: none; }
+    a:hover .proto-box { stroke-width: 2; }
+
+    /* Domain colors */
+    .c-web .proto-box { fill: #4a90d9; stroke: #3a7bc8; }
+    .c-email .proto-box { fill: #e67e22; stroke: #d35400; }
+    .c-dns .proto-box { fill: #27ae60; stroke: #1e8449; }
+    .c-voip .proto-box { fill: #e74c3c; stroke: #c0392b; }
+    .c-media .proto-box { fill: #8e44ad; stroke: #7d3c98; }
+    .c-msg .proto-box { fill: #16a085; stroke: #117a65; }
+    .c-db .proto-box { fill: #8b6914; stroke: #7a5c11; }
+    .c-file .proto-box { fill: #5b8c5a; stroke: #4a7a49; }
+    .c-mon .proto-box { fill: #607d8b; stroke: #4e6a77; }
+    .c-health .proto-box { fill: #e91e63; stroke: #c2185b; }
+    .c-sec .proto-box { fill: #c0392b; stroke: #a93226; }
+    .c-trans .proto-box { fill: #2c6e49; stroke: #1e5631; }
+    .c-route .proto-box { fill: #d35400; stroke: #bf4b00; }
+    .c-net .proto-box { fill: #2c3e50; stroke: #1a252f; }
+    .c-tunnel .proto-box { fill: #5c6bc0; stroke: #4a5ab0; }
+    .c-link .proto-box { fill: #6c3483; stroke: #5b2c6f; }
+    .c-wireless .proto-box { fill: #00acc1; stroke: #0097a7; }
+    .c-telecom .proto-box { fill: #ad1457; stroke: #880e4f; }
+    .c-auto .proto-box { fill: #37474f; stroke: #263238; }
+    .c-aviation .proto-box { fill: #0288d1; stroke: #0277bd; }
+    .c-space .proto-box { fill: #1a237e; stroke: #0d1259; }
+    .c-industrial .proto-box { fill: #827717; stroke: #6d6414; }
+    .c-bus .proto-box { fill: #00695c; stroke: #004d40; }
+    .c-serial .proto-box { fill: #546e7a; stroke: #455a64; }
+    .c-data .proto-box { fill: #6d4c41; stroke: #5d4037; }
+    .c-robotics .proto-box { fill: #ff7043; stroke: #e64a19; }
+    .c-encoding .proto-box { fill: #78909c; stroke: #607d8b; }
+    .c-hpc .proto-box { fill: #5e35b1; stroke: #4527a0; }
+    .c-storage .proto-box { fill: #5d4037; stroke: #4e342e; }
+    .c-radio .proto-box { fill: #f57c00; stroke: #e65100; }
+    .c-remote .proto-box { fill: #455a64; stroke: #37474f; }
+    .c-mobile .proto-box { fill: #7b1fa2; stroke: #6a1b9a; }
+
+    /* Group background colors */
+    .gb-web { fill: #4a90d9; stroke: #4a90d9; }
+    .gb-email { fill: #e67e22; stroke: #e67e22; }
+    .gb-dns { fill: #27ae60; stroke: #27ae60; }
+    .gb-voip { fill: #e74c3c; stroke: #e74c3c; }
+    .gb-media { fill: #8e44ad; stroke: #8e44ad; }
+    .gb-msg { fill: #16a085; stroke: #16a085; }
+    .gb-db { fill: #8b6914; stroke: #8b6914; }
+    .gb-file { fill: #5b8c5a; stroke: #5b8c5a; }
+    .gb-mon { fill: #607d8b; stroke: #607d8b; }
+    .gb-health { fill: #e91e63; stroke: #e91e63; }
+    .gb-sec { fill: #c0392b; stroke: #c0392b; }
+    .gb-trans { fill: #2c6e49; stroke: #2c6e49; }
+    .gb-route { fill: #d35400; stroke: #d35400; }
+    .gb-net { fill: #2c3e50; stroke: #2c3e50; }
+    .gb-tunnel { fill: #5c6bc0; stroke: #5c6bc0; }
+    .gb-link { fill: #6c3483; stroke: #6c3483; }
+    .gb-wireless { fill: #00acc1; stroke: #00acc1; }
+    .gb-telecom { fill: #ad1457; stroke: #ad1457; }
+    .gb-auto { fill: #37474f; stroke: #37474f; }
+    .gb-aviation { fill: #0288d1; stroke: #0288d1; }
+    .gb-space { fill: #1a237e; stroke: #1a237e; }
+    .gb-industrial { fill: #827717; stroke: #827717; }
+    .gb-bus { fill: #00695c; stroke: #00695c; }
+    .gb-serial { fill: #546e7a; stroke: #546e7a; }
+    .gb-data { fill: #6d4c41; stroke: #6d4c41; }
+    .gb-robotics { fill: #ff7043; stroke: #ff7043; }
+    .gb-encoding { fill: #78909c; stroke: #78909c; }
+    .gb-hpc { fill: #5e35b1; stroke: #5e35b1; }
+    .gb-storage { fill: #5d4037; stroke: #5d4037; }
+    .gb-radio { fill: #f57c00; stroke: #f57c00; }
+    .gb-remote { fill: #455a64; stroke: #455a64; }
+    .gb-mobile { fill: #7b1fa2; stroke: #7b1fa2; }
+  </style>
+</defs>
+
+<!-- Background -->
+<rect width="3200" height="2800" fill="#fafafa"/>
+
+<!-- Subtle grid -->
+<g opacity="0.06">
+  <line x1="0" y1="100" x2="3200" y2="100" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="200" x2="3200" y2="200" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="300" x2="3200" y2="300" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="400" x2="3200" y2="400" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="500" x2="3200" y2="500" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="600" x2="3200" y2="600" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="700" x2="3200" y2="700" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="800" x2="3200" y2="800" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="900" x2="3200" y2="900" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1000" x2="3200" y2="1000" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1100" x2="3200" y2="1100" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1200" x2="3200" y2="1200" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1300" x2="3200" y2="1300" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1400" x2="3200" y2="1400" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1500" x2="3200" y2="1500" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1600" x2="3200" y2="1600" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1700" x2="3200" y2="1700" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1800" x2="3200" y2="1800" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="1900" x2="3200" y2="1900" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2000" x2="3200" y2="2000" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2100" x2="3200" y2="2100" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2200" x2="3200" y2="2200" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2300" x2="3200" y2="2300" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2400" x2="3200" y2="2400" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2500" x2="3200" y2="2500" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2600" x2="3200" y2="2600" stroke="#888" stroke-width="0.5"/>
+  <line x1="0" y1="2700" x2="3200" y2="2700" stroke="#888" stroke-width="0.5"/>
+</g>
+
+<!-- ===================== TITLE ===================== -->
+<text x="1600" y="40" text-anchor="middle" class="title">World of Protocols</text>
+<text x="1600" y="62" text-anchor="middle" class="subtitle">270+ protocols organized by layer and domain  --  from physical bus to application layer</text>
+<text x="1600" y="80" text-anchor="middle" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #888;">Click any protocol to view its documentation on GitHub</text>
+
+<!-- ===================== LAYER BANDS ===================== -->
+<!-- Layer 1: Application Layer (y=90 to y=920) -->
+<rect x="55" y="90" width="3090" height="830" class="layer-band" fill="#4a90d9"/>
+<rect x="55" y="90" width="3090" height="830" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 2: Security / Presentation (y=920 to y=1100) -->
+<rect x="55" y="920" width="3090" height="180" class="layer-band" fill="#c0392b"/>
+<rect x="55" y="920" width="3090" height="180" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 3: Transport Layer (y=1100 to y=1230) -->
+<rect x="55" y="1100" width="3090" height="130" class="layer-band" fill="#2c6e49"/>
+<rect x="55" y="1100" width="3090" height="130" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 4: Network / Routing (y=1230 to y=1430) -->
+<rect x="55" y="1230" width="3090" height="200" class="layer-band" fill="#2c3e50"/>
+<rect x="55" y="1230" width="3090" height="200" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 5: Tunneling (y=1430 to y=1540) -->
+<rect x="55" y="1430" width="3090" height="110" class="layer-band" fill="#5c6bc0"/>
+<rect x="55" y="1430" width="3090" height="110" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 6: Data Link Layer (y=1540 to y=1730) -->
+<rect x="55" y="1540" width="3090" height="190" class="layer-band" fill="#6c3483"/>
+<rect x="55" y="1540" width="3090" height="190" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 7: Wireless / Radio (y=1730 to y=1960) -->
+<rect x="55" y="1730" width="3090" height="230" class="layer-band" fill="#00acc1"/>
+<rect x="55" y="1730" width="3090" height="230" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 8: Telecom (y=1960 to y=2160) -->
+<rect x="55" y="1960" width="3090" height="200" class="layer-band" fill="#ad1457"/>
+<rect x="55" y="1960" width="3090" height="200" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 9: Physical / Serial / Bus (y=2160 to y=2500) -->
+<rect x="55" y="2160" width="3090" height="340" class="layer-band" fill="#00695c"/>
+<rect x="55" y="2160" width="3090" height="340" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- Layer 10: Cross-Layer / Data Formats / Encoding (y=2500 to y=2760) -->
+<rect x="55" y="2500" width="3090" height="260" class="layer-band" fill="#6d4c41"/>
+<rect x="55" y="2500" width="3090" height="260" fill="none" stroke="#ccc" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+<!-- ===================== LAYER LABELS (left side) ===================== -->
+<g>
+  <text x="30" y="505" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 505)">APPLICATION LAYER</text>
+  <text x="30" y="1010" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 1010)">SECURITY</text>
+  <text x="30" y="1165" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 1165)">TRANSPORT</text>
+  <text x="30" y="1330" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 1330)">NETWORK</text>
+  <text x="30" y="1485" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 1485)">TUNNEL</text>
+  <text x="30" y="1635" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 1635)">DATA LINK</text>
+  <text x="30" y="1845" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 1845)">WIRELESS</text>
+  <text x="30" y="2060" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 2060)">TELECOM</text>
+  <text x="30" y="2330" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 2330)">PHYSICAL / BUS</text>
+  <text x="30" y="2630" class="layer-label" text-anchor="middle" transform="rotate(-90, 30, 2630)">DATA / HPC</text>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- APPLICATION LAYER GROUPS                                                  -->
+<!-- ======================================================================== -->
+
+<!-- ==================== WEB GROUP ==================== -->
+<g class="c-web" id="group-web">
+  <rect x="70" y="100" width="580" height="130" class="group-bg gb-web"/>
+  <text x="80" y="117" class="group-label" fill="#4a90d9">Web</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/http.md">
+    <rect x="80" y="125" width="50" height="28" class="proto-box"/>
+    <text x="105" y="139" class="proto-name">HTTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/grpc.md">
+    <rect x="138" y="125" width="52" height="28" class="proto-box"/>
+    <text x="164" y="139" class="proto-name">gRPC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/graphql.md">
+    <rect x="198" y="125" width="72" height="28" class="proto-box"/>
+    <text x="234" y="139" class="proto-name">GraphQL</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/sse.md">
+    <rect x="278" y="125" width="44" height="28" class="proto-box"/>
+    <text x="300" y="139" class="proto-name">SSE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/websocket.md">
+    <rect x="330" y="125" width="86" height="28" class="proto-box"/>
+    <text x="373" y="139" class="proto-name">WebSocket</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/webtransport.md">
+    <rect x="424" y="125" width="104" height="28" class="proto-box"/>
+    <text x="476" y="139" class="proto-name">WebTransport</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/coap.md">
+    <rect x="536" y="125" width="52" height="28" class="proto-box"/>
+    <text x="562" y="139" class="proto-name">CoAP</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/s3.md">
+    <rect x="80" y="161" width="36" height="28" class="proto-box"/>
+    <text x="98" y="175" class="proto-name">S3</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/bittorrent.md">
+    <rect x="124" y="161" width="82" height="28" class="proto-box"/>
+    <text x="165" y="175" class="proto-name">BitTorrent</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/ipp.md">
+    <rect x="214" y="161" width="42" height="28" class="proto-box"/>
+    <text x="235" y="175" class="proto-name">IPP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/lwm2m.md">
+    <rect x="264" y="161" width="64" height="28" class="proto-box"/>
+    <text x="296" y="175" class="proto-name">LwM2M</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/hls.md">
+    <rect x="336" y="161" width="42" height="28" class="proto-box"/>
+    <text x="357" y="175" class="proto-name">HLS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/proxy_protocol.md">
+    <rect x="386" y="161" width="70" height="28" class="proto-box"/>
+    <text x="421" y="175" class="proto-name">PROXY</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/web/raft.md">
+    <rect x="464" y="161" width="44" height="28" class="proto-box"/>
+    <text x="486" y="175" class="proto-name">Raft</text>
+  </a>
+</g>
+
+<!-- ==================== EMAIL GROUP ==================== -->
+<g class="c-email" id="group-email">
+  <rect x="660" y="100" width="450" height="130" class="group-bg gb-email"/>
+  <text x="670" y="117" class="group-label" fill="#e67e22">Email</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/smtp.md">
+    <rect x="670" y="125" width="56" height="28" class="proto-box"/>
+    <text x="698" y="139" class="proto-name">SMTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/imap.md">
+    <rect x="734" y="125" width="50" height="28" class="proto-box"/>
+    <text x="759" y="139" class="proto-name">IMAP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/pop3.md">
+    <rect x="792" y="125" width="50" height="28" class="proto-box"/>
+    <text x="817" y="139" class="proto-name">POP3</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/jmap.md">
+    <rect x="850" y="125" width="52" height="28" class="proto-box"/>
+    <text x="876" y="139" class="proto-name">JMAP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/spf.md">
+    <rect x="910" y="125" width="42" height="28" class="proto-box"/>
+    <text x="931" y="139" class="proto-name">SPF</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/dkim.md">
+    <rect x="960" y="125" width="52" height="28" class="proto-box"/>
+    <text x="986" y="139" class="proto-name">DKIM</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/dmarc.md">
+    <rect x="670" y="161" width="64" height="28" class="proto-box"/>
+    <text x="702" y="175" class="proto-name">DMARC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/email/dane.md">
+    <rect x="742" y="161" width="52" height="28" class="proto-box"/>
+    <text x="768" y="175" class="proto-name">DANE</text>
+  </a>
+</g>
+
+<!-- ==================== DNS / NAMING GROUP ==================== -->
+<g class="c-dns" id="group-dns">
+  <rect x="1120" y="100" width="520" height="130" class="group-bg gb-dns"/>
+  <text x="1130" y="117" class="group-label" fill="#27ae60">DNS / Naming</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/dns.md">
+    <rect x="1130" y="125" width="44" height="28" class="proto-box"/>
+    <text x="1152" y="139" class="proto-name">DNS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/doh.md">
+    <rect x="1182" y="125" width="44" height="28" class="proto-box"/>
+    <text x="1204" y="139" class="proto-name">DoH</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/dot.md">
+    <rect x="1234" y="125" width="44" height="28" class="proto-box"/>
+    <text x="1256" y="139" class="proto-name">DoT</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/dnssec.md">
+    <rect x="1286" y="125" width="66" height="28" class="proto-box"/>
+    <text x="1319" y="139" class="proto-name">DNSSEC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/mdns.md">
+    <rect x="1360" y="125" width="56" height="28" class="proto-box"/>
+    <text x="1388" y="139" class="proto-name">mDNS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/dhcp.md">
+    <rect x="1424" y="125" width="56" height="28" class="proto-box"/>
+    <text x="1452" y="139" class="proto-name">DHCP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/dhcpv6.md">
+    <rect x="1488" y="125" width="70" height="28" class="proto-box"/>
+    <text x="1523" y="139" class="proto-name">DHCPv6</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/bootp_pxe.md">
+    <rect x="1130" y="161" width="90" height="28" class="proto-box"/>
+    <text x="1175" y="175" class="proto-name">BOOTP/PXE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/wol.md">
+    <rect x="1228" y="161" width="44" height="28" class="proto-box"/>
+    <text x="1250" y="175" class="proto-name">WOL</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/ldap.md">
+    <rect x="1280" y="161" width="52" height="28" class="proto-box"/>
+    <text x="1306" y="175" class="proto-name">LDAP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/ntp.md">
+    <rect x="1340" y="161" width="44" height="28" class="proto-box"/>
+    <text x="1362" y="175" class="proto-name">NTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/naming/dhcp_options.md">
+    <rect x="1392" y="161" width="100" height="28" class="proto-box"/>
+    <text x="1442" y="175" class="proto-name">DHCP Options</text>
+  </a>
+</g>
+
+<!-- ==================== VOIP / MEDIA GROUP ==================== -->
+<g class="c-voip" id="group-voip">
+  <rect x="1650" y="100" width="680" height="130" class="group-bg gb-voip"/>
+  <text x="1660" y="117" class="group-label" fill="#e74c3c">VoIP / Real-Time Media</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/sip.md">
+    <rect x="1660" y="125" width="40" height="28" class="proto-box"/>
+    <text x="1680" y="139" class="proto-name">SIP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/rtp.md">
+    <rect x="1708" y="125" width="42" height="28" class="proto-box"/>
+    <text x="1729" y="139" class="proto-name">RTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/rtcp.md">
+    <rect x="1758" y="125" width="52" height="28" class="proto-box"/>
+    <text x="1784" y="139" class="proto-name">RTCP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/srtp.md">
+    <rect x="1818" y="125" width="52" height="28" class="proto-box"/>
+    <text x="1844" y="139" class="proto-name">SRTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/sdp.md">
+    <rect x="1878" y="125" width="42" height="28" class="proto-box"/>
+    <text x="1899" y="139" class="proto-name">SDP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/webrtc.md">
+    <rect x="1928" y="125" width="68" height="28" class="proto-box"/>
+    <text x="1962" y="139" class="proto-name">WebRTC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/ice.md">
+    <rect x="2004" y="125" width="38" height="28" class="proto-box"/>
+    <text x="2023" y="139" class="proto-name">ICE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/stun.md">
+    <rect x="2050" y="125" width="52" height="28" class="proto-box"/>
+    <text x="2076" y="139" class="proto-name">STUN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/turn.md">
+    <rect x="2110" y="125" width="52" height="28" class="proto-box"/>
+    <text x="2136" y="139" class="proto-name">TURN</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/rtsp.md">
+    <rect x="1660" y="161" width="52" height="28" class="proto-box"/>
+    <text x="1686" y="175" class="proto-name">RTSP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/dtls.md">
+    <rect x="1720" y="161" width="52" height="28" class="proto-box"/>
+    <text x="1746" y="175" class="proto-name">DTLS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/h323.md">
+    <rect x="1780" y="161" width="52" height="28" class="proto-box"/>
+    <text x="1806" y="175" class="proto-name">H.323</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/iax.md">
+    <rect x="1840" y="161" width="42" height="28" class="proto-box"/>
+    <text x="1861" y="175" class="proto-name">IAX</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/mgcp.md">
+    <rect x="1890" y="161" width="56" height="28" class="proto-box"/>
+    <text x="1918" y="175" class="proto-name">MGCP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/skinny.md">
+    <rect x="1954" y="161" width="64" height="28" class="proto-box"/>
+    <text x="1986" y="175" class="proto-name">Skinny</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/voip/simple.md">
+    <rect x="2026" y="161" width="64" height="28" class="proto-box"/>
+    <text x="2058" y="175" class="proto-name">SIMPLE</text>
+  </a>
+</g>
+
+<!-- ==================== BROADCAST / AV GROUP ==================== -->
+<g class="c-media" id="group-media">
+  <rect x="2340" y="100" width="800" height="130" class="group-bg gb-media"/>
+  <text x="2350" y="117" class="group-label" fill="#8e44ad">Broadcast / AV</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/ndi.md">
+    <rect x="2350" y="125" width="42" height="28" class="proto-box"/>
+    <text x="2371" y="139" class="proto-name">NDI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/smpte2110.md">
+    <rect x="2400" y="125" width="88" height="28" class="proto-box"/>
+    <text x="2444" y="139" class="proto-name">ST 2110</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/smpte2022.md">
+    <rect x="2496" y="125" width="88" height="28" class="proto-box"/>
+    <text x="2540" y="139" class="proto-name">ST 2022</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/aes67.md">
+    <rect x="2592" y="125" width="60" height="28" class="proto-box"/>
+    <text x="2622" y="139" class="proto-name">AES67</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/dante.md">
+    <rect x="2660" y="125" width="56" height="28" class="proto-box"/>
+    <text x="2688" y="139" class="proto-name">Dante</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/avb.md">
+    <rect x="2724" y="125" width="76" height="28" class="proto-box"/>
+    <text x="2762" y="139" class="proto-name">AVB/TSN</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/upnp.md">
+    <rect x="2350" y="161" width="94" height="28" class="proto-box"/>
+    <text x="2397" y="175" class="proto-name">UPnP/DLNA</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/media/onvif.md">
+    <rect x="2452" y="161" width="60" height="28" class="proto-box"/>
+    <text x="2482" y="175" class="proto-name">ONVIF</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/smpte_timecode.md">
+    <rect x="2520" y="161" width="86" height="28" class="proto-box"/>
+    <text x="2563" y="175" class="proto-name">SMPTE TC</text>
+  </a>
+</g>
+
+<!-- ==================== MESSAGING GROUP ==================== -->
+<g class="c-msg" id="group-msg">
+  <rect x="70" y="240" width="530" height="130" class="group-bg gb-msg"/>
+  <text x="80" y="257" class="group-label" fill="#16a085">Messaging / Queues</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/mqtt.md">
+    <rect x="80" y="265" width="56" height="28" class="proto-box"/>
+    <text x="108" y="279" class="proto-name">MQTT</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/amqp.md">
+    <rect x="144" y="265" width="56" height="28" class="proto-box"/>
+    <text x="172" y="279" class="proto-name">AMQP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/nats.md">
+    <rect x="208" y="265" width="52" height="28" class="proto-box"/>
+    <text x="234" y="279" class="proto-name">NATS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/kafka.md">
+    <rect x="268" y="265" width="56" height="28" class="proto-box"/>
+    <text x="296" y="279" class="proto-name">Kafka</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/xmpp.md">
+    <rect x="332" y="265" width="56" height="28" class="proto-box"/>
+    <text x="360" y="279" class="proto-name">XMPP</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/zeromq.md">
+    <rect x="80" y="301" width="70" height="28" class="proto-box"/>
+    <text x="115" y="315" class="proto-name">ZeroMQ</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/matrix.md">
+    <rect x="158" y="301" width="60" height="28" class="proto-box"/>
+    <text x="188" y="315" class="proto-name">Matrix</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/messaging/irc.md">
+    <rect x="226" y="301" width="42" height="28" class="proto-box"/>
+    <text x="247" y="315" class="proto-name">IRC</text>
+  </a>
+</g>
+
+<!-- ==================== DATABASE GROUP ==================== -->
+<g class="c-db" id="group-db">
+  <rect x="610" y="240" width="420" height="130" class="group-bg gb-db"/>
+  <text x="620" y="257" class="group-label" fill="#8b6914">Database</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/database/mysql.md">
+    <rect x="620" y="265" width="60" height="28" class="proto-box"/>
+    <text x="650" y="279" class="proto-name">MySQL</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/database/postgresql.md">
+    <rect x="688" y="265" width="90" height="28" class="proto-box"/>
+    <text x="733" y="279" class="proto-name">PostgreSQL</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/database/redis.md">
+    <rect x="786" y="265" width="56" height="28" class="proto-box"/>
+    <text x="814" y="279" class="proto-name">Redis</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/database/mongodb.md">
+    <rect x="850" y="265" width="76" height="28" class="proto-box"/>
+    <text x="888" y="279" class="proto-name">MongoDB</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/database/tds.md">
+    <rect x="620" y="301" width="42" height="28" class="proto-box"/>
+    <text x="641" y="315" class="proto-name">TDS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/database/memcached.md">
+    <rect x="670" y="301" width="90" height="28" class="proto-box"/>
+    <text x="715" y="315" class="proto-name">Memcached</text>
+  </a>
+</g>
+
+<!-- ==================== FILE SHARING GROUP ==================== -->
+<g class="c-file" id="group-file">
+  <rect x="1040" y="240" width="470" height="130" class="group-bg gb-file"/>
+  <text x="1050" y="257" class="group-label" fill="#5b8c5a">File Sharing / Remote Access</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/ftp.md">
+    <rect x="1050" y="265" width="42" height="28" class="proto-box"/>
+    <text x="1071" y="279" class="proto-name">FTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/sftp.md">
+    <rect x="1100" y="265" width="50" height="28" class="proto-box"/>
+    <text x="1125" y="279" class="proto-name">SFTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/scp.md">
+    <rect x="1158" y="265" width="44" height="28" class="proto-box"/>
+    <text x="1180" y="279" class="proto-name">SCP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/smb.md">
+    <rect x="1210" y="265" width="48" height="28" class="proto-box"/>
+    <text x="1234" y="279" class="proto-name">SMB</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/nfs.md">
+    <rect x="1266" y="265" width="44" height="28" class="proto-box"/>
+    <text x="1288" y="279" class="proto-name">NFS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/tftp.md">
+    <rect x="1318" y="265" width="50" height="28" class="proto-box"/>
+    <text x="1343" y="279" class="proto-name">TFTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/file-sharing/netbios.md">
+    <rect x="1376" y="265" width="70" height="28" class="proto-box"/>
+    <text x="1411" y="279" class="proto-name">NetBIOS</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/remote-access/ssh.md">
+    <rect x="1050" y="301" width="44" height="28" class="proto-box c-remote"/>
+    <text x="1072" y="315" class="proto-name">SSH</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/remote-access/telnet.md">
+    <rect x="1102" y="301" width="60" height="28" class="proto-box c-remote"/>
+    <text x="1132" y="315" class="proto-name">Telnet</text>
+  </a>
+</g>
+
+<!-- ==================== MONITORING GROUP ==================== -->
+<g class="c-mon" id="group-monitoring">
+  <rect x="1520" y="240" width="620" height="130" class="group-bg gb-mon"/>
+  <text x="1530" y="257" class="group-label" fill="#607d8b">Monitoring / Management</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/snmp.md">
+    <rect x="1530" y="265" width="56" height="28" class="proto-box"/>
+    <text x="1558" y="279" class="proto-name">SNMP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/netconf.md">
+    <rect x="1594" y="265" width="76" height="28" class="proto-box"/>
+    <text x="1632" y="279" class="proto-name">NETCONF</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/gnmi.md">
+    <rect x="1678" y="265" width="52" height="28" class="proto-box"/>
+    <text x="1704" y="279" class="proto-name">gNMI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/restconf.md">
+    <rect x="1738" y="265" width="86" height="28" class="proto-box"/>
+    <text x="1781" y="279" class="proto-name">RESTCONF</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/openflow.md">
+    <rect x="1832" y="265" width="84" height="28" class="proto-box"/>
+    <text x="1874" y="279" class="proto-name">OpenFlow</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/syslog.md">
+    <rect x="1924" y="265" width="62" height="28" class="proto-box"/>
+    <text x="1955" y="279" class="proto-name">Syslog</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/netflow.md">
+    <rect x="1530" y="301" width="70" height="28" class="proto-box"/>
+    <text x="1565" y="315" class="proto-name">NetFlow</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/sflow.md">
+    <rect x="1608" y="301" width="56" height="28" class="proto-box"/>
+    <text x="1636" y="315" class="proto-name">sFlow</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/otlp.md">
+    <rect x="1672" y="301" width="52" height="28" class="proto-box"/>
+    <text x="1698" y="315" class="proto-name">OTLP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/ptp.md">
+    <rect x="1732" y="301" width="42" height="28" class="proto-box"/>
+    <text x="1753" y="315" class="proto-name">PTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/monitoring/tr069.md">
+    <rect x="1782" y="301" width="66" height="28" class="proto-box"/>
+    <text x="1815" y="315" class="proto-name">TR-069</text>
+  </a>
+</g>
+
+<!-- ==================== HEALTHCARE GROUP ==================== -->
+<g class="c-health" id="group-health">
+  <rect x="2150" y="240" width="240" height="130" class="group-bg gb-health"/>
+  <text x="2160" y="257" class="group-label" fill="#e91e63">Healthcare</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/healthcare/dicom.md">
+    <rect x="2160" y="265" width="66" height="28" class="proto-box"/>
+    <text x="2193" y="279" class="proto-name">DICOM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/healthcare/hl7.md">
+    <rect x="2234" y="265" width="80" height="28" class="proto-box"/>
+    <text x="2274" y="279" class="proto-name">HL7/FHIR</text>
+  </a>
+</g>
+
+<!-- ==================== MOBILE SYNC GROUP ==================== -->
+<g class="c-mobile" id="group-mobile">
+  <rect x="2400" y="240" width="440" height="130" class="group-bg gb-mobile"/>
+  <text x="2410" y="257" class="group-label" fill="#7b1fa2">Mobile Sync</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/mobile-sync/eas.md">
+    <rect x="2410" y="265" width="42" height="28" class="proto-box"/>
+    <text x="2431" y="279" class="proto-name">EAS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/mobile-sync/syncml.md">
+    <rect x="2460" y="265" width="68" height="28" class="proto-box"/>
+    <text x="2494" y="279" class="proto-name">SyncML</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/mobile-sync/wbxml.md">
+    <rect x="2536" y="265" width="66" height="28" class="proto-box"/>
+    <text x="2569" y="279" class="proto-name">WBXML</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/mobile-sync/deltasync.md">
+    <rect x="2610" y="265" width="82" height="28" class="proto-box"/>
+    <text x="2651" y="279" class="proto-name">DeltaSync</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/mobile-sync/smpp.md">
+    <rect x="2410" y="301" width="56" height="28" class="proto-box"/>
+    <text x="2438" y="315" class="proto-name">SMPP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/mobile-sync/mm5.md">
+    <rect x="2474" y="301" width="44" height="28" class="proto-box"/>
+    <text x="2496" y="315" class="proto-name">MM5</text>
+  </a>
+</g>
+
+<!-- ==================== INDUSTRIAL GROUP ==================== -->
+<g class="c-industrial" id="group-industrial">
+  <rect x="70" y="380" width="960" height="170" class="group-bg gb-industrial"/>
+  <text x="80" y="397" class="group-label" fill="#827717">Industrial / SCADA / Building</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/modbus.md">
+    <rect x="80" y="405" width="68" height="28" class="proto-box"/>
+    <text x="114" y="419" class="proto-name">Modbus</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/opcua.md">
+    <rect x="156" y="405" width="66" height="28" class="proto-box"/>
+    <text x="189" y="419" class="proto-name">OPC UA</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/opcda.md">
+    <rect x="230" y="405" width="66" height="28" class="proto-box"/>
+    <text x="263" y="419" class="proto-name">OPC DA</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/profibus.md">
+    <rect x="304" y="405" width="80" height="28" class="proto-box"/>
+    <text x="344" y="419" class="proto-name">PROFIBUS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/profinet.md">
+    <rect x="392" y="405" width="82" height="28" class="proto-box"/>
+    <text x="433" y="419" class="proto-name">PROFINET</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/ethernetip.md">
+    <rect x="482" y="405" width="96" height="28" class="proto-box"/>
+    <text x="530" y="419" class="proto-name">EtherNet/IP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/bacnet.md">
+    <rect x="586" y="405" width="66" height="28" class="proto-box"/>
+    <text x="619" y="419" class="proto-name">BACnet</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/knx.md">
+    <rect x="660" y="405" width="44" height="28" class="proto-box"/>
+    <text x="682" y="419" class="proto-name">KNX</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/dnp3.md">
+    <rect x="712" y="405" width="50" height="28" class="proto-box"/>
+    <text x="737" y="419" class="proto-name">DNP3</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/iec61850.md">
+    <rect x="80" y="441" width="82" height="28" class="proto-box"/>
+    <text x="121" y="455" class="proto-name">IEC 61850</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/iec104.md">
+    <rect x="170" y="441" width="70" height="28" class="proto-box"/>
+    <text x="205" y="455" class="proto-name">IEC 104</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/ocpp.md">
+    <rect x="248" y="441" width="52" height="28" class="proto-box"/>
+    <text x="274" y="455" class="proto-name">OCPP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/nmea.md">
+    <rect x="308" y="441" width="56" height="28" class="proto-box"/>
+    <text x="336" y="455" class="proto-name">NMEA</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/industrial/iso8583.md">
+    <rect x="372" y="441" width="76" height="28" class="proto-box"/>
+    <text x="410" y="455" class="proto-name">ISO 8583</text>
+  </a>
+</g>
+
+<!-- ==================== AUTOMOTIVE GROUP ==================== -->
+<g class="c-auto" id="group-auto">
+  <rect x="1040" y="380" width="340" height="170" class="group-bg gb-auto"/>
+  <text x="1050" y="397" class="group-label" fill="#37474f">Automotive</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/automotive/obdii.md">
+    <rect x="1050" y="405" width="62" height="28" class="proto-box"/>
+    <text x="1081" y="419" class="proto-name">OBD-II</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/automotive/j1939.md">
+    <rect x="1120" y="405" width="56" height="28" class="proto-box"/>
+    <text x="1148" y="419" class="proto-name">J1939</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/automotive/someip.md">
+    <rect x="1184" y="405" width="76" height="28" class="proto-box"/>
+    <text x="1222" y="419" class="proto-name">SOME/IP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/automotive/doip.md">
+    <rect x="1050" y="441" width="76" height="28" class="proto-box"/>
+    <text x="1088" y="455" class="proto-name">DoIP/UDS</text>
+  </a>
+</g>
+
+<!-- ==================== AVIATION GROUP ==================== -->
+<g class="c-aviation" id="group-aviation">
+  <rect x="1390" y="380" width="410" height="170" class="group-bg gb-aviation"/>
+  <text x="1400" y="397" class="group-label" fill="#0288d1">Aviation</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/aviation/acars.md">
+    <rect x="1400" y="405" width="62" height="28" class="proto-box"/>
+    <text x="1431" y="419" class="proto-name">ACARS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/aviation/modes.md">
+    <rect x="1470" y="405" width="96" height="28" class="proto-box"/>
+    <text x="1518" y="419" class="proto-name">Mode S/TCAS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/aviation/asterix.md">
+    <rect x="1574" y="405" width="72" height="28" class="proto-box"/>
+    <text x="1610" y="419" class="proto-name">ASTERIX</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/aviation/metar.md">
+    <rect x="1400" y="441" width="64" height="28" class="proto-box"/>
+    <text x="1432" y="455" class="proto-name">METAR</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/aviation/cpdlc.md">
+    <rect x="1472" y="441" width="64" height="28" class="proto-box"/>
+    <text x="1504" y="455" class="proto-name">CPDLC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/adsb.md">
+    <rect x="1544" y="441" width="62" height="28" class="proto-box"/>
+    <text x="1575" y="455" class="proto-name">ADS-B</text>
+  </a>
+</g>
+
+<!-- ==================== SPACE GROUP ==================== -->
+<g class="c-space" id="group-space">
+  <rect x="1810" y="380" width="340" height="170" class="group-bg gb-space"/>
+  <text x="1820" y="397" class="group-label" fill="#1a237e">Space / Satellite</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/space/gps.md">
+    <rect x="1820" y="405" width="44" height="28" class="proto-box"/>
+    <text x="1842" y="419" class="proto-name">GPS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/space/rtcm.md">
+    <rect x="1872" y="405" width="56" height="28" class="proto-box"/>
+    <text x="1900" y="419" class="proto-name">RTCM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/space/ccsds.md">
+    <rect x="1936" y="405" width="64" height="28" class="proto-box"/>
+    <text x="1968" y="419" class="proto-name">CCSDS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/space/lrit.md">
+    <rect x="2008" y="405" width="76" height="28" class="proto-box"/>
+    <text x="2046" y="419" class="proto-name">LRIT/HRIT</text>
+  </a>
+</g>
+
+<!-- ==================== ROBOTICS GROUP ==================== -->
+<g class="c-robotics" id="group-robotics">
+  <rect x="2160" y="380" width="400" height="170" class="group-bg gb-robotics"/>
+  <text x="2170" y="397" class="group-label" fill="#ff7043">Robotics</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/robotics/dds.md">
+    <rect x="2170" y="405" width="82" height="28" class="proto-box"/>
+    <text x="2211" y="419" class="proto-name">DDS/ROS2</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/robotics/ros1.md">
+    <rect x="2260" y="405" width="52" height="28" class="proto-box"/>
+    <text x="2286" y="419" class="proto-name">ROS1</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/robotics/mavlink.md">
+    <rect x="2320" y="405" width="72" height="28" class="proto-box"/>
+    <text x="2356" y="419" class="proto-name">MAVLink</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/robotics/ethercat.md">
+    <rect x="2170" y="441" width="78" height="28" class="proto-box"/>
+    <text x="2209" y="455" class="proto-name">EtherCAT</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/robotics/canopen.md">
+    <rect x="2256" y="441" width="78" height="28" class="proto-box"/>
+    <text x="2295" y="455" class="proto-name">CANopen</text>
+  </a>
+</g>
+
+<!-- ==================== STORAGE GROUP ==================== -->
+<g class="c-storage" id="group-storage">
+  <rect x="2570" y="380" width="340" height="170" class="group-bg gb-storage"/>
+  <text x="2580" y="397" class="group-label" fill="#5d4037">Storage</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/storage/iscsi.md">
+    <rect x="2580" y="405" width="56" height="28" class="proto-box"/>
+    <text x="2608" y="419" class="proto-name">iSCSI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/storage/fibrechannel.md">
+    <rect x="2644" y="405" width="104" height="28" class="proto-box"/>
+    <text x="2696" y="419" class="proto-name">Fibre Channel</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/storage/nvmeof.md">
+    <rect x="2756" y="405" width="76" height="28" class="proto-box"/>
+    <text x="2794" y="419" class="proto-name">NVMe-oF</text>
+  </a>
+</g>
+
+<!-- ==================== HPC GROUP ==================== -->
+<g class="c-hpc" id="group-hpc">
+  <rect x="70" y="560" width="350" height="100" class="group-bg gb-hpc"/>
+  <text x="80" y="577" class="group-label" fill="#5e35b1">HPC / High Performance</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/hpc/rdma.md">
+    <rect x="80" y="585" width="90" height="28" class="proto-box"/>
+    <text x="125" y="599" class="proto-name">RDMA/RoCE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/hpc/mpi.md">
+    <rect x="178" y="585" width="42" height="28" class="proto-box"/>
+    <text x="199" y="599" class="proto-name">MPI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/hpc/nccl.md">
+    <rect x="228" y="585" width="52" height="28" class="proto-box"/>
+    <text x="254" y="599" class="proto-name">NCCL</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- SECURITY / PRESENTATION LAYER                                             -->
+<!-- ======================================================================== -->
+
+<!-- ==================== SECURITY GROUP ==================== -->
+<g class="c-sec" id="group-security">
+  <rect x="70" y="930" width="3070" height="160" class="group-bg gb-sec"/>
+  <text x="80" y="947" class="group-label" fill="#c0392b">Security / Authentication / Encryption</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/tls.md">
+    <rect x="80" y="955" width="42" height="28" class="proto-box"/>
+    <text x="101" y="969" class="proto-name">TLS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/ipsec.md">
+    <rect x="130" y="955" width="56" height="28" class="proto-box"/>
+    <text x="158" y="969" class="proto-name">IPsec</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/wireguard.md">
+    <rect x="194" y="955" width="86" height="28" class="proto-box"/>
+    <text x="237" y="969" class="proto-name">WireGuard</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/openvpn.md">
+    <rect x="288" y="955" width="78" height="28" class="proto-box"/>
+    <text x="327" y="969" class="proto-name">OpenVPN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/socks.md">
+    <rect x="374" y="955" width="66" height="28" class="proto-box"/>
+    <text x="407" y="969" class="proto-name">SOCKS5</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/tor.md">
+    <rect x="448" y="955" width="42" height="28" class="proto-box"/>
+    <text x="469" y="969" class="proto-name">Tor</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/kerberos.md">
+    <rect x="498" y="955" width="78" height="28" class="proto-box"/>
+    <text x="537" y="969" class="proto-name">Kerberos</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/radius.md">
+    <rect x="584" y="955" width="68" height="28" class="proto-box"/>
+    <text x="618" y="969" class="proto-name">RADIUS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/tacacs.md">
+    <rect x="660" y="955" width="78" height="28" class="proto-box"/>
+    <text x="699" y="969" class="proto-name">TACACS+</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/oauth2.md">
+    <rect x="746" y="955" width="66" height="28" class="proto-box"/>
+    <text x="779" y="969" class="proto-name">OAuth2</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/saml.md">
+    <rect x="820" y="955" width="52" height="28" class="proto-box"/>
+    <text x="846" y="969" class="proto-name">SAML</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/fido2.md">
+    <rect x="80" y="991" width="56" height="28" class="proto-box"/>
+    <text x="108" y="1005" class="proto-name">FIDO2</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/signal_protocol.md">
+    <rect x="144" y="991" width="60" height="28" class="proto-box"/>
+    <text x="174" y="1005" class="proto-name">Signal</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/x509.md">
+    <rect x="212" y="991" width="56" height="28" class="proto-box"/>
+    <text x="240" y="1005" class="proto-name">X.509</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/acme.md">
+    <rect x="276" y="991" width="56" height="28" class="proto-box"/>
+    <text x="304" y="1005" class="proto-name">ACME</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/ntlm.md">
+    <rect x="340" y="991" width="56" height="28" class="proto-box"/>
+    <text x="368" y="1005" class="proto-name">NTLM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/8021x.md">
+    <rect x="404" y="991" width="64" height="28" class="proto-box"/>
+    <text x="436" y="1005" class="proto-name">802.1X</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/wpa.md">
+    <rect x="476" y="991" width="46" height="28" class="proto-box"/>
+    <text x="499" y="1005" class="proto-name">WPA</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/security/scim.md">
+    <rect x="530" y="991" width="52" height="28" class="proto-box"/>
+    <text x="556" y="1005" class="proto-name">SCIM</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- TRANSPORT LAYER                                                           -->
+<!-- ======================================================================== -->
+
+<g class="c-trans" id="group-transport">
+  <rect x="70" y="1110" width="560" height="110" class="group-bg gb-trans"/>
+  <text x="80" y="1127" class="group-label" fill="#2c6e49">Transport</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/transport-layer/tcp.md">
+    <rect x="80" y="1135" width="42" height="28" class="proto-box"/>
+    <text x="101" y="1149" class="proto-name">TCP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/transport-layer/udp.md">
+    <rect x="130" y="1135" width="42" height="28" class="proto-box"/>
+    <text x="151" y="1149" class="proto-name">UDP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/transport-layer/quic.md">
+    <rect x="180" y="1135" width="52" height="28" class="proto-box"/>
+    <text x="206" y="1149" class="proto-name">QUIC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/transport-layer/sctp.md">
+    <rect x="240" y="1135" width="52" height="28" class="proto-box"/>
+    <text x="266" y="1149" class="proto-name">SCTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/transport-layer/dccp.md">
+    <rect x="300" y="1135" width="52" height="28" class="proto-box"/>
+    <text x="326" y="1149" class="proto-name">DCCP</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- NETWORK / ROUTING LAYER                                                   -->
+<!-- ======================================================================== -->
+
+<!-- ==================== NETWORK GROUP ==================== -->
+<g class="c-net" id="group-network">
+  <rect x="70" y="1240" width="560" height="110" class="group-bg gb-net"/>
+  <text x="80" y="1257" class="group-label" fill="#2c3e50">Network Layer</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/ip.md">
+    <rect x="80" y="1265" width="50" height="28" class="proto-box"/>
+    <text x="105" y="1279" class="proto-name">IPv4</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/ipv6.md">
+    <rect x="138" y="1265" width="50" height="28" class="proto-box"/>
+    <text x="163" y="1279" class="proto-name">IPv6</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/icmp.md">
+    <rect x="196" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="222" y="1279" class="proto-name">ICMP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/icmpv6.md">
+    <rect x="256" y="1265" width="68" height="28" class="proto-box"/>
+    <text x="290" y="1279" class="proto-name">ICMPv6</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/igmp.md">
+    <rect x="332" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="358" y="1279" class="proto-name">IGMP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/gre.md">
+    <rect x="392" y="1265" width="44" height="28" class="proto-box"/>
+    <text x="414" y="1279" class="proto-name">GRE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/mpls.md">
+    <rect x="444" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="470" y="1279" class="proto-name">MPLS</text>
+  </a>
+</g>
+
+<!-- ==================== ROUTING GROUP ==================== -->
+<g class="c-route" id="group-routing">
+  <rect x="650" y="1240" width="740" height="110" class="group-bg gb-route"/>
+  <text x="660" y="1257" class="group-label" fill="#d35400">Routing</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/bgp.md">
+    <rect x="660" y="1265" width="44" height="28" class="proto-box"/>
+    <text x="682" y="1279" class="proto-name">BGP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/ospf.md">
+    <rect x="712" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="738" y="1279" class="proto-name">OSPF</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/eigrp.md">
+    <rect x="772" y="1265" width="60" height="28" class="proto-box"/>
+    <text x="802" y="1279" class="proto-name">EIGRP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/isis.md">
+    <rect x="840" y="1265" width="50" height="28" class="proto-box"/>
+    <text x="865" y="1279" class="proto-name">IS-IS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/rip.md">
+    <rect x="898" y="1265" width="42" height="28" class="proto-box"/>
+    <text x="919" y="1279" class="proto-name">RIP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/pim.md">
+    <rect x="948" y="1265" width="42" height="28" class="proto-box"/>
+    <text x="969" y="1279" class="proto-name">PIM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/rsvp.md">
+    <rect x="998" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="1024" y="1279" class="proto-name">RSVP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/ldp.md">
+    <rect x="1058" y="1265" width="42" height="28" class="proto-box"/>
+    <text x="1079" y="1279" class="proto-name">LDP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/srv6.md">
+    <rect x="1108" y="1265" width="50" height="28" class="proto-box"/>
+    <text x="1133" y="1279" class="proto-name">SRv6</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/network-layer/vrrp.md">
+    <rect x="1166" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="1192" y="1279" class="proto-name">VRRP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/routing/hsrp.md">
+    <rect x="1226" y="1265" width="52" height="28" class="proto-box"/>
+    <text x="1252" y="1279" class="proto-name">HSRP</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- TUNNELING LAYER                                                           -->
+<!-- ======================================================================== -->
+
+<g class="c-tunnel" id="group-tunneling">
+  <rect x="70" y="1440" width="560" height="90" class="group-bg gb-tunnel"/>
+  <text x="80" y="1457" class="group-label" fill="#5c6bc0">Tunneling / Overlay</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/vxlan.md">
+    <rect x="80" y="1465" width="60" height="28" class="proto-box"/>
+    <text x="110" y="1479" class="proto-name">VXLAN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/geneve.md">
+    <rect x="148" y="1465" width="68" height="28" class="proto-box"/>
+    <text x="182" y="1479" class="proto-name">Geneve</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/evpn.md">
+    <rect x="224" y="1465" width="52" height="28" class="proto-box"/>
+    <text x="250" y="1479" class="proto-name">EVPN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/gtp.md">
+    <rect x="284" y="1465" width="42" height="28" class="proto-box"/>
+    <text x="305" y="1479" class="proto-name">GTP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/tunneling/l2tp.md">
+    <rect x="334" y="1465" width="50" height="28" class="proto-box"/>
+    <text x="359" y="1479" class="proto-name">L2TP</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- DATA LINK LAYER                                                           -->
+<!-- ======================================================================== -->
+
+<g class="c-link" id="group-link">
+  <rect x="70" y="1550" width="920" height="170" class="group-bg gb-link"/>
+  <text x="80" y="1567" class="group-label" fill="#6c3483">Data Link / Layer 2</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/ethernet.md">
+    <rect x="80" y="1575" width="76" height="28" class="proto-box"/>
+    <text x="118" y="1589" class="proto-name">Ethernet</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/arp.md">
+    <rect x="164" y="1575" width="42" height="28" class="proto-box"/>
+    <text x="185" y="1589" class="proto-name">ARP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/ppp.md">
+    <rect x="214" y="1575" width="86" height="28" class="proto-box"/>
+    <text x="257" y="1589" class="proto-name">PPP/PPPoE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/vlan8021q.md">
+    <rect x="308" y="1575" width="66" height="28" class="proto-box"/>
+    <text x="341" y="1589" class="proto-name">802.1Q</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/stp.md">
+    <rect x="382" y="1575" width="42" height="28" class="proto-box"/>
+    <text x="403" y="1589" class="proto-name">STP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/lldp.md">
+    <rect x="432" y="1575" width="52" height="28" class="proto-box"/>
+    <text x="458" y="1589" class="proto-name">LLDP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/lacp.md">
+    <rect x="492" y="1575" width="52" height="28" class="proto-box"/>
+    <text x="518" y="1589" class="proto-name">LACP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/cdp.md">
+    <rect x="552" y="1575" width="44" height="28" class="proto-box"/>
+    <text x="574" y="1589" class="proto-name">CDP</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/atm.md">
+    <rect x="80" y="1611" width="44" height="28" class="proto-box"/>
+    <text x="102" y="1625" class="proto-name">ATM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/hdlc.md">
+    <rect x="132" y="1611" width="52" height="28" class="proto-box"/>
+    <text x="158" y="1625" class="proto-name">HDLC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/link-layer/framerelay.md">
+    <rect x="192" y="1611" width="96" height="28" class="proto-box"/>
+    <text x="240" y="1625" class="proto-name">Frame Relay</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- WIRELESS / RADIO LAYER                                                    -->
+<!-- ======================================================================== -->
+
+<!-- ==================== WIRELESS GROUP ==================== -->
+<g class="c-wireless" id="group-wireless">
+  <rect x="70" y="1740" width="1800" height="210" class="group-bg gb-wireless"/>
+  <text x="80" y="1757" class="group-label" fill="#00acc1">Wireless / IoT / Mesh</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/80211.md">
+    <rect x="80" y="1765" width="92" height="28" class="proto-box"/>
+    <text x="126" y="1779" class="proto-name">Wi-Fi 802.11</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/80211s.md">
+    <rect x="180" y="1765" width="68" height="28" class="proto-box"/>
+    <text x="214" y="1779" class="proto-name">802.11s</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/bluetooth.md">
+    <rect x="256" y="1765" width="82" height="28" class="proto-box"/>
+    <text x="297" y="1779" class="proto-name">Bluetooth</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/ble.md">
+    <rect x="346" y="1765" width="42" height="28" class="proto-box"/>
+    <text x="367" y="1779" class="proto-name">BLE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/zigbee.md">
+    <rect x="396" y="1765" width="62" height="28" class="proto-box"/>
+    <text x="427" y="1779" class="proto-name">Zigbee</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/zwave.md">
+    <rect x="466" y="1765" width="62" height="28" class="proto-box"/>
+    <text x="497" y="1779" class="proto-name">Z-Wave</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/thread.md">
+    <rect x="536" y="1765" width="62" height="28" class="proto-box"/>
+    <text x="567" y="1779" class="proto-name">Thread</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/matter.md">
+    <rect x="606" y="1765" width="62" height="28" class="proto-box"/>
+    <text x="637" y="1779" class="proto-name">Matter</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/lora.md">
+    <rect x="676" y="1765" width="52" height="28" class="proto-box"/>
+    <text x="702" y="1779" class="proto-name">LoRa</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/lorawan.md">
+    <rect x="80" y="1801" width="78" height="28" class="proto-box"/>
+    <text x="119" y="1815" class="proto-name">LoRaWAN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/6lowpan.md">
+    <rect x="166" y="1801" width="76" height="28" class="proto-box"/>
+    <text x="204" y="1815" class="proto-name">6LoWPAN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/nfc.md">
+    <rect x="250" y="1801" width="42" height="28" class="proto-box"/>
+    <text x="271" y="1815" class="proto-name">NFC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/uwb.md">
+    <rect x="300" y="1801" width="44" height="28" class="proto-box"/>
+    <text x="322" y="1815" class="proto-name">UWB</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/enocean.md">
+    <rect x="352" y="1801" width="72" height="28" class="proto-box"/>
+    <text x="388" y="1815" class="proto-name">EnOcean</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/antplus.md">
+    <rect x="432" y="1801" width="56" height="28" class="proto-box"/>
+    <text x="460" y="1815" class="proto-name">ANT+</text>
+  </a>
+</g>
+
+<!-- ==================== RADIO GROUP ==================== -->
+<g class="c-radio" id="group-radio">
+  <rect x="1880" y="1740" width="320" height="210" class="group-bg gb-radio"/>
+  <text x="1890" y="1757" class="group-label" fill="#f57c00">Radio / Broadcast</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/dmr.md">
+    <rect x="1890" y="1765" width="48" height="28" class="proto-box"/>
+    <text x="1914" y="1779" class="proto-name">DMR</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/tetra.md">
+    <rect x="1946" y="1765" width="62" height="28" class="proto-box"/>
+    <text x="1977" y="1779" class="proto-name">TETRA</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/wireless/dvbs2.md">
+    <rect x="2016" y="1765" width="68" height="28" class="proto-box"/>
+    <text x="2050" y="1779" class="proto-name">DVB-S2</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- TELECOM LAYER                                                             -->
+<!-- ======================================================================== -->
+
+<g class="c-telecom" id="group-telecom">
+  <rect x="70" y="1970" width="3070" height="180" class="group-bg gb-telecom"/>
+  <text x="80" y="1987" class="group-label" fill="#ad1457">Telecom / Mobile / Access</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/gsm.md">
+    <rect x="80" y="1995" width="46" height="28" class="proto-box"/>
+    <text x="103" y="2009" class="proto-name">GSM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/lte.md">
+    <rect x="134" y="1995" width="42" height="28" class="proto-box"/>
+    <text x="155" y="2009" class="proto-name">LTE</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/5gnr.md">
+    <rect x="184" y="1995" width="56" height="28" class="proto-box"/>
+    <text x="212" y="2009" class="proto-name">5G NR</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/ngap.md">
+    <rect x="248" y="1995" width="56" height="28" class="proto-box"/>
+    <text x="276" y="2009" class="proto-name">NGAP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/pfcp.md">
+    <rect x="312" y="1995" width="52" height="28" class="proto-box"/>
+    <text x="338" y="2009" class="proto-name">PFCP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/nas5g.md">
+    <rect x="372" y="1995" width="42" height="28" class="proto-box"/>
+    <text x="393" y="2009" class="proto-name">NAS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/sbi.md">
+    <rect x="422" y="1995" width="42" height="28" class="proto-box"/>
+    <text x="443" y="2009" class="proto-name">SBI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/ss7.md">
+    <rect x="472" y="1995" width="42" height="28" class="proto-box"/>
+    <text x="493" y="2009" class="proto-name">SS7</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/diameter.md">
+    <rect x="522" y="1995" width="76" height="28" class="proto-box"/>
+    <text x="560" y="2009" class="proto-name">Diameter</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/isdn.md">
+    <rect x="606" y="1995" width="50" height="28" class="proto-box"/>
+    <text x="631" y="2009" class="proto-name">ISDN</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/gpon.md">
+    <rect x="80" y="2031" width="56" height="28" class="proto-box"/>
+    <text x="108" y="2045" class="proto-name">GPON</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/epon.md">
+    <rect x="144" y="2031" width="52" height="28" class="proto-box"/>
+    <text x="170" y="2045" class="proto-name">EPON</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/docsis.md">
+    <rect x="204" y="2031" width="66" height="28" class="proto-box"/>
+    <text x="237" y="2045" class="proto-name">DOCSIS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/xdsl.md">
+    <rect x="278" y="2031" width="52" height="28" class="proto-box"/>
+    <text x="304" y="2045" class="proto-name">xDSL</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/wap.md">
+    <rect x="338" y="2031" width="44" height="28" class="proto-box"/>
+    <text x="360" y="2045" class="proto-name">WAP</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/sms.md">
+    <rect x="390" y="2031" width="44" height="28" class="proto-box"/>
+    <text x="412" y="2045" class="proto-name">SMS</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/ussd.md">
+    <rect x="442" y="2031" width="52" height="28" class="proto-box"/>
+    <text x="468" y="2045" class="proto-name">USSD</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/e1.md">
+    <rect x="502" y="2031" width="56" height="28" class="proto-box"/>
+    <text x="530" y="2045" class="proto-name">E1/T1</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/t1.md">
+    <rect x="566" y="2031" width="36" height="28" class="proto-box"/>
+    <text x="584" y="2045" class="proto-name">T1</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/telecom/pon_50g.md">
+    <rect x="610" y="2031" width="66" height="28" class="proto-box"/>
+    <text x="643" y="2045" class="proto-name">50G PON</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- PHYSICAL / SERIAL / BUS LAYER                                             -->
+<!-- ======================================================================== -->
+
+<!-- ==================== BUS GROUP ==================== -->
+<g class="c-bus" id="group-bus">
+  <rect x="70" y="2170" width="1900" height="170" class="group-bg gb-bus"/>
+  <text x="80" y="2187" class="group-label" fill="#00695c">Bus / Serial / Physical Interfaces</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/can.md">
+    <rect x="80" y="2195" width="44" height="28" class="proto-box"/>
+    <text x="102" y="2209" class="proto-name">CAN</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/robotics/canopen.md">
+    <rect x="132" y="2195" width="78" height="28" class="proto-box"/>
+    <text x="171" y="2209" class="proto-name">CANopen</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/usb.md">
+    <rect x="218" y="2195" width="42" height="28" class="proto-box"/>
+    <text x="239" y="2209" class="proto-name">USB</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/pcie.md">
+    <rect x="268" y="2195" width="50" height="28" class="proto-box"/>
+    <text x="293" y="2209" class="proto-name">PCIe</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/i2c.md">
+    <rect x="326" y="2195" width="42" height="28" class="proto-box"/>
+    <text x="347" y="2209" class="proto-name">I2C</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/spi.md">
+    <rect x="376" y="2195" width="42" height="28" class="proto-box"/>
+    <text x="397" y="2209" class="proto-name">SPI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/i2s.md">
+    <rect x="426" y="2195" width="42" height="28" class="proto-box"/>
+    <text x="447" y="2209" class="proto-name">I2S</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/onewire.md">
+    <rect x="476" y="2195" width="62" height="28" class="proto-box"/>
+    <text x="507" y="2209" class="proto-name">1-Wire</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/midi.md">
+    <rect x="546" y="2195" width="50" height="28" class="proto-box"/>
+    <text x="571" y="2209" class="proto-name">MIDI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/dmx512.md">
+    <rect x="604" y="2195" width="66" height="28" class="proto-box"/>
+    <text x="637" y="2209" class="proto-name">DMX512</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/artnet.md">
+    <rect x="678" y="2195" width="62" height="28" class="proto-box"/>
+    <text x="709" y="2209" class="proto-name">Art-Net</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/sacn.md">
+    <rect x="748" y="2195" width="50" height="28" class="proto-box"/>
+    <text x="773" y="2209" class="proto-name">sACN</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/hdmi_cec.md">
+    <rect x="80" y="2231" width="86" height="28" class="proto-box"/>
+    <text x="123" y="2245" class="proto-name">HDMI CEC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/arinc429.md">
+    <rect x="174" y="2231" width="86" height="28" class="proto-box"/>
+    <text x="217" y="2245" class="proto-name">ARINC 429</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/milstd1553.md">
+    <rect x="268" y="2231" width="110" height="28" class="proto-box"/>
+    <text x="323" y="2245" class="proto-name">MIL-STD-1553</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/dali.md">
+    <rect x="386" y="2231" width="50" height="28" class="proto-box"/>
+    <text x="411" y="2245" class="proto-name">DALI</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/bus/jtag_swd.md">
+    <rect x="444" y="2231" width="86" height="28" class="proto-box"/>
+    <text x="487" y="2245" class="proto-name">JTAG/SWD</text>
+  </a>
+</g>
+
+<!-- ==================== SERIAL GROUP ==================== -->
+<g class="c-serial" id="group-serial">
+  <rect x="1980" y="2170" width="470" height="170" class="group-bg gb-serial"/>
+  <text x="1990" y="2187" class="group-label" fill="#546e7a">Serial / Transfer</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/serial/uart.md">
+    <rect x="1990" y="2195" width="52" height="28" class="proto-box"/>
+    <text x="2016" y="2209" class="proto-name">UART</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/serial/rs232.md">
+    <rect x="2050" y="2195" width="62" height="28" class="proto-box"/>
+    <text x="2081" y="2209" class="proto-name">RS-232</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/serial/rs485.md">
+    <rect x="2120" y="2195" width="62" height="28" class="proto-box"/>
+    <text x="2151" y="2209" class="proto-name">RS-485</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/serial/rs422.md">
+    <rect x="2190" y="2195" width="62" height="28" class="proto-box"/>
+    <text x="2221" y="2209" class="proto-name">RS-422</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/serial/xmodem.md">
+    <rect x="1990" y="2231" width="72" height="28" class="proto-box"/>
+    <text x="2026" y="2245" class="proto-name">XMODEM</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/serial/zmodem.md">
+    <rect x="2070" y="2231" width="74" height="28" class="proto-box"/>
+    <text x="2107" y="2245" class="proto-name">ZMODEM</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- CROSS-LAYER: DATA FORMATS / ENCODING / HPC                               -->
+<!-- ======================================================================== -->
+
+<!-- ==================== DATA FORMATS GROUP ==================== -->
+<g class="c-data" id="group-data">
+  <rect x="70" y="2510" width="680" height="130" class="group-bg gb-data"/>
+  <text x="80" y="2527" class="group-label" fill="#6d4c41">Data Formats / Serialization</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/protobuf.md">
+    <rect x="80" y="2535" width="74" height="28" class="proto-box"/>
+    <text x="117" y="2549" class="proto-name">Protobuf</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/parquet.md">
+    <rect x="162" y="2535" width="70" height="28" class="proto-box"/>
+    <text x="197" y="2549" class="proto-name">Parquet</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/hdf5.md">
+    <rect x="240" y="2535" width="50" height="28" class="proto-box"/>
+    <text x="265" y="2549" class="proto-name">HDF5</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/onnx.md">
+    <rect x="298" y="2535" width="52" height="28" class="proto-box"/>
+    <text x="324" y="2549" class="proto-name">ONNX</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/gguf.md">
+    <rect x="358" y="2535" width="52" height="28" class="proto-box"/>
+    <text x="384" y="2549" class="proto-name">GGUF</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/safetensors.md">
+    <rect x="418" y="2535" width="96" height="28" class="proto-box"/>
+    <text x="466" y="2549" class="proto-name">Safetensors</text>
+  </a>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/tfrecord.md">
+    <rect x="80" y="2571" width="78" height="28" class="proto-box"/>
+    <text x="119" y="2585" class="proto-name">TFRecord</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/data-formats/mcap.md">
+    <rect x="166" y="2571" width="52" height="28" class="proto-box"/>
+    <text x="192" y="2585" class="proto-name">MCAP</text>
+  </a>
+</g>
+
+<!-- ==================== ENCODING GROUP ==================== -->
+<g class="c-encoding" id="group-encoding">
+  <rect x="760" y="2510" width="420" height="130" class="group-bg gb-encoding"/>
+  <text x="770" y="2527" class="group-label" fill="#78909c">Encoding / Barcode</text>
+
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/encoding/qrcode.md">
+    <rect x="770" y="2535" width="72" height="28" class="proto-box"/>
+    <text x="806" y="2549" class="proto-name">QR Code</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/encoding/upc.md">
+    <rect x="850" y="2535" width="42" height="28" class="proto-box"/>
+    <text x="871" y="2549" class="proto-name">UPC</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/encoding/code128.md">
+    <rect x="900" y="2535" width="76" height="28" class="proto-box"/>
+    <text x="938" y="2549" class="proto-name">Code 128</text>
+  </a>
+  <a xlink:href="https://github.com/yepher/world_of_protocols/blob/main/protocols/encoding/datamatrix.md">
+    <rect x="984" y="2535" width="96" height="28" class="proto-box"/>
+    <text x="1032" y="2549" class="proto-name">Data Matrix</text>
+  </a>
+</g>
+
+
+<!-- ======================================================================== -->
+<!-- LEGEND                                                                    -->
+<!-- ======================================================================== -->
+<g transform="translate(2460, 2510)">
+  <rect x="0" y="0" width="680" height="250" rx="8" ry="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="20" y="24" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333;">Legend — Domain Colors</text>
+
+  <!-- Row 1 -->
+  <rect x="20" y="38" width="14" height="14" rx="2" fill="#4a90d9"/>
+  <text x="40" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">Web</text>
+  <rect x="90" y="38" width="14" height="14" rx="2" fill="#e67e22"/>
+  <text x="110" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">Email</text>
+  <rect x="160" y="38" width="14" height="14" rx="2" fill="#27ae60"/>
+  <text x="180" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">DNS</text>
+  <rect x="230" y="38" width="14" height="14" rx="2" fill="#e74c3c"/>
+  <text x="250" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">VoIP</text>
+  <rect x="300" y="38" width="14" height="14" rx="2" fill="#8e44ad"/>
+  <text x="320" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">AV/Broadcast</text>
+  <rect x="420" y="38" width="14" height="14" rx="2" fill="#16a085"/>
+  <text x="440" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">Messaging</text>
+  <rect x="530" y="38" width="14" height="14" rx="2" fill="#8b6914"/>
+  <text x="550" y="50" style="font-family: Arial; font-size: 10px; fill: #333;">Database</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="62" width="14" height="14" rx="2" fill="#5b8c5a"/>
+  <text x="40" y="74" style="font-family: Arial; font-size: 10px; fill: #333;">File Share</text>
+  <rect x="110" y="62" width="14" height="14" rx="2" fill="#607d8b"/>
+  <text x="130" y="74" style="font-family: Arial; font-size: 10px; fill: #333;">Monitoring</text>
+  <rect x="220" y="62" width="14" height="14" rx="2" fill="#e91e63"/>
+  <text x="240" y="74" style="font-family: Arial; font-size: 10px; fill: #333;">Healthcare</text>
+  <rect x="330" y="62" width="14" height="14" rx="2" fill="#c0392b"/>
+  <text x="350" y="74" style="font-family: Arial; font-size: 10px; fill: #333;">Security</text>
+  <rect x="420" y="62" width="14" height="14" rx="2" fill="#2c6e49"/>
+  <text x="440" y="74" style="font-family: Arial; font-size: 10px; fill: #333;">Transport</text>
+  <rect x="530" y="62" width="14" height="14" rx="2" fill="#d35400"/>
+  <text x="550" y="74" style="font-family: Arial; font-size: 10px; fill: #333;">Routing</text>
+
+  <!-- Row 3 -->
+  <rect x="20" y="86" width="14" height="14" rx="2" fill="#2c3e50"/>
+  <text x="40" y="98" style="font-family: Arial; font-size: 10px; fill: #333;">Network</text>
+  <rect x="110" y="86" width="14" height="14" rx="2" fill="#5c6bc0"/>
+  <text x="130" y="98" style="font-family: Arial; font-size: 10px; fill: #333;">Tunneling</text>
+  <rect x="220" y="86" width="14" height="14" rx="2" fill="#6c3483"/>
+  <text x="240" y="98" style="font-family: Arial; font-size: 10px; fill: #333;">Data Link</text>
+  <rect x="330" y="86" width="14" height="14" rx="2" fill="#00acc1"/>
+  <text x="350" y="98" style="font-family: Arial; font-size: 10px; fill: #333;">Wireless</text>
+  <rect x="420" y="86" width="14" height="14" rx="2" fill="#ad1457"/>
+  <text x="440" y="98" style="font-family: Arial; font-size: 10px; fill: #333;">Telecom</text>
+  <rect x="530" y="86" width="14" height="14" rx="2" fill="#37474f"/>
+  <text x="550" y="98" style="font-family: Arial; font-size: 10px; fill: #333;">Automotive</text>
+
+  <!-- Row 4 -->
+  <rect x="20" y="110" width="14" height="14" rx="2" fill="#0288d1"/>
+  <text x="40" y="122" style="font-family: Arial; font-size: 10px; fill: #333;">Aviation</text>
+  <rect x="110" y="110" width="14" height="14" rx="2" fill="#1a237e"/>
+  <text x="130" y="122" style="font-family: Arial; font-size: 10px; fill: #333;">Space</text>
+  <rect x="220" y="110" width="14" height="14" rx="2" fill="#827717"/>
+  <text x="240" y="122" style="font-family: Arial; font-size: 10px; fill: #333;">Industrial</text>
+  <rect x="330" y="110" width="14" height="14" rx="2" fill="#00695c"/>
+  <text x="350" y="122" style="font-family: Arial; font-size: 10px; fill: #333;">Bus/Serial</text>
+  <rect x="420" y="110" width="14" height="14" rx="2" fill="#ff7043"/>
+  <text x="440" y="122" style="font-family: Arial; font-size: 10px; fill: #333;">Robotics</text>
+  <rect x="530" y="110" width="14" height="14" rx="2" fill="#5d4037"/>
+  <text x="550" y="122" style="font-family: Arial; font-size: 10px; fill: #333;">Storage</text>
+
+  <!-- Row 5 -->
+  <rect x="20" y="134" width="14" height="14" rx="2" fill="#5e35b1"/>
+  <text x="40" y="146" style="font-family: Arial; font-size: 10px; fill: #333;">HPC</text>
+  <rect x="110" y="134" width="14" height="14" rx="2" fill="#6d4c41"/>
+  <text x="130" y="146" style="font-family: Arial; font-size: 10px; fill: #333;">Data Formats</text>
+  <rect x="220" y="134" width="14" height="14" rx="2" fill="#78909c"/>
+  <text x="240" y="146" style="font-family: Arial; font-size: 10px; fill: #333;">Encoding</text>
+  <rect x="330" y="134" width="14" height="14" rx="2" fill="#f57c00"/>
+  <text x="350" y="146" style="font-family: Arial; font-size: 10px; fill: #333;">Radio</text>
+  <rect x="420" y="134" width="14" height="14" rx="2" fill="#7b1fa2"/>
+  <text x="440" y="146" style="font-family: Arial; font-size: 10px; fill: #333;">Mobile Sync</text>
+  <rect x="530" y="134" width="14" height="14" rx="2" fill="#546e7a"/>
+  <text x="550" y="146" style="font-family: Arial; font-size: 10px; fill: #333;">Serial Xfer</text>
+
+  <!-- Layer key -->
+  <text x="20" y="172" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #333;">Layer Bands (top to bottom)</text>
+  <text x="20" y="188" style="font-family: Arial; font-size: 10px; fill: #555;">Application  |  Security  |  Transport  |  Network  |  Tunnel  |  Data Link  |  Wireless  |  Telecom  |  Physical/Bus  |  Data/HPC</text>
+
+  <text x="20" y="210" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #888;">github.com/yepher/world_of_protocols</text>
+  <text x="20" y="228" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; fill: #aaa;">Click any protocol box to view its documentation</text>
+</g>
+
+</svg>
