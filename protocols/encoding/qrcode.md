@@ -72,7 +72,7 @@ Multiple mode segments can be concatenated in a single QR code for optimal encod
 
 ## Error Correction Levels
 
-QR codes use **Reed-Solomon** error correction with four levels:
+QR codes use [**Reed-Solomon**](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction) error correction with four levels:
 
 | Level | Recovery Capacity | Typical Use |
 |-------|------------------|-------------|
