@@ -1,7 +1,7 @@
 site_name: World of Protocols
 site_description: Concise quick-reference for network protocols with packet diagrams and standards links
-repo_url: https://github.com/YOUR_USERNAME/world-of-protocols
-repo_name: world-of-protocols
+repo_url: https://github.com/yepher/world_of_protocols
+repo_name: world_of_protocols
 
 theme:
   name: material

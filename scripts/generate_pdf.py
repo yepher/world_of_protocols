@@ -15,8 +15,13 @@ Default output: maps/world-of-protocols.pdf
 """
 
 import argparse
+import base64
+import hashlib
+import io
 import re
 import sys
+import urllib.request
+import urllib.error
 from datetime import date
 from pathlib import Path
 
@@ -28,6 +33,7 @@ from reportlab.lib.units import inch, mm
 from reportlab.platypus import (
     BaseDocTemplate,
     Frame,
+    Image,
     NextPageTemplate,
     PageBreak,
     PageTemplate,
@@ -46,7 +52,120 @@ from reportlab.platypus.tableofcontents import TableOfContents
 PAGE_WIDTH, PAGE_HEIGHT = letter
 MARGIN = 0.75 * inch
 
-GITHUB_URL = "https://github.com/willswire/world-of-protocols"
+GITHUB_URL = "https://github.com/yepher/world_of_protocols"
+
+# Mermaid rendering cache directory
+MERMAID_CACHE_DIR = Path(__file__).resolve().parent.parent / ".mermaid_cache"
+
+# Global flag -- set by CLI --no-diagrams
+SKIP_MERMAID = False
+
+import shutil
+import subprocess
+import tempfile
+import time
+
+def _find_mmdc() -> str | None:
+    """Find mermaid-cli (mmdc) binary or npx."""
+    mmdc = shutil.which("mmdc")
+    if mmdc:
+        return mmdc
+    # Check if npx is available (will use npx @mermaid-js/mermaid-cli)
+    npx = shutil.which("npx")
+    if npx:
+        return npx
+    return None
+
+def _render_mermaid_local(code: str, output_path: Path) -> bool:
+    """Render mermaid diagram locally using mmdc or npx mmdc."""
+    mmdc = shutil.which("mmdc")
+    with tempfile.NamedTemporaryFile(suffix=".mmd", mode="w", delete=False) as f:
+        f.write(code)
+        input_path = f.name
+    try:
+        if mmdc:
+            cmd = [mmdc, "-i", input_path, "-o", str(output_path), "-b", "white", "--scale", "2"]
+        else:
+            npx = shutil.which("npx")
+            if not npx:
+                return False
+            cmd = [npx, "-y", "@mermaid-js/mermaid-cli", "-i", input_path, "-o", str(output_path), "-b", "white", "--scale", "2"]
+        result = subprocess.run(cmd, capture_output=True, timeout=30)
+        return result.returncode == 0 and output_path.exists() and output_path.stat().st_size > 100
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        return False
+    finally:
+        Path(input_path).unlink(missing_ok=True)
+
+def _render_mermaid_api(code: str, output_path: Path) -> bool:
+    """Render mermaid diagram via mermaid.ink API with rate limiting and retry."""
+    encoded = base64.urlsafe_b64encode(code.encode()).decode()
+    url = f"https://mermaid.ink/img/{encoded}?bgColor=white&theme=default"
+
+    for attempt in range(3):
+        try:
+            if attempt > 0:
+                time.sleep(2 ** attempt)  # Exponential backoff: 2s, 4s
+            req = urllib.request.Request(url, headers={"User-Agent": "WorldOfProtocols-PDFGen/1.0"})
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                png_data = resp.read()
+            if len(png_data) < 100:
+                continue
+            output_path.write_bytes(png_data)
+            time.sleep(0.5)  # Rate limit: 0.5s between successful requests
+            return True
+        except (urllib.error.URLError, OSError, TimeoutError):
+            continue
+    return False
+
+def render_mermaid(code: str, max_width: float = None) -> "Image | None":
+    """Render a Mermaid diagram to a ReportLab Image.
+
+    Tries local mmdc first (fast, reliable), falls back to mermaid.ink API.
+    Uses a local file cache (keyed by content hash) to avoid re-rendering.
+    Returns None on failure so the caller can fall back to a placeholder.
+    """
+    if SKIP_MERMAID:
+        return None
+
+    if max_width is None:
+        max_width = PAGE_WIDTH - 2 * MARGIN - 4
+
+    # Cache setup
+    MERMAID_CACHE_DIR.mkdir(exist_ok=True)
+    code_hash = hashlib.md5(code.encode()).hexdigest()
+    cache_file = MERMAID_CACHE_DIR / f"{code_hash}.png"
+
+    if not (cache_file.exists() and cache_file.stat().st_size > 100):
+        # Try local rendering first (much faster and more reliable)
+        if not _render_mermaid_local(code, cache_file):
+            # Fall back to API
+            if not _render_mermaid_api(code, cache_file):
+                print(f"    WARNING: Mermaid render failed (both local and API)")
+                return None
+
+    # Create ReportLab Image from the cached PNG
+    try:
+        png_data = cache_file.read_bytes()
+        img_buf = io.BytesIO(png_data)
+        img = Image(img_buf)
+        # Scale to fit page width while maintaining aspect ratio
+        orig_w, orig_h = img.drawWidth, img.drawHeight
+        if orig_w > max_width:
+            scale = max_width / orig_w
+            img.drawWidth = orig_w * scale
+            img.drawHeight = orig_h * scale
+        # Also cap height to avoid page overflow
+        max_height = PAGE_HEIGHT - 2 * MARGIN - 1.5 * inch
+        if img.drawHeight > max_height:
+            scale = max_height / img.drawHeight
+            img.drawWidth = img.drawWidth * scale
+            img.drawHeight = img.drawHeight * scale
+        return img
+    except Exception as e:
+        print(f"    WARNING: Mermaid image embed failed: {e}")
+        return None
+
 
 # Directory name -> human-readable display name
 CATEGORY_NAMES = {
@@ -495,9 +614,16 @@ def md_to_flowables(md_text: str, styles: dict, protocol_name: str = "") -> list
             i += 1  # skip closing ```
 
             if lang == "mermaid":
-                flowables.append(
-                    Paragraph("[Diagram: see online version]", styles["mermaid_placeholder"])
-                )
+                mermaid_code = "\n".join(code_lines)
+                img = render_mermaid(mermaid_code)
+                if img is not None:
+                    flowables.append(Spacer(1, 4))
+                    flowables.append(img)
+                    flowables.append(Spacer(1, 4))
+                else:
+                    flowables.append(
+                        Paragraph("[Diagram: see online version]", styles["mermaid_placeholder"])
+                    )
             else:
                 # Render code block as preformatted text with light gray background
                 code_text = "\n".join(code_lines)
@@ -1135,7 +1261,16 @@ def main():
         default=None,
         help="Output PDF path (default: maps/world-of-protocols.pdf)",
     )
+    parser.add_argument(
+        "--no-diagrams",
+        action="store_true",
+        help="Skip Mermaid diagram rendering (faster, uses placeholders)",
+    )
     args = parser.parse_args()
+
+    global SKIP_MERMAID
+    if args.no_diagrams:
+        SKIP_MERMAID = True
 
     # Resolve paths relative to the project root (parent of scripts/)
     script_dir = Path(__file__).resolve().parent
